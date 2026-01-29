@@ -69,7 +69,7 @@ const getResultRoute = (
 export default function Header({ onMenuClick }: HeaderProps) {
   const theme = useTheme();
   const router = useRouter();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'), { noSsr: true });
   const { cards, playlists } = useContent();
   const [query, setQuery] = useState('');
   const fuse = useMemo(() => createSearch(cards, playlists), [cards, playlists]);
@@ -101,7 +101,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
       <Toolbar sx={{ gap: 2 }}>
         <IconButton
           color="inherit"
-          aria-label={isDesktop ? 'Toggle sidebar' : 'Open navigation menu'}
+          aria-label="Toggle sidebar"
           edge="start"
           onClick={onMenuClick}
         >

@@ -26,7 +26,7 @@ export default function Sidebar({
   onClose,
 }: SidebarProps) {
   const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'), { noSsr: true });
   const pathname = usePathname();
   const headerOffset = { xs: '56px', md: '64px' };
   const orderedSlugs = [

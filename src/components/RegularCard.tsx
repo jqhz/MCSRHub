@@ -95,7 +95,9 @@ export default function RegularCard({ card }: RegularCardProps) {
           {card.date && (
             <Stack direction="row" spacing={1}>
               <Typography variant="caption" color="text.secondary">
-                {new Date(card.date).toLocaleDateString()}
+                {new Date(card.date).toLocaleDateString('en-US', {
+                  timeZone: 'UTC',
+                })}
               </Typography>
             </Stack>
           )}

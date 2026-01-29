@@ -37,12 +37,26 @@ export default function CategoryPage() {
     const handlePageChange = (_event: React.ChangeEvent<unknown>, value: number) => {
       router.push(`/${categoryMeta.slug}?page=${value}`);
     };
+    const fanartCards = cards.filter(
+      (card) => card.category === 'fanart',
+    );
+    const localItems = fanartCards.map((card) => ({
+      imageUrl:
+        card.image ?? `/api/og-image?url=${encodeURIComponent(card.url)}`,
+      tweetUrl: card.url,
+      author: card.title,
+    }));
     return (
       <Box>
         <Typography variant="h4" sx={{ mb: 3, fontWeight: 700 }}>
           Fanart
         </Typography>
-        <FanartGrid page={page} pageSize={PAGE_SIZE} onPageChange={handlePageChange} />
+        <FanartGrid
+          page={page}
+          pageSize={PAGE_SIZE}
+          onPageChange={handlePageChange}
+          localItems={localItems}
+        />
       </Box>
     );
   }

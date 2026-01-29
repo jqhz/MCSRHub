@@ -22,21 +22,27 @@ interface FanartGridProps {
   page: number;
   pageSize: number;
   onPageChange: (event: React.ChangeEvent<unknown>, value: number) => void;
+  localItems?: FanartItem[];
 }
 
 export default function FanartGrid({
   page,
   pageSize,
   onPageChange,
+  localItems = [],
 }: FanartGridProps) {
   const [items, setItems] = useState<FanartItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const totalPages = Math.max(1, Math.ceil(items.length / pageSize));
+  const mergedItems = useMemo(
+    () => [...localItems, ...items],
+    [localItems, items],
+  );
+  const totalPages = Math.max(1, Math.ceil(mergedItems.length / pageSize));
   const currentPage = Math.min(page, totalPages);
   const pagedItems = useMemo(() => {
     const startIndex = (currentPage - 1) * pageSize;
-    return items.slice(startIndex, startIndex + pageSize);
-  }, [items, currentPage, pageSize]);
+    return mergedItems.slice(startIndex, startIndex + pageSize);
+  }, [mergedItems, currentPage, pageSize]);
 
   useEffect(() => {
     const loadFanart = async () => {
@@ -54,7 +60,7 @@ export default function FanartGrid({
     loadFanart();
   }, []);
 
-  if (loading) {
+  if (loading && mergedItems.length === 0) {
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', py: 6 }}>
         <CircularProgress />
@@ -62,7 +68,7 @@ export default function FanartGrid({
     );
   }
 
-  if (items.length === 0) {
+  if (mergedItems.length === 0) {
     return (
       <Typography variant="body1" color="text.secondary">
         Fanart will appear here once available.

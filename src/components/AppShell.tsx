@@ -32,7 +32,7 @@ export default function AppShell({ children }: PropsWithChildren) {
       }),
     [],
   );
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'), { noSsr: true });
 
   const handleToggle = () => {
     if (isDesktop) {

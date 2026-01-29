@@ -379,9 +379,33 @@
     {
       "id": "fanart-001",
       "category": "fanart",
-      "title": "z",
-      "description": "@alsoma91c1",
+      "title": "@alsoma91c1",
       "url": "https://x.com/alsoma91c1/status/2015063662495494452?s=20",
+      "recommended": false,
+      "image": "images/fanart/art-001.jpg"
+    },
+    {
+      "id": "fanart-002",
+      "category": "fanart",
+      "title": "@SERENE__APPLE",
+      "image": "images/fanart/art-002.jpg",
+      "url": "https://x.com/SERENE__APPLE/status/2015281490029080679?s=20",
+      "recommended": false
+    },
+    {
+      "id": "fanart-003",
+      "category": "fanart",
+      "title": "@mwadmadde",
+      "image": "images/fanart/art-003.jpg",
+      "url": "https://x.com/mwadmadde/status/2013896734263648543?s=20",
+      "recommended": false
+    },
+    {
+      "id": "fanart-004",
+      "category": "fanart",
+      "title": "@Witherrr05",
+      "image": "images/fanart/art-004.jpg",
+      "url": "https://x.com/Witherrr05/status/2015795781194911863?s=20",
       "recommended": false
     }
   ]
