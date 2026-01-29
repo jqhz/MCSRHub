@@ -1,49 +1,125 @@
 {
-  "playlists": [
-    {
-      "id": "fortress",
-      "category": "tutorials",
-      "title": "Fortress",
-      "image": "/images/fortress.svg",
-      "description": "Speedrun-ready Nether Fortress routing tips."
-    },
-    {
-      "id": "redstone",
-      "category": "tech",
-      "title": "Redstone Plays",
-      "image": "/images/redstone.svg",
-      "description": "Mechanics, contraptions, and redstone logic."
-    },
-    {
-      "id": "speedrun-tutorials",
-      "category": "tutorials",
-      "title": "Speedrun Tutorials",
-      "image": "/images/fortress.svg",
-      "description": "Techniques and strategies from the speedrunning community."
-    }
-  ],
+  "playlists": [],
   "cards": [
     {
-      "id": "d1",
+      "id": "youtube-001",
+      "category": "youtube",
+      "title": "Chudwig",
+      "url": "https://www.youtube.com/@ludwig",
+      "recommended": true
+    },
+    {
+      "id": "app-001",
+      "category": "apps-tools",
+      "title": "MCSR TV",
+      "url": "https://mcsr.tv",
+      "recommended": true,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "app-002",
+      "category": "apps-tools",
+      "title": "Ranked Rundown",
+      "description": "@lesarxd",
+      "url": "https://lesarxd.github.io/ranked-rundown/",
+      "recommended": false,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "app-003",
+      "category": "apps-tools",
+      "title": "L9 Name Generator",
+      "description": "@cylorun",
+      "url": "https://cylorun.github.io/L9.html",
+      "recommended": false,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "app-004",
+      "category": "apps-tools",
+      "title": "Bastionguessr",
+      "description": "@cryotitan",
+      "url": "https://cryotitan.github.io/bastionguessr/",
+      "recommended": false,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "app-005",
+      "category": "apps-tools",
+      "title": "Guess 20 Runners",
+      "description": "@burandby",
+      "url": "https://burandby.github.io/runners",
+      "recommended": false,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "app-006",
+      "category": "apps-tools",
+      "title": "MPK Editor",
+      "description": "@qmaxxen",
+      "url": "https://qmaxxen.github.io/MiniPracticeKit-Editor/",
+      "recommended": false,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "tutorial-001",
+      "category": "tutorials",
+      "title": "Draconix Setup Guide",
+      "url": "https://www.youtube.com/watch?v=RSLv7FfQZKY",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-002",
+      "category": "tutorials",
+      "title": "OSH Full Minecraft Speedrunning",
+      "url": "https://youtube.com/playlist?list=PLwJbTWLH-1dakBZaROfNJZ-m59OQg_hFp",
+      "recommended": true,
+      "description": "(Playlist)"
+    },
+    {
+      "id": "discord-001",
       "category": "discords",
       "title": "JavaCord",
       "url": "https://discord.com/invite/jmdFn3C",
-      "recommended": true,
-      "description": "Java Minecraft Speedrunning Server"
+      "recommended": true
     },
     {
-      "id": "d2",
+      "id": "discord-002",
       "category": "discords",
       "title": "MCSR Ranked",
       "url": "https://mcsrranked.com/discord",
+      "recommended": true
+    },
+    {
+      "id": "discord-003",
+      "category": "discords",
+      "title": "The Bridge",
+      "url": "https://discord.com/invite/PzKt3YUE4A",
       "recommended": false
     },
     {
-      "id": "tech-001",
-      "category": "tech",
-      "title": "Infume Bow",
-      "url": "https://youtu.be/jGmKU7Ho4eM",
-      "recommended": false
+      "id": "discord-004",
+      "category": "discords",
+      "title": "Runners' Improvement Program (RIP)",
+      "url": "https://discord.gg/HtgcAHd9D2",
+      "recommended": false,
+      "image": "images/discord.png"
+    },
+    {
+      "id": "discord-005",
+      "category": "discords",
+      "title": "PaceMan",
+      "url": "https://discord.gg/t63gGSWvdV",
+      "recommended": false,
+      "image": "images/discord.png"
+    },
+    {
+      "id": "discord-006",
+      "category": "discords",
+      "title": "SeedQueue",
+      "url": "https://discord.gg/9P6PJkHCdU",
+      "recommended": false,
+      "image": "images/discord.png"
     }
   ]
 }
