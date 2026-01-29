@@ -1,20 +1,26 @@
+/* eslint-disable react-refresh/only-export-components */
 import type { Metadata } from 'next';
 import '@src/styles/globals.css';
+import AppShell from '@src/components/AppShell';
+
 export const metadata: Metadata = {
-  title: 'MCSRHub',
+  title: 'MCSR Hub',
   description: 'MCSR community hub',
-}
+  icons: {
+    icon: 'images/MCSRHubIcon.png',
+  }
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <AppShell>{children}</AppShell>
       </body>
     </html>
-  )
+  );
 }

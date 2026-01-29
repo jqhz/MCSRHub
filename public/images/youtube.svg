@@ -1,0 +1,8 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" rx="24" fill="#1F2937"/>
+  <rect x="60" y="80" width="520" height="200" rx="24" fill="#DC2626"/>
+  <polygon points="300,140 440,180 300,220" fill="#F8FAFC"/>
+  <text x="50%" y="78%" text-anchor="middle" fill="#E5E7EB" font-size="28" font-family="Arial, sans-serif">
+    YouTube Channels
+  </text>
+</svg>

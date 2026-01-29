@@ -1,0 +1,60 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Which structure should every new runner learn first?",
+      "responses": [
+        "Village",
+        "Bastion",
+        "Fortress",
+        "Stronghold"
+      ],
+      "askedBefore": true
+    },
+    {
+      "id": "q2",
+      "question": "Favorite early-game resource?",
+      "responses": [
+        "Iron",
+        "Gold",
+        "Obsidian"
+      ],
+      "askedBefore": true
+    },
+    {
+      "id": "q3",
+      "question": "Best practice category for new runners?",
+      "responses": [
+        "Blind travel",
+        "Portal timing",
+        "Inventory routing"
+      ],
+      "askedBefore": false
+    },
+    {
+      "id": "q4",
+      "question": "Which biome feels most consistent to route?",
+      "responses": [
+        "Crimson Forest",
+        "Warped Forest",
+        "Basalt Delta"
+      ],
+      "askedBefore": false
+    }
+  ],
+  "votes": {
+    "q1": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "q2": [
+      0,
+      0,
+      0
+    ]
+  },
+  "currentQuestionId": "q2",
+  "lastResetDate": "2026-01-28"
+}

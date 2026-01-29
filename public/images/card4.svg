@@ -1,0 +1,7 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" rx="24" fill="#0B1120"/>
+  <rect x="40" y="40" width="560" height="280" rx="20" fill="#1E293B"/>
+  <text x="50%" y="52%" text-anchor="middle" fill="#A7F3D0" font-size="32" font-family="Arial, sans-serif">
+    Mechanics Card
+  </text>
+</svg>

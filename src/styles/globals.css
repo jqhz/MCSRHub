@@ -1,1 +1,35 @@
 @import 'tailwindcss';
+
+@font-face {
+  font-family: 'Minecraftia';
+  src: url('../assets/fonts/Minecraft.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  font-family: 'Minecraftia', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.mcsr-highlight {
+  outline: 3px solid rgba(94, 234, 212, 0.9);
+  box-shadow: 0 0 0 6px rgba(94, 234, 212, 0.2);
+  animation: mcsrGlow 2s ease;
+}
+
+@keyframes mcsrGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(94, 234, 212, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(94, 234, 212, 0);
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "playlists": [
+    {
+      "id": "fortress",
+      "category": "tutorials",
+      "title": "Fortress",
+      "image": "/images/fortress.svg",
+      "description": "Speedrun-ready Nether Fortress routing tips."
+    },
+    {
+      "id": "redstone",
+      "category": "tech",
+      "title": "Redstone Plays",
+      "image": "/images/redstone.svg",
+      "description": "Mechanics, contraptions, and redstone logic."
+    },
+    {
+      "id": "speedrun-tutorials",
+      "category": "tutorials",
+      "title": "Speedrun Tutorials",
+      "image": "/images/fortress.svg",
+      "description": "Techniques and strategies from the speedrunning community."
+    }
+  ],
+  "cards": [
+    {
+      "id": "d1",
+      "category": "discords",
+      "title": "JavaCord",
+      "url": "https://discord.com/invite/jmdFn3C",
+      "recommended": true,
+      "description": "Java Minecraft Speedrunning Server"
+    },
+    {
+      "id": "d2",
+      "category": "discords",
+      "title": "MCSR Ranked",
+      "url": "https://mcsrranked.com/discord",
+      "recommended": false
+    },
+    {
+      "id": "tech-001",
+      "category": "tech",
+      "title": "Infume Bow",
+      "url": "https://youtu.be/jGmKU7Ho4eM",
+      "recommended": false
+    }
+  ]
+}
