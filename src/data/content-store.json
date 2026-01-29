@@ -407,6 +407,21 @@
       "image": "images/fanart/art-004.jpg",
       "url": "https://x.com/Witherrr05/status/2015795781194911863?s=20",
       "recommended": false
+    },
+    {
+      "id": "tech-023",
+      "category": "tech",
+      "title": "Enderman de-agro from dragon",
+      "description": "@roobley",
+      "url": "https://youtu.be/emhiL9tLyeU",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-005",
+      "category": "tutorials",
+      "title": "Couriway's Metafy Guide",
+      "url": "https://metafy.gg/@couriway",
+      "recommended": true
     }
   ]
 }
