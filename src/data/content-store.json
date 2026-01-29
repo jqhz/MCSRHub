@@ -120,6 +120,269 @@
       "url": "https://discord.gg/9P6PJkHCdU",
       "recommended": false,
       "image": "images/discord.png"
+    },
+    {
+      "id": "discord-007",
+      "category": "discords",
+      "title": "Event Server",
+      "url": "https://discord.com/invite/zzptZsec42",
+      "recommended": false,
+      "image": "images/discord.png"
+    },
+    {
+      "id": "discord-008",
+      "category": "discords",
+      "title": "Linux MCSR",
+      "url": "https://discord.gg/3tm4UpUQ8t",
+      "recommended": false,
+      "image": "images/discord.png"
+    },
+    {
+      "id": "discord-009",
+      "category": "discords",
+      "title": "Julti",
+      "url": "https://discord.gg/De6gpNSZqe",
+      "recommended": false,
+      "image": "images/discord.png"
+    },
+    {
+      "id": "discord-010",
+      "category": "discords",
+      "title": "FSG",
+      "image": "images/discord.png",
+      "url": "https://discord.gg/cADcJe8ND8",
+      "recommended": false
+    },
+    {
+      "id": "document-001",
+      "category": "documents",
+      "title": "Preemptive Doc",
+      "url": "https://docs.google.com/document/d/16so86RO1CN1iRprZn5dPKH3UuIxoUlduKelb1rw1PhI/edit?usp=sharing",
+      "recommended": true
+    },
+    {
+      "id": "download-001",
+      "category": "downloads",
+      "title": "ModCheck",
+      "url": "https://github.com/tildejustin/modcheck/releases/latest",
+      "recommended": true
+    },
+    {
+      "id": "download-002",
+      "category": "downloads",
+      "title": "MapCheck",
+      "url": "https://github.com/cylorun/Map-Check/releases/latest",
+      "recommended": true
+    },
+    {
+      "id": "download-003",
+      "category": "downloads",
+      "title": "MCSR Ranked",
+      "url": "https://mcsrranked.com/download",
+      "recommended": true,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "tech-001",
+      "category": "tech",
+      "title": "Section Crafting",
+      "description": "@k4yfour",
+      "url": "https://www.youtube.com/watch?v=GM6Dui8m9Zc",
+      "recommended": false
+    },
+    {
+      "id": "tech-002",
+      "category": "tech",
+      "title": "Prevent cobble in 2x1",
+      "url": "https://youtu.be/SSlsWfwdkb8",
+      "recommended": false
+    },
+    {
+      "id": "tech-003",
+      "category": "tech",
+      "title": "High Ocean Blind Portal Boat Pearl",
+      "url": "https://youtu.be/X7xWeolT80s",
+      "recommended": false
+    },
+    {
+      "id": "tech-004",
+      "category": "tech",
+      "title": "Food Guide",
+      "description": "@Ninjabrain",
+      "url": "https://youtu.be/FETY89nTjNM",
+      "recommended": false
+    },
+    {
+      "id": "tech-005",
+      "category": "tech",
+      "title": "Every Useful Death Reset",
+      "url": "https://youtu.be/rhHjI8Ri84k",
+      "recommended": false
+    },
+    {
+      "id": "tech-006",
+      "category": "tech",
+      "title": "1 bed 1 TNT auto-light for exposed spawner",
+      "url": "https://www.youtube.com/watch?v=-ihZ1XzSyxk",
+      "recommended": false
+    },
+    {
+      "id": "tech-007",
+      "category": "tech",
+      "title": "Front to back asymmetrical blazetntbed",
+      "url": "https://www.youtube.com/watch?v=JBhSbYIMWVo",
+      "recommended": false
+    },
+    {
+      "id": "tech-008",
+      "category": "tech",
+      "title": "Remote Spawner Break and Treasure Piedar",
+      "url": "https://www.youtube.com/watch?v=SbwhuXTmXi8",
+      "recommended": false,
+      "description": "@Kaltsi"
+    },
+    {
+      "id": "tech-009",
+      "category": "tech",
+      "title": "Treasure Spawner Bomb Strat Showcase",
+      "description": "@SuperC",
+      "url": "https://www.youtube.com/watch?v=CdrLtlJN8f0",
+      "recommended": false
+    },
+    {
+      "id": "tech-010",
+      "category": "tech",
+      "title": "All Gold Pick + TNT Bastions",
+      "description": "@Crossroads198x",
+      "url": "https://youtu.be/Ke67jRD3Ko0",
+      "recommended": false
+    },
+    {
+      "id": "tech-011",
+      "category": "tech",
+      "title": "Punch boat for more distance",
+      "description": "@r0hkx ft. Pavkin",
+      "url": "https://youtu.be/xlIig5eoxd8",
+      "recommended": false
+    },
+    {
+      "id": "tech-012",
+      "category": "tech",
+      "title": "No damage boat crawl",
+      "description": "@blad_d",
+      "url": "https://youtu.be/UXplHrtdtGk",
+      "recommended": false
+    },
+    {
+      "id": "tech-013",
+      "category": "tech",
+      "title": "How to take less damage in treasure",
+      "description": "@byugoi",
+      "url": "https://www.youtube.com/watch?v=aB29Jx-NwSM",
+      "recommended": false
+    },
+    {
+      "id": "tech-014",
+      "category": "tech",
+      "title": "Diagonal Pieray",
+      "description": "@frankey32",
+      "url": "https://youtu.be/C7WPh4GvbAU",
+      "recommended": false
+    },
+    {
+      "id": "tech-015",
+      "category": "tech",
+      "title": "Rampart eray",
+      "description": "@Redpill",
+      "url": "https://youtu.be/ldbovUA8GeY",
+      "recommended": false
+    },
+    {
+      "id": "tech-016",
+      "category": "tech",
+      "title": "Housing Light Abuse Moody",
+      "description": "@blad_d",
+      "url": "https://youtu.be/wMZPBJrv5Nk",
+      "recommended": false
+    },
+    {
+      "id": "tech-017",
+      "category": "tech",
+      "title": "Air Replace Zero",
+      "description": "@dqng3r/edcuh",
+      "url": "https://www.youtube.com/watch?v=cMfB9RSQ7wM",
+      "recommended": false
+    },
+    {
+      "id": "tech-018",
+      "category": "tech",
+      "title": "No magma, pertruding lava portal",
+      "url": "https://www.youtube.com/watch?v=jTkAwTCL-gI",
+      "recommended": false
+    },
+    {
+      "id": "tech-019",
+      "category": "tech",
+      "title": "Timing-less Portal Bucket Break",
+      "description": "@Duncan",
+      "url": "https://www.youtube.com/watch?v=2BDMk3ja_Os",
+      "recommended": false
+    },
+    {
+      "id": "tech-020",
+      "category": "tech",
+      "title": "Fish portal L shape",
+      "description": "@odyssey",
+      "url": "https://www.youtube.com/watch?v=W7tXavI66Sw",
+      "recommended": false
+    },
+    {
+      "id": "tech-021",
+      "category": "tech",
+      "title": "Keima Boat break brainless timing",
+      "description": "@Creedence",
+      "url": "https://www.youtube.com/watch?v=oWrYv1wsQbg",
+      "recommended": false
+    },
+    {
+      "id": "app-007",
+      "category": "apps-tools",
+      "title": "MPK",
+      "image": "images/gh.jpg",
+      "url": "https://github.com/Knawk/mc-MiniPracticeKit",
+      "recommended": true,
+      "description": "@knawk"
+    },
+    {
+      "id": "tutorial-003",
+      "category": "tutorials",
+      "title": "Linux MCSR Setup",
+      "url": "https://www.youtube.com/watch?v=DGrChQDC7CY",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-004",
+      "category": "tutorials",
+      "title": "Advanced 1.16.2 - 1.21.11+* strats and alternate routing",
+      "description": "@K4yfour",
+      "url": "https://www.youtube.com/watch?v=9jSInpb9dXo",
+      "recommended": false
+    },
+    {
+      "id": "tech-022",
+      "category": "tech",
+      "title": "Stop using soul sand on First Portal",
+      "description": "@Jahzz",
+      "url": "https://www.youtube.com/watch?v=o2gLiiYgPs4",
+      "recommended": false
+    },
+    {
+      "id": "fanart-001",
+      "category": "fanart",
+      "title": "z",
+      "description": "@alsoma91c1",
+      "url": "https://x.com/alsoma91c1/status/2015063662495494452?s=20",
+      "recommended": false
     }
   ]
 }
