@@ -1,5 +1,42 @@
 {
-  "playlists": [],
+  "playlists": [
+    {
+      "id": "tutorial-p-001",
+      "category": "tutorials",
+      "title": "Overworld",
+      "image": "images/mc_pics/island_leave_split.png"
+    },
+    {
+      "id": "tutorial-p-002",
+      "category": "tutorials",
+      "title": "Bastions",
+      "image": "images/mc_pics/bastion_split.png"
+    },
+    {
+      "id": "tutorial-p-003",
+      "category": "tutorials",
+      "title": "Fortress",
+      "image": "images/mc_pics/fortress_split.png"
+    },
+    {
+      "id": "tutorial-p-004",
+      "category": "tutorials",
+      "title": "Post Blind",
+      "image": "images/mc_pics/post_blind_split.png"
+    },
+    {
+      "id": "tutorial-p-005",
+      "category": "tutorials",
+      "title": "Stronghold",
+      "image": "images/mc_pics/stronghold_split.png"
+    },
+    {
+      "id": "tutorial-p-006",
+      "category": "tutorials",
+      "title": "The End",
+      "image": "images/mc_pics/end_split.png"
+    }
+  ],
   "cards": [
     {
       "id": "youtube-001",
@@ -422,6 +459,91 @@
       "title": "Couriway's Metafy Guide",
       "url": "https://metafy.gg/@couriway",
       "recommended": true
+    },
+    {
+      "id": "app-008",
+      "category": "apps-tools",
+      "title": "SpeedStats",
+      "description": "@ffz",
+      "image": "images/gh.jpg",
+      "url": "https://speedstats.vercel.app/",
+      "recommended": false
+    },
+    {
+      "id": "app-009",
+      "category": "apps-tools",
+      "title": "Village Houses",
+      "url": "https://mcsr.tools/villages",
+      "recommended": true,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "app-010",
+      "category": "apps-tools",
+      "title": "Ranked Watch",
+      "url": "https://mcsr.tools/ranked/watch",
+      "recommended": false,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "tutorial-006",
+      "category": "tutorials",
+      "title": "How to find Mapless Buried Treasure",
+      "description": "@Meebie",
+      "url": "https://youtu.be/o0LDg3fe2iI",
+      "playlistId": "tutorial-p-001",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-007",
+      "category": "tutorials",
+      "title": "How to use thin resolution effectively",
+      "description": "@Priffie",
+      "url": "https://youtu.be/OwKqLv2MJrg",
+      "playlistId": "tutorial-p-001",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-008",
+      "category": "tutorials",
+      "title": "Preemptive Navigation (In DEPTH)",
+      "description": "@meebie",
+      "url": "https://youtu.be/yF4kcBk3lKo",
+      "playlistId": "tutorial-p-005",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-009",
+      "category": "tutorials",
+      "title": "Locating the stronghold with Ninjabrain Bot",
+      "description": "@olock",
+      "url": "https://youtu.be/Gp6EnDs24NI",
+      "playlistId": "tutorial-p-004",
+      "recommended": true
+    },
+    {
+      "id": "document-002",
+      "category": "documents",
+      "title": "Search Crafting Resource Collection",
+      "url": "https://frontcage.com/t/search-crafting-resource-collection/32",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-010",
+      "category": "tutorials",
+      "title": "Preemptive Navigation in 3 Minutes",
+      "description": "@meebie",
+      "url": "https://www.youtube.com/watch?v=LtouvpxyDGY",
+      "playlistId": "tutorial-p-005",
+      "recommended": true
+    },
+    {
+      "id": "tech-024",
+      "category": "tech",
+      "title": "Things speedrunners do that you probably don't understand.",
+      "description": "@rekrap1",
+      "url": "https://www.youtube.com/watch?v=7r1F2oFpmkA",
+      "recommended": false
     }
   ]
 }
