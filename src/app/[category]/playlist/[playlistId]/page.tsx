@@ -84,7 +84,7 @@ export default function PlaylistPage() {
     <Box>
       <Box id={getHighlightIdForPlaylist(playlist.id)}>
         <Breadcrumbs sx={{ mb: 3 }}>
-          <Link component={NextLink} href={getCategoryRoute(categoryMeta.slug)}>
+          <Link prefetch={false} component={NextLink} href={getCategoryRoute(categoryMeta.slug)}>
             {categoryMeta.label}
           </Link>
           <Typography color="text.primary">{playlist.title}</Typography>

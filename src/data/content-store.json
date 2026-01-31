@@ -758,6 +758,85 @@
       "description": "@Ninjabrain",
       "url": "https://github.com/Ninjabrain1/Ninjabrain-Bot/releases/latest",
       "recommended": true
+    },
+    {
+      "id": "tutorial-027",
+      "category": "tutorials",
+      "title": "MCSR Ranked Explanations | The Fortress",
+      "description": "@Hackingnoisess",
+      "url": "https://www.youtube.com/watch?v=Ts2cRIz-MOc",
+      "playlistId": "tutorial-p-003",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-028",
+      "category": "tutorials",
+      "title": "MCSR Ranked Explanations | The Stronghold",
+      "description": "@Doogile",
+      "url": "https://www.youtube.com/watch?v=iI8bntMXJzE",
+      "playlistId": "tutorial-p-005",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-029",
+      "category": "tutorials",
+      "title": "MCSR Ranked Explanations | The End Fight",
+      "description": "@AutomattPL",
+      "url": "https://www.youtube.com/watch?v=_d6_XF6SFBk",
+      "playlistId": "tutorial-p-006",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-030",
+      "category": "tutorials",
+      "title": "How to Find a Bastion",
+      "description": "@K4yfour",
+      "url": "https://www.youtube.com/watch?v=M-sffdCnv-4",
+      "playlistId": "tutorial-p-002",
+      "recommended": true
+    },
+    {
+      "id": "tech-025",
+      "category": "tech",
+      "title": "Negative Pieray",
+      "description": "@Mar1n",
+      "url": "https://www.youtube.com/watch?v=fw0KzXyEFtY",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-031",
+      "category": "tutorials",
+      "title": "Right DK / Cracksmoker Bridge route",
+      "description": "@roobley",
+      "url": "https://www.youtube.com/watch?v=yTpNzvSD7oA",
+      "playlistId": "tutorial-p-002",
+      "recommended": false
+    },
+    {
+      "id": "document-006",
+      "category": "documents",
+      "title": "Linux Guide for MCSR",
+      "description": "Huge credit to the MCSR linux community",
+      "url": "https://its-saanvi.github.io/linux-mcsr/",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-032",
+      "category": "tutorials",
+      "title": "How to One Cycle the Ender Dragon",
+      "description": "@K4yfour",
+      "url": "https://www.youtube.com/watch?v=u9UVwwWxN_k",
+      "recommended": true,
+      "playlistId": "tutorial-p-006"
+    },
+    {
+      "id": "tutorial-033",
+      "category": "tutorials",
+      "title": "Stables Triple to Gap",
+      "description": "@meebie",
+      "url": "https://www.youtube.com/watch?v=D4Ulw7VepJc",
+      "playlistId": "tutorial-p-002",
+      "recommended": false
     }
   ]
 }
