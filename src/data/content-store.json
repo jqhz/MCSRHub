@@ -718,6 +718,46 @@
       "url": "https://www.youtube.com/watch?v=pDLufpy11GY",
       "playlistId": "tutorial-p-006",
       "recommended": false
+    },
+    {
+      "id": "tutorial-026",
+      "category": "tutorials",
+      "title": "Every Portal For Minecraft Speedrunners",
+      "description": "@schulo",
+      "url": "https://www.youtube.com/watch?v=r_lIEBZTepk",
+      "playlistId": "tutorial-p-001",
+      "recommended": false
+    },
+    {
+      "id": "download-005",
+      "category": "downloads",
+      "title": "Filter Keys",
+      "url": "https://geekhack.org/index.php?topic=41881.0",
+      "recommended": false,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "download-006",
+      "category": "downloads",
+      "title": "Prism Launcher",
+      "url": "https://prismlauncher.org/",
+      "recommended": false,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "download-007",
+      "category": "downloads",
+      "title": "Jingle",
+      "url": "https://github.com/DuncanRuns/Jingle/releases/latest",
+      "recommended": false
+    },
+    {
+      "id": "download-008",
+      "category": "downloads",
+      "title": "Ninjabrain Bot",
+      "description": "@Ninjabrain",
+      "url": "https://github.com/Ninjabrain1/Ninjabrain-Bot/releases/latest",
+      "recommended": true
     }
   ]
 }
