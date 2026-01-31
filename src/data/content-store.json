@@ -544,6 +544,180 @@
       "description": "@rekrap1",
       "url": "https://www.youtube.com/watch?v=7r1F2oFpmkA",
       "recommended": false
+    },
+    {
+      "id": "document-003",
+      "category": "documents",
+      "title": "A Deeper Look Into Preemptive Navigation",
+      "description": "@Mimi",
+      "url": "https://docs.google.com/document/d/1Xnmki5jOwuiwVnyv1b3VJLpiDWfNixgKW3zQowmpsYo/edit?usp=sharing",
+      "recommended": false
+    },
+    {
+      "id": "document-004",
+      "category": "documents",
+      "title": "Beginner's Guide to Preemptive Navigation",
+      "description": "@dibedy",
+      "url": "https://docs.google.com/document/d/16so86RO1CN1iRprZn5dPKH3UuIxoUlduKelb1rw1PhI/edit?usp=sharing",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-011",
+      "category": "tutorials",
+      "title": "Boat Eye Setup Guide",
+      "description": "@montage",
+      "url": "https://youtu.be/l1Z2t9e6Qko",
+      "playlistId": "tutorial-p-004",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-012",
+      "category": "tutorials",
+      "title": "A guide to eye desync",
+      "description": "@char",
+      "url": "https://www.youtube.com/watch?v=uBqAeZMlEFQ",
+      "playlistId": "tutorial-p-004",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-013",
+      "category": "tutorials",
+      "title": "Retimeless/no retime Boateye",
+      "description": "@dan",
+      "url": "https://www.youtube.com/watch?v=ff9KCyrYpEY",
+      "recommended": false,
+      "playlistId": "tutorial-p-004"
+    },
+    {
+      "id": "download-004",
+      "category": "downloads",
+      "title": "Microsoft Keyboard Layout Creator (MSKLC)",
+      "url": "https://www.microsoft.com/en-us/download/details.aspx?id=102134",
+      "recommended": false,
+      "image": "images/gh.jpg"
+    },
+    {
+      "id": "document-005",
+      "category": "documents",
+      "title": "Overview of Language Crafting for Minecraft Speedruns",
+      "url": "https://docs.google.com/document/d/1jSeciLoEgSwWWCdNk0dKignzxJskxJ5_zeCQmcdGmTg/edit?usp=sharing",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-014",
+      "category": "tutorials",
+      "title": "How To ACTUALLY Play Endgames in Minecraft Speedrunning",
+      "description": "@anjou",
+      "url": "https://youtu.be/NQ9eQnhvEF4?si=E6s621aPk2iuSM4p",
+      "playlistId": "tutorial-p-004",
+      "recommended": false
+    },
+    {
+      "id": "youtube-002",
+      "category": "youtube",
+      "title": "MCSR Clips",
+      "description": "(Playlist) @Zangoose",
+      "url": "https://youtube.com/playlist?list=PLTqPOJCzbI3TdFy1dtFYACZW0TZEPR9f3&si=Jotd2azzsioLfYno",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-015",
+      "category": "tutorials",
+      "title": "MCSR Ranked Explanations | Bridge Bastion",
+      "description": "@7rowl",
+      "url": "https://www.youtube.com/watch?v=SDBdWHKLvNg",
+      "playlistId": "tutorial-p-002",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-016",
+      "category": "tutorials",
+      "title": "MCSR Ranked Explanations | Treasure Bastion",
+      "description": "@BeefSalad",
+      "url": "https://www.youtube.com/watch?v=G6bbyQsxDEI",
+      "playlistId": "tutorial-p-002",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-017",
+      "category": "tutorials",
+      "title": "MCSR Ranked Explanations | Housing Bastion",
+      "description": "@BigBigMongey",
+      "url": "https://www.youtube.com/watch?v=OxZkC67rops",
+      "playlistId": "tutorial-p-002",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-018",
+      "category": "tutorials",
+      "title": "MCSR Ranked Explanations | Stables Bastion",
+      "description": "@Silverr",
+      "url": "https://www.youtube.com/watch?v=jc8156m-URU",
+      "playlistId": "tutorial-p-002",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-019",
+      "category": "tutorials",
+      "title": "Speedrun Bootcamp: Overworlds",
+      "description": "@Nerdi ft. @Infume",
+      "url": "https://www.youtube.com/watch?v=9vFLxtPZJGQ",
+      "playlistId": "tutorial-p-001",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-020",
+      "category": "tutorials",
+      "title": "Speedrun Bootcamp: Bastions (1)",
+      "description": "@Nerdi ft. @Silverrruns",
+      "url": "https://www.youtube.com/watch?v=ebSRmUmP3jk",
+      "playlistId": "tutorial-p-002",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-021",
+      "category": "tutorials",
+      "title": "Speedrun Bootcamp: Bastions (2)",
+      "description": "@Nerdi ft. @BigBigMongey",
+      "url": "https://www.youtube.com/watch?v=veXI1gCOXOI",
+      "playlistId": "tutorial-p-002",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-022",
+      "category": "tutorials",
+      "title": "Speerun Bootcamp: Fortresses",
+      "description": "@Nerdi ft. Dandannyboy",
+      "url": "https://www.youtube.com/watch?v=S_lVSa0vriU",
+      "playlistId": "tutorial-p-003",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-023",
+      "category": "tutorials",
+      "title": "Speedrun Bootcamp: Strongholds",
+      "description": "@Nerdi ft. @Feinberg",
+      "url": "https://www.youtube.com/watch?v=BOInaKNe21w",
+      "playlistId": "tutorial-p-005",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-024",
+      "category": "tutorials",
+      "title": "Speedrun Bootcamp: Zero Cycles (1)",
+      "description": "@Nerdi ft. @Hackingnoisess",
+      "url": "https://www.youtube.com/watch?v=1NFO3vdxyWQ",
+      "playlistId": "tutorial-p-006",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-025",
+      "category": "tutorials",
+      "title": "Speedrun Bootcamp: Zero Cycles (2)",
+      "description": "@Nerdi ft. @Doogile",
+      "url": "https://www.youtube.com/watch?v=pDLufpy11GY",
+      "playlistId": "tutorial-p-006",
+      "recommended": false
     }
   ]
 }
