@@ -818,7 +818,8 @@
       "title": "Linux Guide for MCSR",
       "description": "Huge credit to the MCSR linux community",
       "url": "https://its-saanvi.github.io/linux-mcsr/",
-      "recommended": false
+      "recommended": false,
+      "image": "images/doc.jpg"
     },
     {
       "id": "tutorial-032",
@@ -837,6 +838,133 @@
       "url": "https://www.youtube.com/watch?v=D4Ulw7VepJc",
       "playlistId": "tutorial-p-002",
       "recommended": false
+    },
+    {
+      "id": "tech-026",
+      "category": "tech",
+      "title": "How to loot bottom treasure fully safe every time!",
+      "description": "@kindred",
+      "url": "https://www.youtube.com/watch?v=4vR8WFWhCm8",
+      "recommended": false
+    },
+    {
+      "id": "discord-011",
+      "category": "discords",
+      "title": "Strats Exchange & Archive",
+      "url": "https://discord.gg/ueNnhfDJSQ",
+      "recommended": false,
+      "image": "images/discord.png"
+    },
+    {
+      "id": "tech-027",
+      "category": "tech",
+      "title": "Bolan Diamonds",
+      "description": "@Matthew Bolan",
+      "url": "https://www.youtube.com/watch?v=5Icj5TNmBUI",
+      "recommended": false
+    },
+    {
+      "id": "tech-028",
+      "category": "tech",
+      "title": "Village Resetting",
+      "url": "https://www.youtube.com/watch?v=1jls_L-Zetg",
+      "recommended": false
+    },
+    {
+      "id": "tech-029",
+      "category": "tech",
+      "title": "Housing buried single chest",
+      "description": "@Doogile",
+      "url": "https://clips.twitch.tv/BadCrunchyLegFreakinStinkin-U3Pq0rsQ_kkFvJ2F",
+      "recommended": false
+    },
+    {
+      "id": "tech-030",
+      "category": "tech",
+      "title": "Fishing Rod on eye",
+      "description": "@Doogile",
+      "url": "https://www.twitch.tv/doogile/clip/AstuteUnsightlyOstrichGingerPower-xcyW2PUVSi-u2Rep",
+      "recommended": false
+    },
+    {
+      "id": "tech-031",
+      "category": "tech",
+      "title": "Portal Break",
+      "description": "@5crimson",
+      "url": "https://www.youtube.com/watch?v=FKT3cwU432k",
+      "recommended": false
+    },
+    {
+      "id": "tech-032",
+      "category": "tech",
+      "title": "How to boat clutch (How boat MLG works)",
+      "description": "@roobley",
+      "url": "https://www.youtube.com/watch?v=kLluezTCQc4",
+      "recommended": false
+    },
+    {
+      "id": "tech-033",
+      "category": "tech",
+      "title": "How to boat clutch easier",
+      "description": "@jojoe good for single/double/non-drag clicking",
+      "url": "https://www.youtube.com/watch?v=9wRGY0aHY0E",
+      "recommended": false
+    },
+    {
+      "id": "app-011",
+      "category": "apps-tools",
+      "title": "Keybind Trainer",
+      "description": "@rep0z",
+      "url": "https://keybind-trainer.beatone.app/",
+      "recommended": false
+    },
+    {
+      "id": "app-012",
+      "category": "apps-tools",
+      "title": "Green boat calculator",
+      "description": "forked from priffie's calculator",
+      "url": "https://babeoban.github.io/Pixel-Perfect-Tools/calc.html",
+      "recommended": false
+    },
+    {
+      "id": "app-013",
+      "category": "apps-tools",
+      "title": "Minecraft 360 Calculator",
+      "description": "@qmaxxen",
+      "url": "https://qmaxxen.github.io/mc-360-calc/",
+      "recommended": false
+    },
+    {
+      "id": "download-009",
+      "category": "downloads",
+      "title": "Hyprmcsr",
+      "description": "Toolkit that automates and streamlines the Minecraft speedrunning setup on Linux.",
+      "url": "https://github.com/Relacibo/hyprmcsr",
+      "recommended": false
+    },
+    {
+      "id": "tech-034",
+      "category": "tech",
+      "title": "How to fast loot/quick loot",
+      "description": "@Sendoff",
+      "url": "https://www.youtube.com/watch?v=ebd3q3HNnQA",
+      "recommended": true
+    },
+    {
+      "id": "document-007",
+      "category": "documents",
+      "title": "Inventory Management / Hotbar",
+      "description": "@Fulham",
+      "url": "https://docs.google.com/presentation/d/1UgQQbd-ao2ky0m3nGUeylBUfb8naGWqnV1vdj29SVJ0/edit?usp=sharing",
+      "recommended": false
+    },
+    {
+      "id": "app-014",
+      "category": "apps-tools",
+      "title": "Priffie Boateye Sensitivity Calculator",
+      "description": "@Priffie",
+      "url": "https://priffin.github.io/Pixel-Perfect-Tools/calc.html",
+      "recommended": true
     }
   ]
 }
