@@ -62,7 +62,7 @@ export default function Home() {
                 Explore
               </Button>
             </Stack>
-            <Box
+            {/* <Box
               className="rounded-3xl border border-slate-800/80 bg-slate-900/70 p-6"
               sx={{ minHeight: 260 }}
             >
@@ -73,7 +73,7 @@ export default function Home() {
                 </Typography>
                 
               </Box>
-            </Box>
+            </Box> */}
           </Box>
 
           <Box className="grid gap-6 md:grid-cols-2">

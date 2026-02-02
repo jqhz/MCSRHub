@@ -35,6 +35,12 @@
       "category": "tutorials",
       "title": "The End",
       "image": "images/mc_pics/end_split.png"
+    },
+    {
+      "id": "app-p-001",
+      "category": "apps-tools",
+      "title": "OBS Widgets",
+      "image": ""
     }
   ],
   "cards": [
@@ -965,6 +971,359 @@
       "description": "@Priffie",
       "url": "https://priffin.github.io/Pixel-Perfect-Tools/calc.html",
       "recommended": true
+    },
+    {
+      "id": "tech-035",
+      "category": "tech",
+      "title": "Dynamic RD for blaze spawns",
+      "description": "@pncakespoon",
+      "url": "https://www.youtube.com/watch?v=qfwyFWTY3ds",
+      "recommended": false
+    },
+    {
+      "id": "document-008",
+      "category": "documents",
+      "title": "MCSR Community Settings",
+      "description": "@luvvlyjude and @r0hkx",
+      "url": "https://docs.google.com/spreadsheets/d/1aa_ZRy1Dd3Fj4eEzPABY0hHEpCsQTZdYKWSwc7zaoVI/edit?usp=sharing",
+      "recommended": false
+    },
+    {
+      "id": "tech-036",
+      "category": "tech",
+      "title": "Entering Sprint States",
+      "description": "@ExeRSolver",
+      "url": "https://www.youtube.com/watch?v=KuKgkoaw6W8",
+      "recommended": false
+    },
+    {
+      "id": "discord-012",
+      "category": "discords",
+      "title": "Maya's Mods",
+      "url": "https://discord.gg/s9m8gf6pju",
+      "recommended": false
+    },
+    {
+      "id": "discord-013",
+      "category": "discords",
+      "title": "SSG Any%",
+      "url": "https://discord.gg/NR89cg4ZB7",
+      "recommended": false
+    },
+    {
+      "id": "discord-014",
+      "category": "discords",
+      "title": "Agency of Bastion Strats",
+      "url": "https://discord.gg/TPJw3Ejktb",
+      "recommended": false
+    },
+    {
+      "id": "discord-015",
+      "category": "discords",
+      "title": "Lockout",
+      "url": "https://discord.gg/GZkksAXwyK",
+      "recommended": false
+    },
+    {
+      "id": "discord-016",
+      "category": "discords",
+      "title": "Ranked Weekly Race",
+      "url": "https://discord.gg/pUwHeaWr82",
+      "recommended": false
+    },
+    {
+      "id": "discord-017",
+      "category": "discords",
+      "title": "MacCord",
+      "description": "Mac Speedrunning",
+      "url": "https://discord.gg/sczfsdE39W",
+      "recommended": false
+    },
+    {
+      "id": "discord-018",
+      "category": "discords",
+      "title": "No Reset Cord",
+      "url": "https://discord.gg/dsXT2J2JCk",
+      "recommended": false
+    },
+    {
+      "id": "discord-019",
+      "category": "discords",
+      "title": "No F3 Speedrunning Community",
+      "url": "https://discord.gg/JdtzU9vVEZ",
+      "recommended": false
+    },
+    {
+      "id": "discord-020",
+      "category": "discords",
+      "title": "MCSR Cubers",
+      "url": "https://discord.gg/NHayEdNnXe",
+      "recommended": false
+    },
+    {
+      "id": "discord-021",
+      "category": "discords",
+      "title": "Practice Seed Server",
+      "url": "https://discord.gg/pV2kYMjDDV",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-034",
+      "category": "tutorials",
+      "title": "How to Install and Setup Minecraft Speedrunning Ranked",
+      "description": "@OaklesFINE",
+      "url": "https://www.youtube.com/watch?v=iL6w40xLUAw",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-035",
+      "category": "tutorials",
+      "title": "MCSR Ranked Explanations | Portals",
+      "description": "@Oxidiot",
+      "url": "https://www.youtube.com/watch?v=WEfSS2JTR80",
+      "playlistId": "tutorial-p-001",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-036",
+      "category": "tutorials",
+      "title": "How to Speedrun Minecraft (nether)",
+      "description": "@rekrap1",
+      "date": "05/27/2023",
+      "url": "https://www.youtube.com/watch?v=tuoJpIQu8l8",
+      "playlistId": "tutorial-p-002",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-037",
+      "category": "tutorials",
+      "title": "How to Speedrun Minecraft (overworld)",
+      "description": "@rekrap1",
+      "date": "05/23/2023",
+      "url": "https://www.youtube.com/watch?v=FGfuoLTma14",
+      "playlistId": "tutorial-p-001",
+      "recommended": false
+    },
+    {
+      "id": "youtube-003",
+      "category": "youtube",
+      "title": "MCSR Wiki",
+      "url": "https://www.youtube.com/@MinecraftSpeedrunningWiki",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-038",
+      "category": "tutorials",
+      "title": "How to SPEEDRUN - The FORTRESS",
+      "description": "@MCSR Wiki",
+      "url": "https://www.youtube.com/watch?v=9LpyDBPC3u4",
+      "playlistId": "tutorial-p-003",
+      "recommended": true
+    },
+    {
+      "id": "download-010",
+      "category": "downloads",
+      "title": "GraalVM",
+      "url": "https://gist.github.com/maskersss/5847d594fc6ce4feb66fbd2d3fda281d#graalvm",
+      "recommended": false
+    },
+    {
+      "id": "download-011",
+      "category": "downloads",
+      "title": "Eclipse Adoptium Java",
+      "url": "https://adoptium.net/temurin/releases/?os=windows&arch=x64&package=jdk",
+      "recommended": false
+    },
+    {
+      "id": "download-012",
+      "category": "downloads",
+      "title": "MCSR Mods List",
+      "url": "https://mods.tildejustin.dev/",
+      "recommended": true
+    },
+    {
+      "id": "download-013",
+      "category": "downloads",
+      "title": "AutoHotkey (AHK)",
+      "description": "(WINDOWS) choose v1.1",
+      "url": "https://www.autohotkey.com/",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-039",
+      "category": "tutorials",
+      "title": "Minecraft All Advancements Speedrun Guide",
+      "description": "@DoyPingu AA Guide",
+      "url": "https://www.youtube.com/watch?v=yFAMGsNnKXY",
+      "recommended": false
+    },
+    {
+      "id": "download-014",
+      "category": "downloads",
+      "title": "OBS",
+      "url": "https://obsproject.com/",
+      "recommended": true
+    },
+    {
+      "id": "download-015",
+      "category": "downloads",
+      "title": "ContariaCalc",
+      "url": "https://github.com/contariaa/ContariaCalc/releases/latest",
+      "recommended": false
+    },
+    {
+      "id": "download-016",
+      "category": "downloads",
+      "title": "CTM's AATool",
+      "description": "Recommended tracker for All Advancements (AA)",
+      "url": "https://github.com/DarwinBaker/AATool/releases/latest",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-040",
+      "category": "tutorials",
+      "title": "How to easily Host a Minecraft Server for Free",
+      "description": "@Montage",
+      "url": "https://www.youtube.com/watch?v=8NYvWOt42kg",
+      "recommended": false
+    },
+    {
+      "id": "download-017",
+      "category": "downloads",
+      "title": "Bore",
+      "url": "https://github.com/ekzhang/bore/releases/latest",
+      "recommended": false
+    },
+    {
+      "id": "download-018",
+      "category": "downloads",
+      "title": "e4mcbiat",
+      "description": "@DuncanRuns",
+      "url": "https://github.com/DuncanRuns/e4mcbiat/releases/latest",
+      "recommended": false
+    },
+    {
+      "id": "app-015",
+      "category": "apps-tools",
+      "title": "Search Crafting Optimizer",
+      "description": "@bezz",
+      "url": "https://searchcrafting.bezz.dev/",
+      "recommended": false
+    },
+    {
+      "id": "app-016",
+      "category": "apps-tools",
+      "title": "Zero Practice Seed Filter for MPK",
+      "url": "https://github.com/repeater64/ZeroPracticeSeedFilter",
+      "recommended": false
+    },
+    {
+      "id": "app-017",
+      "category": "apps-tools",
+      "title": "Open MCSR",
+      "description": "@ignDylan Overview of MCSR Ranked Stats",
+      "url": "https://openmcsr.com/dashboard",
+      "recommended": false
+    },
+    {
+      "id": "app-018",
+      "category": "apps-tools",
+      "title": "MCSR Ranked Live",
+      "url": "https://www.mcsr-ranked.live/",
+      "recommended": false
+    },
+    {
+      "id": "app-019",
+      "category": "apps-tools",
+      "title": "MCSR Ranked Analysis",
+      "description": "@NotE4sy",
+      "url": "https://rankedanalysis.vercel.app/",
+      "recommended": false
+    },
+    {
+      "id": "app-020",
+      "category": "apps-tools",
+      "title": "Village Houses Quiz",
+      "description": "Learn Your Freaking Houses",
+      "url": "https://learnyourfuckinghouses.ch/",
+      "recommended": false
+    },
+    {
+      "id": "app-021",
+      "category": "apps-tools",
+      "title": "Ranked Invest",
+      "url": "https://rankedinvest.com/",
+      "recommended": false
+    },
+    {
+      "id": "app-022",
+      "category": "apps-tools",
+      "title": "Ranked Versus",
+      "description": "@LeSaRXD",
+      "url": "https://lesarxd.github.io/ranked-versus/",
+      "recommended": false
+    },
+    {
+      "id": "app-023",
+      "category": "apps-tools",
+      "title": "Web client for ninbot (mobile)",
+      "description": "@Cylorun *useful for single monitor*",
+      "url": "https://github.com/cylorun/ninbot-web-client",
+      "recommended": false
+    },
+    {
+      "id": "app-024",
+      "category": "apps-tools",
+      "title": "Ranked Paceman",
+      "url": "https://ranked-paceman.vercel.app/",
+      "recommended": false
+    },
+    {
+      "id": "app-025",
+      "category": "apps-tools",
+      "title": "Zero Cycle Cheat Sheet",
+      "description": "@Vibzz",
+      "url": "https://wvibzz.github.io/Zero-Cycle-Cheat-Sheet/",
+      "recommended": true
+    },
+    {
+      "id": "app-026",
+      "category": "apps-tools",
+      "title": "MCSR Ranked Pick'Ems",
+      "description": "@quilldev",
+      "url": "https://pickems.quill.moe/",
+      "recommended": false
+    },
+    {
+      "id": "app-027",
+      "category": "apps-tools",
+      "title": "Hotbar Practice",
+      "description": "@SimZooo",
+      "url": "https://simzooo.github.io/hotbar-pratice/",
+      "recommended": false
+    },
+    {
+      "id": "document-009",
+      "category": "documents",
+      "title": "Current Playoffs-Qualification, LCQ-Qualification and Potential Phase Points-Leaderboard",
+      "url": "https://docs.google.com/spreadsheets/d/1nsaTERxFUDnjqfO21_Et1m6M7TZYLppWb13PpyXYlqI/edit?usp=sharing",
+      "recommended": false
+    },
+    {
+      "id": "app-028",
+      "category": "apps-tools",
+      "title": "Jingle plugin to delete region files in Llama's Bastion Practice",
+      "description": "@Skylewl",
+      "url": "https://github.com/Skylewl/LBP-Regions-Deleter/releases/tag/release",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-041",
+      "category": "tutorials",
+      "title": "Custom Cape Updated Tutorial",
+      "description": "@mowcus",
+      "url": "https://youtu.be/izyY35w30II",
+      "recommended": false
     }
   ]
 }
