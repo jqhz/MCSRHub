@@ -11,9 +11,11 @@ const getCategoryCombinedIds = (
   const scopedPlaylists = playlists.filter(
     (playlist) => playlist.category === category,
   );
-  const scopedCards = cards.filter(
-    (card) => card.category === category && !card.playlistId,
-  );
+  const scopedCards = cards
+    .filter((card) => card.category === category && !card.playlistId)
+    .sort(
+      (a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)),
+    );
   return [
     ...scopedPlaylists.map((playlist) => `playlist-${playlist.id}`),
     ...scopedCards.map((card) => card.id),
@@ -45,6 +47,8 @@ export const getPlaylistPageForCard = (
   const scopedCards = cards.filter(
     (card) =>
       card.category === category && card.playlistId === playlistId,
+  ).sort(
+    (a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)),
   );
   const index = scopedCards.findIndex((card) => card.id === cardId);
   if (index < 0) return 1;
