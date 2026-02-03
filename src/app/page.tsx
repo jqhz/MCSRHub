@@ -36,18 +36,46 @@ export default function Home() {
             'radial-gradient(circle at 20% 20%, rgba(94,234,212,0.2), transparent 50%), radial-gradient(circle at 70% 20%, rgba(248,113,113,0.2), transparent 55%), radial-gradient(circle at 60% 80%, rgba(59,130,246,0.15), transparent 55%)',
         }}
       />
-      <Container sx={{ position: 'relative', py: { xs: 6, md: 10 } }}>
+      <Container maxWidth={false} sx={{ position: 'relative', px: { xs: 2, md: 4 }, py: 0 }}>
         <Stack spacing={6}>
-          <Box className="grid gap-6 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-            <Stack spacing={3}>
+          <Box
+            className="grid md:items-center"
+            sx={{
+              minHeight: '100vh',
+              py: { xs: 2, md: 3, lg: 4 },
+              alignContent: 'center',
+            }}
+          >
+            <Box
+              sx={{
+                // border: '1px solid rgba(148, 163, 184, 0.5)',
+                // background:
+                //   'linear-gradient(135deg, rgba(14, 25, 33, 0.95), rgba(33, 30, 38, 0.92))',
+                px: { xs: 3, md: 5 },
+                py: { xs: 4, md: 6 },
+                maxWidth: { xs: '100%', md: 760, lg: '100%' },
+              }}
+            >
+              <Stack spacing={6}>
               {/* <Typography variant="overline" color="text.secondary">
                 MCSR Hub
               </Typography> */}
-              <Typography variant="h2" sx={{ fontWeight: 800 }}>
+              <Typography
+                variant="h1"
+                sx={{
+                  fontWeight: 800,
+                  fontSize: { xs: '2.6rem', md: '4.1rem', lg: '9rem' },
+                  letterSpacing: 1,
+                }}
+              >
                 {/* MCSR guides, tech, and community resources — in one place. */}
                 MCSR Hub
               </Typography>
-              <Typography variant="body1" color="text.secondary">
+              <Typography
+                variant="h6"
+                sx={{ fontSize: { xs: '1rem', md: '1.2rem', lg: '2.5rem' } }}
+                color="text.secondary"
+              >
                 Search fast, jump to playlists, and keep up with the latest MCSR
                 tutorials, tools, and community resources without digging
                 through endless threads.
@@ -57,11 +85,17 @@ export default function Home() {
                 href="/tutorials"
                 variant="contained"
                 color="primary"
-                sx={{ width: { xs: '100%', sm: 'fit-content' } }}
+                sx={{
+                  width: 'fit-content',
+                  px: 3,
+                  py: 1.1,
+                  fontSize: '2.5rem',
+                }}
               >
                 Explore
               </Button>
             </Stack>
+            </Box>
             {/* <Box
               className="rounded-3xl border border-slate-800/80 bg-slate-900/70 p-6"
               sx={{ minHeight: 260 }}
