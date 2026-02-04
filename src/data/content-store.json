@@ -1388,8 +1388,9 @@
       "id": "download-019",
       "category": "downloads",
       "title": "Jarfix",
-      "url": "https://johann.loefflmann.net/en/software/jarfix/",
-      "recommended": false
+      "url": "https://github.com/qMaxXen/Jarfix/releases/latest",
+      "recommended": false,
+      "description": "@qMaxXen"
     },
     {
       "id": "download-020",
