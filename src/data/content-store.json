@@ -1692,9 +1692,9 @@
     {
       "id": "app-030",
       "category": "apps-tools",
-      "title": "Priffie's Projector Overlay Generator",
-      "description": "@priffie",
-      "url": "https://priffin.github.io/Pixel-Perfect-Tools/overlayGen.html",
+      "title": "Projector Overlay Generator",
+      "description": "@qmaxxen",
+      "url": "https://qmaxxen.github.io/overlay-gen/",
       "recommended": false
     },
     {
