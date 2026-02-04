@@ -4,11 +4,30 @@ import '@src/styles/globals.css';
 import AppShell from '@src/components/AppShell';
 import { Analytics } from "@vercel/analytics/next"
 export const metadata: Metadata = {
-  title: 'MCSR Hub',
-  description: 'MCSR community hub',
+  title: {
+    default: 'MCSR Hub',
+    template: '%s | MCSR Hub',
+  },
+  description:
+    'MCSR Hub is a community-driven index of Minecraft speedrunning tutorials, tech, tools, and resources with searchable playlists and curated links.',
+  metadataBase: new URL('https://mcsrhub.vercel.app'),
+  openGraph: {
+    title: 'MCSR Hub',
+    description:
+      'Find Minecraft speedrunning tutorials, tech, tools, and community resources in one searchable hub.',
+    url: '/',
+    siteName: 'MCSR Hub',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MCSR Hub',
+    description:
+      'Find Minecraft speedrunning tutorials, tech, tools, and community resources in one searchable hub.',
+  },
   icons: {
     icon: 'images/MCSRHubIcon.png',
-  }
+  },
 };
 
 export default function RootLayout({
