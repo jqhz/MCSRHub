@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const FALLBACK_PATH = '/images/card1.svg';
+const FALLBACK_PATH = '/images/defaultcard.jpg';
 
 const getFallbackResponse = (request: Request) =>
   NextResponse.redirect(new URL(FALLBACK_PATH, request.url), 302);

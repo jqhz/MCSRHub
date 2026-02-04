@@ -10,7 +10,8 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import StarIcon from '@mui/icons-material/Star';
 import type { CardItem } from '../data/content';
-
+import Image from 'next/image';
+import NetherStar from 'public/images/Recommended_Star.gif'
 interface RegularCardProps {
   card: CardItem;
 }
@@ -60,7 +61,14 @@ export default function RegularCard({ card }: RegularCardProps) {
               '&:hover': { backgroundColor: 'rgba(15, 23, 42, 0.9)' },
             }}
           >
-            <StarIcon sx={{ color: '#facc15' }} />
+            {/* <StarIcon sx={{ color: '#facc15' }} /> */}
+            <Image
+              src={NetherStar}
+              alt="Recommended"
+              width={32}
+              height={32}
+              // className="animate-spin [animation-duration:10s]"
+            />
           </IconButton>
         </Tooltip>
       )}

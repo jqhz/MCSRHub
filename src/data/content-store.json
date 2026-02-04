@@ -1324,6 +1324,42 @@
       "description": "@mowcus",
       "url": "https://youtu.be/izyY35w30II",
       "recommended": false
+    },
+    {
+      "id": "youtube-004",
+      "category": "youtube",
+      "title": "MCSR Replays",
+      "url": "https://www.youtube.com/@MCSRReplay",
+      "recommended": false
+    },
+    {
+      "id": "youtube-005",
+      "category": "youtube",
+      "title": "MCSR Vault",
+      "url": "https://www.youtube.com/@MCSR-Vault",
+      "recommended": false
+    },
+    {
+      "id": "youtube-006",
+      "category": "youtube",
+      "title": "RIP Feedback",
+      "url": "https://www.youtube.com/@MCSRFeedback",
+      "recommended": false
+    },
+    {
+      "id": "youtube-007",
+      "category": "youtube",
+      "title": "Lolcow Song List",
+      "description": "(Playlist)",
+      "url": "https://www.youtube.com/playlist?list=PLGCkUufkxhu4Xd7zsVBgKMyGQH3S0pcca",
+      "recommended": false
+    },
+    {
+      "id": "discord-022",
+      "category": "discords",
+      "title": "Searchcraftcord",
+      "url": "https://discord.gg/8Cr723teyN",
+      "recommended": false
     }
   ]
 }

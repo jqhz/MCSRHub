@@ -63,7 +63,7 @@ export default function Sidebar({
         >
           <Typography
             variant="h6"
-            sx={{ fontWeight: 600, letterSpacing: 0.5 }}
+            sx={{ fontWeight: 600, letterSpacing: 0.5}}
           >
             Home
           </Typography>
