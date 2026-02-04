@@ -128,7 +128,8 @@ export default function DevContentPage() {
     if (editingId) return;
     const prefix = getCategoryPrefix(draft.category);
     const pattern = new RegExp(`^${prefix}-\\d{3}$`);
-    if (!draft.id || pattern.test(draft.id)) {
+    const hasPrefix = draft.id.startsWith(`${prefix}-`);
+    if (!draft.id || !hasPrefix || pattern.test(draft.id)) {
       setDraft((prev) => ({
         ...prev,
         id: getNextIdForCategory(prev.category),
