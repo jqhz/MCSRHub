@@ -41,6 +41,24 @@
       "category": "apps-tools",
       "title": "OBS Widgets",
       "image": ""
+    },
+    {
+      "id": "download-p-001",
+      "category": "downloads",
+      "title": "Mods",
+      "image": ""
+    },
+    {
+      "id": "download-p-002",
+      "category": "downloads",
+      "title": "Maps",
+      "image": ""
+    },
+    {
+      "id": "tutorial-p-007",
+      "category": "tutorials",
+      "title": "Mac Tutorials",
+      "image": ""
     }
   ],
   "cards": [
@@ -208,14 +226,18 @@
       "category": "downloads",
       "title": "ModCheck",
       "url": "https://github.com/tildejustin/modcheck/releases/latest",
-      "recommended": true
+      "recommended": true,
+      "playlistId": "download-p-001",
+      "description": "@tildejustin"
     },
     {
       "id": "download-002",
       "category": "downloads",
       "title": "MapCheck",
       "url": "https://github.com/cylorun/Map-Check/releases/latest",
-      "recommended": true
+      "recommended": true,
+      "description": "@cylorun",
+      "playlistId": "download-p-002"
     },
     {
       "id": "download-003",
@@ -1359,6 +1381,191 @@
       "category": "discords",
       "title": "Searchcraftcord",
       "url": "https://discord.gg/8Cr723teyN",
+      "recommended": false
+    },
+    {
+      "id": "download-019",
+      "category": "downloads",
+      "title": "Jarfix",
+      "url": "https://johann.loefflmann.net/en/software/jarfix/",
+      "recommended": false
+    },
+    {
+      "id": "download-020",
+      "category": "downloads",
+      "title": "The MCSR Practice Map",
+      "description": "@Dibedy",
+      "url": "https://github.com/Dibedy/The-MCSR-Practice-Map/releases/latest",
+      "playlistId": "download-p-002",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-042",
+      "category": "tutorials",
+      "title": "How to Submit Minecraft: Java Edition Speedruns",
+      "description": "@Ismexion",
+      "url": "https://youtu.be/z2n2fCV1GY0",
+      "recommended": false
+    },
+    {
+      "id": "app-029",
+      "category": "apps-tools",
+      "title": "Jingle World Bopper Plugin",
+      "description": "@marin774",
+      "url": "https://github.com/marin774/Jingle-WorldBopper-Plugin",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-043",
+      "category": "tutorials",
+      "title": "How to see E-counter with Thin in MCSR (OBS Projector)",
+      "description": "@Montage",
+      "url": "https://www.youtube.com/watch?v=ZXPM1f00wmY",
+      "recommended": false
+    },
+    {
+      "id": "download-021",
+      "category": "downloads",
+      "title": "SlackowWall",
+      "description": "@Slackow",
+      "url": "https://github.com/Slackow/SlackowWall",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-044",
+      "category": "tutorials",
+      "title": "neo's MCSR on Mac Guide",
+      "description": "@neo_the_human",
+      "date": "06/11/2023",
+      "url": "https://www.youtube.com/watch?v=GomIeW5xdBM",
+      "playlistId": "tutorial-p-007",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-045",
+      "category": "tutorials",
+      "title": "MacOs Boateye Tutorial",
+      "description": "@FlaxyB and @Slackow",
+      "date": "06/07/2025",
+      "url": "https://youtu.be/Mj42HbnPUZ4",
+      "playlistId": "tutorial-p-007",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-046",
+      "category": "tutorials",
+      "title": "How to One Cycle",
+      "description": "@Marcus Fireworks",
+      "date": "05/26/2023",
+      "url": "https://www.youtube.com/watch?v=JaVyuTyDxxs",
+      "playlistId": "tutorial-p-006",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-047",
+      "category": "tutorials",
+      "title": "How to Zero Cycle",
+      "description": "@osh",
+      "url": "https://youtu.be/PB5UQB13VHc",
+      "playlistId": "tutorial-p-006",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-048",
+      "category": "tutorials",
+      "title": "All Useful Zero Cycle Setups",
+      "description": "@kohout135",
+      "url": "https://www.youtube.com/watch?v=2Nw7Y5QxYFg",
+      "playlistId": "tutorial-p-006",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-049",
+      "category": "tutorials",
+      "title": "A Guide to Every Zero Cycle Setup in 5 Explosives",
+      "description": "@pion the silly",
+      "url": "https://www.youtube.com/watch?v=aQ7GxWUXvaY",
+      "playlistId": "tutorial-p-006",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-050",
+      "category": "tutorials",
+      "title": "Preemptive Guide",
+      "description": "@Michiru",
+      "url": "https://www.youtube.com/watch?v=1Kv5gbhzltc",
+      "playlistId": "tutorial-p-005",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-051",
+      "category": "tutorials",
+      "title": "How to set up pie chart for Eye Zoom (OBS Projector)",
+      "description": "@paul",
+      "url": "https://www.youtube.com/watch?v=8dk5gaS4BxE",
+      "recommended": false
+    },
+    {
+      "id": "tech-037",
+      "category": "tech",
+      "title": "A Minecraft Speedrunner's Guide to Ruined Portals",
+      "description": "@Dav1E",
+      "date": "11/30/2020",
+      "url": "https://www.youtube.com/watch?v=V2KzS4Fo5-Q",
+      "recommended": false
+    },
+    {
+      "id": "download-022",
+      "category": "downloads",
+      "title": "Crafting Practice & More",
+      "description": "@romuuuuu",
+      "url": "https://github.com/romuuuuu/crafingworld/releases/latest",
+      "playlistId": "download-p-002",
+      "recommended": false
+    },
+    {
+      "id": "download-023",
+      "category": "downloads",
+      "title": "How to install practice maps",
+      "description": "@greenfrogee",
+      "url": "https://gist.github.com/greenfrogee/b11b285406911fb4f2721e9e47a022c0",
+      "playlistId": "download-p-002",
+      "recommended": true
+    },
+    {
+      "id": "download-024",
+      "category": "downloads",
+      "title": "FSG Mod",
+      "description": "@DuncanRuns",
+      "url": "https://modrinth.com/mod/fsg-mod",
+      "playlistId": "download-p-001",
+      "recommended": false
+    },
+    {
+      "id": "download-025",
+      "category": "downloads",
+      "title": "AreEssGee",
+      "description": "@faluhub",
+      "url": "https://github.com/faluhub/AreEssGee/releases",
+      "playlistId": "download-p-001",
+      "recommended": false
+    },
+    {
+      "id": "download-026",
+      "category": "downloads",
+      "title": "PeepoPractice",
+      "description": "@faluhub",
+      "url": "https://github.com/faluhub/peepoPractice",
+      "playlistId": "download-p-001",
+      "recommended": false
+    },
+    {
+      "id": "download-027",
+      "category": "downloads",
+      "title": "Search Crafting Practice",
+      "description": "@7rowl",
+      "url": "https://github.com/7rowl/Search-Crafting-Practice",
+      "playlistId": "download-p-002",
       "recommended": false
     }
   ]
