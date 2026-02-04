@@ -40,25 +40,25 @@
       "id": "app-p-001",
       "category": "apps-tools",
       "title": "OBS Widgets",
-      "image": ""
+      "image": "images/OBS.jpg"
     },
     {
       "id": "download-p-001",
       "category": "downloads",
       "title": "Mods",
-      "image": ""
+      "image": "images/Mods.jpg"
     },
     {
       "id": "download-p-002",
       "category": "downloads",
       "title": "Maps",
-      "image": ""
+      "image": "images/Maps.png"
     },
     {
       "id": "tutorial-p-007",
       "category": "tutorials",
       "title": "Mac Tutorials",
-      "image": ""
+      "image": "images/Apple.jpg"
     }
   ],
   "cards": [
@@ -1095,7 +1095,7 @@
       "title": "How to Install and Setup Minecraft Speedrunning Ranked",
       "description": "@OaklesFINE",
       "url": "https://www.youtube.com/watch?v=iL6w40xLUAw",
-      "recommended": false
+      "recommended": true
     },
     {
       "id": "tutorial-035",
@@ -1114,7 +1114,7 @@
       "date": "05/27/2023",
       "url": "https://www.youtube.com/watch?v=tuoJpIQu8l8",
       "playlistId": "tutorial-p-002",
-      "recommended": false
+      "recommended": true
     },
     {
       "id": "tutorial-037",
@@ -1184,7 +1184,8 @@
       "category": "downloads",
       "title": "OBS",
       "url": "https://obsproject.com/",
-      "recommended": true
+      "recommended": true,
+      "image": "images/OBS.jpg"
     },
     {
       "id": "download-015",
@@ -1566,6 +1567,193 @@
       "description": "@7rowl",
       "url": "https://github.com/7rowl/Search-Crafting-Practice",
       "playlistId": "download-p-002",
+      "recommended": false
+    },
+    {
+      "id": "tech-038",
+      "category": "tech",
+      "title": "Perch Oneshot Tutorial",
+      "description": "@r0hkx",
+      "url": "https://www.youtube.com/watch?v=717kfB39gjQ",
+      "recommended": false
+    },
+    {
+      "id": "tech-039",
+      "category": "tech",
+      "title": "Zero Oneshot Tutorial (for ranked weekly race)",
+      "description": "@r0hkx",
+      "url": "https://www.youtube.com/watch?v=15zK6zejNAk",
+      "recommended": false
+    },
+    {
+      "id": "download-028",
+      "category": "downloads",
+      "title": "Insta Kill Timing",
+      "description": "@curcuit",
+      "url": "https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbG9kNktVcElJZ3JMd011dmVYdE5tZUlqY0JyZ3xBQ3Jtc0ttS1oyX0pLYnBCQVlqaUlDNmRDSy1FZHNxWDAza2JlUENyZFF5djBMUk5XdVAzT09fSTc2Tkpza2k5bDRyQUZOSUNfelV3MTJrcXVXbjhvSzloVjlDbHQ4OTVvWTlBMUlEbDVtRFRzT2Rtc0JfNGpMcw&q=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1mcqOCZIMXJWO7P_KlEd79eSlc6JLzKd7&v=15zK6zejNAk",
+      "playlistId": "download-p-002",
+      "recommended": false
+    },
+    {
+      "id": "tech-040",
+      "category": "tech",
+      "title": "14 Minecraft Secrets Only Speedrunners Know",
+      "description": "@Penney",
+      "date": "03/29/2021",
+      "url": "https://www.youtube.com/watch?v=TvvApbI6fis",
+      "recommended": false
+    },
+    {
+      "id": "youtube-008",
+      "category": "youtube",
+      "title": "FrizzClips",
+      "url": "https://www.youtube.com/@FrizzClips",
+      "recommended": false
+    },
+    {
+      "id": "youtube-009",
+      "category": "youtube",
+      "title": "Tazoh",
+      "description": "(video link to \"I Learned to Speedrun Minecraft\" [1 week])",
+      "url": "https://www.youtube.com/watch?v=vuv-me_w7sg",
+      "recommended": false
+    },
+    {
+      "id": "youtube-010",
+      "category": "youtube",
+      "title": "MCSR Replays",
+      "url": "https://www.youtube.com/@mcsrreplays",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-052",
+      "category": "tutorials",
+      "title": "How to Route Bridge Bastions + dodge hoglins",
+      "description": "@Trash Resolution",
+      "url": "https://www.youtube.com/watch?v=yzn4sfJcVWk",
+      "playlistId": "tutorial-p-002",
+      "recommended": false
+    },
+    {
+      "id": "download-029",
+      "category": "downloads",
+      "title": "Eye Fishing Practice",
+      "description": "@FourGoesFast",
+      "url": "https://github.com/FourGoesFast/EyeFishingPractice",
+      "playlistId": "download-p-002",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-053",
+      "category": "tutorials",
+      "title": "Stables info dump",
+      "description": "@7rowl",
+      "url": "https://www.youtube.com/watch?v=o8gCJJkCBno",
+      "playlistId": "tutorial-p-002",
+      "recommended": false
+    },
+    {
+      "id": "tutorial-054",
+      "category": "tutorials",
+      "title": "Silverr's Treasure Guide",
+      "description": "(Playlist) @Couriway and @silverrruns",
+      "url": "https://youtube.com/playlist?list=PLO6wEI7P54FfArYE7X3CFiETvc9rk-kSy",
+      "playlistId": "tutorial-p-002",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-055",
+      "category": "tutorials",
+      "title": "Silverr's Housing Guide",
+      "description": "(Playlist) @Couriway and @silverrruns",
+      "url": "https://youtube.com/playlist?list=PLO6wEI7P54FfQGhnOu-mqoy4-MznOuC-W",
+      "playlistId": "tutorial-p-002",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-056",
+      "category": "tutorials",
+      "title": "Silverr's Stables Guide",
+      "description": "(Playlist) @Couriway and @silverrruns",
+      "url": "https://youtube.com/playlist?list=PLO6wEI7P54Fcu6PpaNW_X0Ws_x1Hp0lW6",
+      "playlistId": "tutorial-p-002",
+      "recommended": true
+    },
+    {
+      "id": "tutorial-057",
+      "category": "tutorials",
+      "title": "Silverr's Bridge Guide",
+      "description": "(Playlist) @Couriway, @silverrruns, and @Doogile",
+      "url": "https://youtube.com/playlist?list=PLO6wEI7P54FePuoBsKZddehBcmkw3Elzs",
+      "playlistId": "tutorial-p-002",
+      "recommended": true
+    },
+    {
+      "id": "app-030",
+      "category": "apps-tools",
+      "title": "Priffie's Projector Overlay Generator",
+      "description": "@priffie",
+      "url": "https://priffin.github.io/Pixel-Perfect-Tools/overlayGen.html",
+      "recommended": false
+    },
+    {
+      "id": "app-031",
+      "category": "apps-tools",
+      "title": "XP Bar Ranked Overlay",
+      "description": "@yatko",
+      "url": "https://github.com/mcsr-tools/xp-bar-ranked-overlay",
+      "playlistId": "app-p-001",
+      "recommended": false
+    },
+    {
+      "id": "app-032",
+      "category": "apps-tools",
+      "title": "MCSR Ranked Widget",
+      "description": "@cltWilly",
+      "url": "https://mcsrr-widget.cltw.dev/",
+      "playlistId": "app-p-001",
+      "recommended": false
+    },
+    {
+      "id": "app-033",
+      "category": "apps-tools",
+      "title": "Olof's Ninjabrain Overlay",
+      "url": "https://github.com/VilleOlof/onbo",
+      "playlistId": "app-p-001",
+      "recommended": false
+    },
+    {
+      "id": "app-034",
+      "category": "apps-tools",
+      "title": "Minimalistic Ranked OBS widget",
+      "url": "https://ranked.noobweer.ru/",
+      "playlistId": "app-p-001",
+      "recommended": false
+    },
+    {
+      "id": "app-035",
+      "category": "apps-tools",
+      "title": "MCSR Ranked Widget",
+      "description": "@SpiritedNeal",
+      "url": "https://github.com/SpiritedNeal/mcsrrankedwidget",
+      "playlistId": "app-p-001",
+      "recommended": false
+    },
+    {
+      "id": "app-036",
+      "category": "apps-tools",
+      "title": "MCSR Ranked Match Recap Widget + Ninjabrain Bot Stream Overlay",
+      "url": "http://mcsr-overlay.de/",
+      "playlistId": "app-p-001",
+      "recommended": false
+    },
+    {
+      "id": "app-037",
+      "category": "apps-tools",
+      "title": "NinjaBrain Bot OBS Overlay",
+      "description": "@qMaxXen",
+      "url": "https://github.com/qMaxXen/CalcOverlay",
+      "playlistId": "app-p-001",
       "recommended": false
     }
   ]
