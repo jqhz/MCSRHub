@@ -59,6 +59,12 @@
       "category": "tutorials",
       "title": "Mac Tutorials",
       "image": "images/Apple.jpg"
+    },
+    {
+      "id": "tutorial-p-008",
+      "category": "tutorials",
+      "title": "Linux Tutorials",
+      "image": "images/Linux.png"
     }
   ],
   "cards": [
@@ -164,7 +170,7 @@
       "title": "Runners' Improvement Program (RIP)",
       "url": "https://discord.gg/HtgcAHd9D2",
       "recommended": false,
-      "image": "images/discord.png"
+      "searchable": true
     },
     {
       "id": "discord-005",
@@ -172,7 +178,7 @@
       "title": "PaceMan",
       "url": "https://discord.gg/t63gGSWvdV",
       "recommended": false,
-      "image": "images/discord.png"
+      "searchable": true
     },
     {
       "id": "discord-006",
@@ -180,7 +186,7 @@
       "title": "SeedQueue",
       "url": "https://discord.gg/9P6PJkHCdU",
       "recommended": false,
-      "image": "images/discord.png"
+      "searchable": true
     },
     {
       "id": "discord-007",
@@ -188,7 +194,7 @@
       "title": "Event Server",
       "url": "https://discord.com/invite/zzptZsec42",
       "recommended": false,
-      "image": "images/discord.png"
+      "searchable": true
     },
     {
       "id": "discord-008",
@@ -196,7 +202,7 @@
       "title": "Linux MCSR",
       "url": "https://discord.gg/3tm4UpUQ8t",
       "recommended": false,
-      "image": "images/discord.png"
+      "searchable": true
     },
     {
       "id": "discord-009",
@@ -204,15 +210,15 @@
       "title": "Julti",
       "url": "https://discord.gg/De6gpNSZqe",
       "recommended": false,
-      "image": "images/discord.png"
+      "searchable": true
     },
     {
       "id": "discord-010",
       "category": "discords",
       "title": "FSG",
-      "image": "images/discord.png",
       "url": "https://discord.gg/cADcJe8ND8",
-      "recommended": false
+      "recommended": false,
+      "searchable": true
     },
     {
       "id": "document-001",
@@ -881,7 +887,7 @@
       "title": "Strats Exchange & Archive",
       "url": "https://discord.gg/ueNnhfDJSQ",
       "recommended": false,
-      "image": "images/discord.png"
+      "searchable": true
     },
     {
       "id": "tech-027",
@@ -1066,7 +1072,8 @@
       "category": "discords",
       "title": "No Reset Cord",
       "url": "https://discord.gg/dsXT2J2JCk",
-      "recommended": false
+      "recommended": false,
+      "searchable": true
     },
     {
       "id": "discord-019",
@@ -1754,6 +1761,22 @@
       "description": "@qMaxXen",
       "url": "https://github.com/qMaxXen/CalcOverlay",
       "playlistId": "app-p-001",
+      "recommended": false
+    },
+    {
+      "id": "document-010",
+      "category": "documents",
+      "title": "Pixel Perfect Troubleshooting FAQ",
+      "description": "@qMaxXen, @Draconix, @Maskers, @r0hkx, and @Oshgay",
+      "url": "https://docs.google.com/document/d/1aYxL747PI6Lr0rgPSFmO-wvL6P7-YPLpNJewCJU86n0/edit?tab=t.0",
+      "recommended": false
+    },
+    {
+      "id": "document-011",
+      "category": "documents",
+      "title": "The NRI Archive",
+      "description": "@queenkac",
+      "url": "https://docs.google.com/spreadsheets/d/11rHMVtHr47LTnfevUcy6XX05Gz9TPhUDv-iRN1kKcjI/edit?usp=sharing",
       "recommended": false
     }
   ]

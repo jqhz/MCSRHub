@@ -25,6 +25,7 @@ export interface CardItem {
   image?: string;
   date?: string;
   recommended?: boolean;
+  searchable?: boolean;
   url: string;
 }
 

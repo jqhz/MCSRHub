@@ -29,14 +29,16 @@ export const buildSearchIndex = (
     category: playlist.category,
     description: playlist.description,
   })),
-  ...cards.map((card) => ({
-    type: 'card' as const,
-    id: card.id,
-    title: card.title,
-    category: card.category,
-    playlistId: card.playlistId,
-    description: card.description,
-  })),
+  ...cards
+    .filter((card) => card.searchable !== false)
+    .map((card) => ({
+      type: 'card' as const,
+      id: card.id,
+      title: card.title,
+      category: card.category,
+      playlistId: card.playlistId,
+      description: card.description,
+    })),
 ];
 
 export const createSearch = (cards: CardItem[], playlists: Playlist[]) =>

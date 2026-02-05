@@ -32,6 +32,7 @@ const emptyCard: CardItem = {
   url: '',
   playlistId: undefined,
   recommended: false,
+  searchable: true,
 };
 
 const emptyPlaylist: Playlist = {
@@ -154,6 +155,7 @@ export default function DevContentPage() {
     url: card.url.trim(),
     playlistId: card.playlistId || undefined,
     recommended: Boolean(card.recommended),
+    searchable: card.searchable !== false,
   });
 
   const handleSave = async () => {
@@ -387,6 +389,28 @@ export default function DevContentPage() {
               />
             }
             label="Recommended card"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={draft.searchable !== false}
+                onChange={(event) =>
+                  handleChange('searchable', event.target.checked)
+                }
+              />
+            }
+            label="Searchable"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={draft.searchable === false}
+                onChange={(event) =>
+                  handleChange('searchable', !event.target.checked)
+                }
+              />
+            }
+            label="Is duplicate? (exclude from search)"
           />
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
             <Button variant="contained" onClick={handleSave}>
