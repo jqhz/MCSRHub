@@ -31,6 +31,33 @@ export const GET = async (request: Request) => {
   }
 
   try {
+    const hostname = target.hostname.replace('www.', '');
+    if (
+      hostname === 'discord.gg' ||
+      (hostname === 'discord.com' && target.pathname.startsWith('/invite/'))
+    ) {
+      const inviteCode =
+        hostname === 'discord.gg'
+          ? target.pathname.replace('/', '')
+          : target.pathname.split('/invite/')[1]?.split('/')[0] ?? '';
+      if (inviteCode) {
+        const inviteResponse = await fetch(
+          `https://discord.com/api/v9/invites/${inviteCode}?with_counts=true`,
+        );
+        if (inviteResponse.ok) {
+          const inviteData = (await inviteResponse.json()) as {
+            guild?: { id?: string; icon?: string };
+          };
+          const guildId = inviteData.guild?.id;
+          const guildIcon = inviteData.guild?.icon;
+          if (guildId && guildIcon) {
+            const iconUrl = `https://cdn.discordapp.com/icons/${guildId}/${guildIcon}.png?size=512`;
+            return NextResponse.redirect(iconUrl, 302);
+          }
+        }
+      }
+    }
+
     const response = await fetch(target.toString(), {
       headers: { 'User-Agent': 'MCSRHub/1.0' },
     });
