@@ -429,7 +429,9 @@
       "category": "tutorials",
       "title": "Linux MCSR Setup",
       "url": "https://www.youtube.com/watch?v=DGrChQDC7CY",
-      "recommended": false
+      "recommended": false,
+      "playlistId": "tutorial-p-008",
+      "searchable": true
     },
     {
       "id": "tutorial-004",
@@ -1806,6 +1808,54 @@
       "url": "https://x.com/TimelyMCSR/status/2008870915162214797",
       "recommended": false,
       "searchable": true
+    },
+    {
+      "id": "tutorial-058",
+      "category": "tutorials",
+      "title": "MacCord",
+      "url": "https://discord.gg/sczfsdE39W",
+      "playlistId": "tutorial-p-007",
+      "recommended": false,
+      "searchable": false
+    },
+    {
+      "id": "tutorial-059",
+      "category": "tutorials",
+      "title": "Linux Guide for MCSR",
+      "image": "images/Linux.png",
+      "url": "https://its-saanvi.github.io/linux-mcsr/",
+      "playlistId": "tutorial-p-008",
+      "recommended": true,
+      "searchable": false
+    },
+    {
+      "id": "tutorial-060",
+      "category": "tutorials",
+      "title": "Waywall Doc",
+      "description": "@tesselslate",
+      "url": "https://tesselslate.github.io/waywall/index.html",
+      "playlistId": "tutorial-p-008",
+      "recommended": true,
+      "searchable": false
+    },
+    {
+      "id": "document-012",
+      "category": "documents",
+      "title": "Waywall Doc",
+      "description": "@tesselslate",
+      "url": "https://tesselslate.github.io/waywall/index.html",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tutorial-061",
+      "category": "tutorials",
+      "title": "Linux MCSR",
+      "description": "(Discord)",
+      "url": "https://discord.gg/3tm4UpUQ8t",
+      "playlistId": "tutorial-p-008",
+      "recommended": false,
+      "searchable": false
     }
   ]
 }
