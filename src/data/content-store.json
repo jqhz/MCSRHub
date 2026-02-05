@@ -1779,6 +1779,33 @@
       "description": "@queenkac",
       "url": "https://docs.google.com/spreadsheets/d/11rHMVtHr47LTnfevUcy6XX05Gz9TPhUDv-iRN1kKcjI/edit?usp=sharing",
       "recommended": false
+    },
+    {
+      "id": "fanart-005",
+      "category": "fanart",
+      "title": "@TimelyMCSR",
+      "url": "https://x.com/timelymcsr/status/2013503269188804994",
+      "recommended": false,
+      "searchable": true,
+      "image": "images/fanart/art-005.jpg"
+    },
+    {
+      "id": "fanart-006",
+      "category": "fanart",
+      "title": "@TimelyMCSR",
+      "image": "images/fanart/art-006.jpg",
+      "url": "https://x.com/TimelyMCSR/status/2007793566106767472",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "fanart-007",
+      "category": "fanart",
+      "title": "@TimelyMCSR",
+      "image": "images/fanart/art-007.jpg",
+      "url": "https://x.com/TimelyMCSR/status/2008870915162214797",
+      "recommended": false,
+      "searchable": true
     }
   ]
 }
