@@ -2,7 +2,9 @@
 import type { Metadata } from 'next';
 import '@src/styles/globals.css';
 import AppShell from '@src/components/AppShell';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import path from 'path';
+import { promises as fs } from 'fs';
 export const metadata: Metadata = {
   title: {
     default: 'MCSR Hub',
@@ -30,15 +32,30 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+const getInitialContent = async () => {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'content-store.json');
+    const raw = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(raw) as {
+      cards: import('@src/data/content').CardItem[];
+      playlists: import('@src/data/content').Playlist[];
+    };
+  } catch {
+    return { cards: [], playlists: [] };
+  }
+};
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const initialContent = await getInitialContent();
+
   return (
     <html lang="en">
       <body>
-        <AppShell>{children}</AppShell>
+        <AppShell initialContent={initialContent}>{children}</AppShell>
         <Analytics />
       </body>
     </html>

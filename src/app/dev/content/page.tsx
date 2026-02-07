@@ -95,7 +95,7 @@ export default function DevContentPage() {
   );
 
   const fetchContent = async () => {
-    const response = await fetch('/api/content');
+    const response = await fetch('/api/content', { cache: 'no-store' });
     const data = (await response.json()) as {
       cards: CardItem[];
       playlists: Playlist[];

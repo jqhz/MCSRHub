@@ -25,7 +25,11 @@ const writeStore = async (store: ContentStore) => {
 
 export const GET = async () => {
   const store = await readStore();
-  return NextResponse.json(store);
+  return NextResponse.json(store, {
+    headers: {
+      'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
+    },
+  });
 };
 
 export const POST = async (request: Request) => {

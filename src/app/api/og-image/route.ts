@@ -2,8 +2,14 @@ import { NextResponse } from 'next/server';
 
 const FALLBACK_PATH = '/images/defaultcard.jpg';
 
-const getFallbackResponse = (request: Request) =>
-  NextResponse.redirect(new URL(FALLBACK_PATH, request.url), 302);
+const getFallbackResponse = (request: Request) => {
+  const response = NextResponse.redirect(new URL(FALLBACK_PATH, request.url), 302);
+  response.headers.set(
+    'Cache-Control',
+    'public, s-maxage=86400, stale-while-revalidate=604800',
+  );
+  return response;
+};
 
 const getMetaContent = (html: string, property: string) => {
   const regex = new RegExp(
@@ -52,9 +58,15 @@ export const GET = async (request: Request) => {
           const guildIcon = inviteData.guild?.icon;
           if (guildId && guildIcon) {
             const iconUrl = `https://cdn.discordapp.com/icons/${guildId}/${guildIcon}.png?size=512`;
-            return NextResponse.redirect(iconUrl, 302);
+            const response = NextResponse.redirect(iconUrl, 302);
+            response.headers.set(
+              'Cache-Control',
+              'public, s-maxage=86400, stale-while-revalidate=604800',
+            );
+            return response;
           }
         }
+        return new NextResponse(null, { status: 404 });
       }
     }
 
@@ -67,7 +79,12 @@ export const GET = async (request: Request) => {
     if (!ogImage) return getFallbackResponse(request);
 
     const resolved = new URL(ogImage, target).toString();
-    return NextResponse.redirect(resolved, 302);
+    const response2 = NextResponse.redirect(resolved, 302);
+    response2.headers.set(
+      'Cache-Control',
+      'public, s-maxage=86400, stale-while-revalidate=604800',
+    );
+    return response2;
   } catch {
     return getFallbackResponse(request);
   }

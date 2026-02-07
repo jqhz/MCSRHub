@@ -10,7 +10,15 @@ import ContentProvider from '@src/components/ContentProvider';
 
 const drawerWidth = 260;
 
-export default function AppShell({ children }: PropsWithChildren) {
+export default function AppShell({
+  children,
+  initialContent,
+}: PropsWithChildren<{
+  initialContent?: {
+    cards: import('@src/data/content').CardItem[];
+    playlists: import('@src/data/content').Playlist[];
+  };
+}>) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopOpen, setDesktopOpen] = useState(true);
   const theme = useMemo(
@@ -46,7 +54,7 @@ export default function AppShell({ children }: PropsWithChildren) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <ContentProvider>
+      <ContentProvider initialData={initialContent}>
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Header onMenuClick={handleToggle} />
           <Box sx={{ display: 'flex', flexGrow: 1 }}>

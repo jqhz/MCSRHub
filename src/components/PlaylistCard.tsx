@@ -37,6 +37,8 @@ export default function PlaylistCard({ playlist }: PlaylistCardProps) {
           image={playlist.image}
           alt={playlist.title}
           sx={{ height: 160, width: '100%', objectFit: 'cover' }}
+          loading="lazy"
+          decoding="async"
         />
         <CardContent
           sx={{ display: 'flex', flexDirection: 'column', gap: 1, flexGrow: 1 }}

@@ -21,14 +21,23 @@ export const useContent = () => {
   return context;
 };
 
-export default function ContentProvider({ children }: { children: React.ReactNode }) {
-  const [cards, setCards] = useState<CardItem[]>([]);
-  const [playlists, setPlaylists] = useState<Playlist[]>([]);
-  const [loading, setLoading] = useState(true);
+export default function ContentProvider({
+  children,
+  initialData,
+}: {
+  children: React.ReactNode;
+  initialData?: { cards: CardItem[]; playlists: Playlist[] };
+}) {
+  const [cards, setCards] = useState<CardItem[]>(initialData?.cards ?? []);
+  const [playlists, setPlaylists] = useState<Playlist[]>(
+    initialData?.playlists ?? [],
+  );
+  const [loading, setLoading] = useState(!initialData);
 
   const fetchContent = useCallback(async () => {
+    setLoading(true);
     try {
-      const response = await fetch('/api/content');
+      const response = await fetch('/api/content', { cache: 'force-cache' });
       const data = (await response.json()) as { cards: CardItem[]; playlists: Playlist[] };
       setCards(data.cards ?? []);
       setPlaylists(data.playlists ?? []);
@@ -41,8 +50,10 @@ export default function ContentProvider({ children }: { children: React.ReactNod
   }, []);
 
   useEffect(() => {
-    fetchContent();
-  }, [fetchContent]);
+    if (!initialData) {
+      fetchContent();
+    }
+  }, [fetchContent, initialData]);
 
   const value = useMemo(
     () => ({

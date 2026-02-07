@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useMemo, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
@@ -8,9 +9,8 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import StarIcon from '@mui/icons-material/Star';
 import type { CardItem } from '../data/content';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import NetherStar from 'public/images/Recommended_Star.gif'
 interface RegularCardProps {
   card: CardItem;
@@ -32,12 +32,26 @@ export default function RegularCard({ card }: RegularCardProps) {
     return '';
   };
 
+  const isDiscordInvite = (url: string) => {
+    try {
+      const parsed = new URL(url);
+      const hostname = parsed.hostname.replace('www.', '');
+      return (
+        hostname === 'discord.gg' ||
+        (hostname === 'discord.com' && parsed.pathname.startsWith('/invite/'))
+      );
+    } catch {
+      return false;
+    }
+  };
+
   const getFallbackImage = (url: string) => {
     const youtubeId = getYouTubeId(url);
     if (youtubeId) {
       return `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
     }
     return `/api/og-image?url=${encodeURIComponent(url)}`;
+
   };
 
   const imageSrc = card.image ?? (card.url ? getFallbackImage(card.url) : undefined);
@@ -62,7 +76,7 @@ export default function RegularCard({ card }: RegularCardProps) {
             }}
           >
             {/* <StarIcon sx={{ color: '#facc15' }} /> */}
-            <Image
+            <NextImage
               src={NetherStar}
               alt="Recommended"
               width={32}
@@ -87,6 +101,8 @@ export default function RegularCard({ card }: RegularCardProps) {
             image={imageSrc}
             alt={card.title}
             sx={{ height: 160, width: '100%', objectFit: 'cover' }}
+            loading="lazy"
+            decoding="async"
           />
         )}
         <CardContent
