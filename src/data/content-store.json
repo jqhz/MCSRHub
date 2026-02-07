@@ -1629,13 +1629,6 @@
       "recommended": false
     },
     {
-      "id": "youtube-010",
-      "category": "youtube",
-      "title": "MCSR Replays",
-      "url": "https://www.youtube.com/@mcsrreplays",
-      "recommended": false
-    },
-    {
       "id": "tutorial-052",
       "category": "tutorials",
       "title": "How to Route Bridge Bastions + dodge hoglins",
@@ -1856,6 +1849,35 @@
       "playlistId": "tutorial-p-008",
       "recommended": false,
       "searchable": false
+    },
+    {
+      "id": "download-030",
+      "category": "downloads",
+      "title": "Ground Zero Practice",
+      "description": "@jojoe77777",
+      "url": "https://github.com/jojoe77777/GroundZeroPractice/releases/latest",
+      "playlistId": "download-p-002",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tech-041",
+      "category": "tech",
+      "title": "All useful blaze bed/blaze tnt setups",
+      "description": "@darvz",
+      "url": "https://www.youtube.com/watch?v=fDDIgq_97Rg",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tutorial-062",
+      "category": "tutorials",
+      "title": "How To Do Every Underwater Portal (Magma Ravines)",
+      "description": "@JOURONA",
+      "url": "https://www.youtube.com/watch?v=mLuxNQZshy0",
+      "playlistId": "tutorial-p-001",
+      "recommended": false,
+      "searchable": true
     }
   ]
 }
