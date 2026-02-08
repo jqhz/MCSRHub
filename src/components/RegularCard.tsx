@@ -10,8 +10,8 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import type { CardItem } from '../data/content';
-import NextImage from 'next/image';
-import NetherStar from 'public/images/Recommended_Star.gif'
+// import NextImage from 'next/image';
+// import NetherStar from 'public/images/Recommended_Star.gif'
 interface RegularCardProps {
   card: CardItem;
 }
@@ -55,6 +55,11 @@ export default function RegularCard({ card }: RegularCardProps) {
   };
 
   const imageSrc = card.image ?? (card.url ? getFallbackImage(card.url) : undefined);
+  const [displaySrc, setDisplaySrc] = useState<string | undefined>(imageSrc);
+
+  useEffect(() => {
+    setDisplaySrc(imageSrc);
+  }, [imageSrc]);
 
   return (
     <Card
@@ -76,8 +81,8 @@ export default function RegularCard({ card }: RegularCardProps) {
             }}
           >
             {/* <StarIcon sx={{ color: '#facc15' }} /> */}
-            <NextImage
-              src={NetherStar}
+            <img
+              src="https://0h847npmzk.ufs.sh/f/BE9LtSdhVFPyXPoG60RAm0QDWCe2BHLVxnuT1bGgd4sUEpoq"
               alt="Recommended"
               width={32}
               height={32}
@@ -94,15 +99,16 @@ export default function RegularCard({ card }: RegularCardProps) {
         className="h-full"
         sx={{ height: '100%', alignItems: 'stretch' }}
       >
-        {imageSrc && (
+        {displaySrc && (
           <CardMedia
             component="img"
             height="160"
-            image={imageSrc}
+            image={displaySrc}
             alt={card.title}
             sx={{ height: 160, width: '100%', objectFit: 'cover' }}
             loading="lazy"
             decoding="async"
+            onError={() => setDisplaySrc('/images/defaultcard.jpg')}
           />
         )}
         <CardContent

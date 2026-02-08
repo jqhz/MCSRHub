@@ -47,6 +47,7 @@ export default function Sidebar({
       <List sx={{ display: 'grid', gap: 0 }}>
         <ListItemButton
           component={Link}
+          prefetch={false}
           href="/"
           selected={pathname === '/'}
           onClick={() => {
@@ -76,6 +77,7 @@ export default function Sidebar({
             <ListItemButton
               key={category.slug}
               component={Link}
+              prefetch={false}
               href={route}
               selected={selected}
               onClick={() => {

@@ -27,6 +27,7 @@ export default function PlaylistCard({ playlist }: PlaylistCardProps) {
     >
       <CardActionArea
         component={Link}
+        prefetch={false}
         href={getPlaylistRoute(playlist)}
         className="h-full"
         sx={{ height: '100%', alignItems: 'stretch' }}

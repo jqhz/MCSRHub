@@ -82,6 +82,7 @@ export default function Home() {
               </Typography>
               <Button
                 component={Link}
+                prefetch={false}
                 href="/tutorials"
                 variant="contained"
                 color="primary"
