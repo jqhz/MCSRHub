@@ -65,6 +65,12 @@
       "category": "tutorials",
       "title": "Linux Tutorials",
       "image": "images/Linux.png"
+    },
+    {
+      "id": "discord-p-001",
+      "category": "discords",
+      "title": "National Servers",
+      "image": "images/globe.png"
     }
   ],
   "cards": [
@@ -1876,6 +1882,114 @@
       "description": "@JOURONA",
       "url": "https://www.youtube.com/watch?v=mLuxNQZshy0",
       "playlistId": "tutorial-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-023",
+      "category": "discords",
+      "title": "Latin America MCSR",
+      "url": "https://discord.gg/CqrFbccy67",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-024",
+      "category": "discords",
+      "title": "Korean MCSR Server",
+      "url": "https://discord.gg/TRReBcmHA7",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-025",
+      "category": "discords",
+      "title": "MCSR Deutschland (Germany)",
+      "url": "https://discord.gg/nQgaK2AdzS",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-026",
+      "category": "discords",
+      "title": "エンドラRTA楽しもうの会 (Japan)",
+      "url": "https://discord.gg/6MDTfRmCZs",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-027",
+      "category": "discords",
+      "title": "マイクラのRTAサーバー (Japan)",
+      "url": "https://discord.gg/jaa2xyATG2",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-028",
+      "category": "discords",
+      "title": "MCSR Taiwan",
+      "url": "https://discord.gg/gDGPgCyTW5",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-029",
+      "category": "discords",
+      "title": "MCSR Hong Kong Coop",
+      "url": "https://discord.gg/GqfZYKtW3g",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-030",
+      "category": "discords",
+      "title": "Danish MCSR",
+      "url": "https://discord.gg/m9T2uZupdW",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-031",
+      "category": "discords",
+      "title": "MCSR Brasil",
+      "url": "https://discord.gg/qApqNcK8RF",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-032",
+      "category": "discords",
+      "title": "MCSR CIS/МКСР СНГ (RU,UA,KZ,BY etc.)",
+      "url": "https://discord.gg/gd2TMqDxP2",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-033",
+      "category": "discords",
+      "title": "IMCSR (India)",
+      "url": "https://discord.gg/J3xu95JzxF",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-034",
+      "category": "discords",
+      "title": "MCSR Việt Nam",
+      "url": "https://discord.gg/5A8ENtUnZa",
+      "playlistId": "discord-p-001",
       "recommended": false,
       "searchable": true
     }
