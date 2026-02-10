@@ -1992,6 +1992,32 @@
       "playlistId": "discord-p-001",
       "recommended": false,
       "searchable": true
+    },
+    {
+      "id": "app-038",
+      "category": "apps-tools",
+      "title": "Ranked Seed Info",
+      "description": "@char3210",
+      "url": "https://char3210.github.io/RankedSeedInfo/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-039",
+      "category": "apps-tools",
+      "title": "Seedqueue Settings Calc",
+      "url": "https://seedqueue-settings-calc.vercel.app/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tech-042",
+      "category": "tech",
+      "title": "Piedar Treasure Without Spawner Break - Glowdar",
+      "description": "@chloe",
+      "url": "https://www.youtube.com/watch?v=8r4icysEvsI",
+      "recommended": false,
+      "searchable": true
     }
   ]
 }
