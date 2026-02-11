@@ -1107,10 +1107,11 @@
     {
       "id": "tutorial-034",
       "category": "tutorials",
-      "title": "How to Install and Setup Minecraft Speedrunning Ranked",
-      "description": "@OaklesFINE",
-      "url": "https://www.youtube.com/watch?v=iL6w40xLUAw",
-      "recommended": true
+      "title": "Minecraft Speedrunning Ranked Installation Guide",
+      "description": "@MCSR Ranked Wiki",
+      "url": "https://wiki.mcsrranked.com/install/",
+      "recommended": true,
+      "searchable": true
     },
     {
       "id": "tutorial-035",
