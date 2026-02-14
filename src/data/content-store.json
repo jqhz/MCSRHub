@@ -2064,6 +2064,15 @@
       "url": "https://www.twitch.tv/fyroah/clip/SpeedyBlushingHabaneroHotPokket-iOd5R2yVp4A4kxmC",
       "recommended": false,
       "searchable": true
+    },
+    {
+      "id": "app-041",
+      "category": "apps-tools",
+      "title": "Ranked MCSR Seed Info",
+      "description": "@char3210",
+      "url": "https://char3210.github.io/RankedSeedInfo/",
+      "recommended": false,
+      "searchable": true
     }
   ]
 }
