@@ -2019,6 +2019,51 @@
       "url": "https://www.youtube.com/watch?v=8r4icysEvsI",
       "recommended": false,
       "searchable": true
+    },
+    {
+      "id": "tech-043",
+      "category": "tech",
+      "title": "Micro Improved Wood Light Setup",
+      "description": "@ClearColdWater",
+      "url": "https://www.youtube.com/watch?v=AtMl6TdU-Og",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-040",
+      "category": "apps-tools",
+      "title": "Bastion route success rate analyser",
+      "description": "@5joshi",
+      "url": "https://bastions.5joshi.dev/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "document-013",
+      "category": "documents",
+      "title": "Hotbars of top players",
+      "description": "@roobley",
+      "url": "https://docs.google.com/spreadsheets/d/1kPO7CQadluxOZKZ5nUxKI9aCyBVcB6Ab4v243ADMLXE/edit?gid=1271413340#gid=1271413340",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-035",
+      "category": "discords",
+      "title": "Minecraft Speedrun France",
+      "url": "https://discord.gg/gFJweBe39N",
+      "playlistId": "discord-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tech-044",
+      "category": "tech",
+      "title": "0% Blocked Blaze TNT setup",
+      "description": "@Fyroah",
+      "url": "https://www.twitch.tv/fyroah/clip/SpeedyBlushingHabaneroHotPokket-iOd5R2yVp4A4kxmC",
+      "recommended": false,
+      "searchable": true
     }
   ]
 }
