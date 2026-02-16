@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Header from '@src/components/Header';
 import Sidebar from '@src/components/Sidebar';
+import Footer from '@src/components/Footer';
 import ContentProvider from '@src/components/ContentProvider';
 
 const drawerWidth = 260;
@@ -67,11 +68,16 @@ export default function AppShell({
             <Box
               component="main"
               sx={{
+                display: 'flex',
+                flexDirection: 'column',
                 flexGrow: 1,
                 p: { xs: 3, md: 4 },
               }}
             >
-              {children}
+              <Box sx={{ flexGrow: 1 }}>
+                {children}
+              </Box>
+              <Footer />
             </Box>
           </Box>
         </Box>
