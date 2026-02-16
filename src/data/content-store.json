@@ -2090,7 +2090,7 @@
       "title": "Toolscreen",
       "description": "@jojoe77777",
       "url": "https://github.com/jojoe77777/Toolscreen/releases/latest",
-      "recommended": false,
+      "recommended": true,
       "searchable": true
     },
     {
@@ -2109,6 +2109,16 @@
       "url": "https://www.youtube.com/watch?v=CSdkCmZ69RI",
       "playlistId": "tutorial-p-006",
       "recommended": true,
+      "searchable": true
+    },
+    {
+      "id": "app-042",
+      "category": "apps-tools",
+      "title": "Jingle Calc Overlay Plugin",
+      "description": "@marin774",
+      "url": "https://github.com/marin774/Jingle-CalcOverlay-Plugin",
+      "playlistId": "app-p-001",
+      "recommended": false,
       "searchable": true
     }
   ]
