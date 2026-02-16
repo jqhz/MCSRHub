@@ -2073,6 +2073,43 @@
       "url": "https://char3210.github.io/RankedSeedInfo/",
       "recommended": false,
       "searchable": true
+    },
+    {
+      "id": "tutorial-063",
+      "category": "tutorials",
+      "title": "How to set up Toolscreen for Minecraft Speedrunning",
+      "description": "@jojoe",
+      "date": "02/16/2026",
+      "url": "https://youtu.be/YqS-fxPx_jo",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "download-031",
+      "category": "downloads",
+      "title": "Toolscreen",
+      "description": "@jojoe77777",
+      "url": "https://github.com/jojoe77777/Toolscreen/releases/latest",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "discord-036",
+      "category": "discords",
+      "title": "Toolscreen Server",
+      "url": "https://discord.com/invite/A2v6bCJg6K",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tutorial-064",
+      "category": "tutorials",
+      "title": "How to ZERO CYCLE",
+      "description": "@MCSR Wiki & @Doogile",
+      "url": "https://www.youtube.com/watch?v=CSdkCmZ69RI",
+      "playlistId": "tutorial-p-006",
+      "recommended": true,
+      "searchable": true
     }
   ]
 }

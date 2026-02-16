@@ -32,8 +32,11 @@ export default function Home() {
         sx={{
           position: 'absolute',
           inset: 0,
-          backgroundImage:
-            'radial-gradient(circle at 20% 20%, rgba(94,234,212,0.2), transparent 50%), radial-gradient(circle at 70% 20%, rgba(248,113,113,0.2), transparent 55%), radial-gradient(circle at 60% 80%, rgba(59,130,246,0.15), transparent 55%)',
+          backgroundImage: "url('/images/mc_pics/igloo_split.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.20, // optional
         }}
       />
       <Container maxWidth={false} sx={{ position: 'relative', px: { xs: 2, md: 4 }, py: 0 }}>
@@ -64,7 +67,7 @@ export default function Home() {
                 variant="h1"
                 sx={{
                   fontWeight: 800,
-                  fontSize: { xs: '2.6rem', md: '4.1rem', lg: '9rem' },
+                  fontSize: { xs: '2.6rem', md: '4.1rem', lg: '8rem' },
                   letterSpacing: 1,
                 }}
               >
@@ -73,12 +76,10 @@ export default function Home() {
               </Typography>
               <Typography
                 variant="h6"
-                sx={{ fontSize: { xs: '1rem', md: '1.2rem', lg: '2.5rem' } }}
+                sx={{ fontSize: { xs: '1rem', md: '1.2rem', lg: '2rem' } }}
                 color="text.secondary"
               >
-                Search fast, jump to playlists, and keep up with the latest MCSR
-                tutorials, tools, and community resources without digging
-                through endless threads.
+                Search fast, jump to playlists, and keep up with the latest MCSR tutorials, tools, and community resources without digging through endless threads.
               </Typography>
               <Button
                 component={Link}
