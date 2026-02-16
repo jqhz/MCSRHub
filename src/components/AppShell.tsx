@@ -56,7 +56,7 @@ export default function AppShell({
       <CssBaseline />
       <ContentProvider initialData={initialContent}>
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          <Header onMenuClick={handleToggle} />
+          <Header onMenuClick={handleToggle} sidebarOpen={isDesktop ? desktopOpen : mobileOpen} />
           <Box sx={{ display: 'flex', flexGrow: 1 }}>
             <Sidebar
               drawerWidth={drawerWidth}

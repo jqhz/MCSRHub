@@ -29,6 +29,7 @@ import { createSearch, type SearchItem } from '@src/utils/search';
 
 interface HeaderProps {
   onMenuClick: () => void;
+  sidebarOpen: boolean;
 }
 
 const categoryLabelMap = new Map(
@@ -67,7 +68,7 @@ const getResultRoute = (
   return `${baseRoute}?${highlightParam}&page=${page}`;
 };
 
-export default function Header({ onMenuClick }: HeaderProps) {
+export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {
   const theme = useTheme();
   const router = useRouter();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'), { noSsr: true });
@@ -106,15 +107,21 @@ export default function Header({ onMenuClick }: HeaderProps) {
           edge="start"
           onClick={onMenuClick}
         >
-          <MenuIcon />
-        </IconButton>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+          {/* <MenuIcon /> */}
           <img
-            src="/images/MCSRHubIcon.png"
+            src={sidebarOpen ? "/images/MCSRHubIcon.png" : "/images/MCSRHubIconAlt.png"}
             alt="MCSR Hub"
             width={28}
             height={28}
           />
+        </IconButton>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+          {/* <img
+            src="/images/MCSRHubIcon.png"
+            alt="MCSR Hub"
+            width={28}
+            height={28}
+          /> */}
           <Typography variant="h6" sx={{ fontWeight: 700 }}>
             MCSR Hub
           </Typography>
