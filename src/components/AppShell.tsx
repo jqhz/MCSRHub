@@ -1,5 +1,5 @@
 'use client';
-
+import { useEffect } from 'react';
 import { type PropsWithChildren, useMemo, useState } from 'react';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Box from '@mui/material/Box';
@@ -22,6 +22,7 @@ export default function AppShell({
 }>) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopOpen, setDesktopOpen] = useState(true);
+  const [mounted, setMounted] = useState(false);
   const theme = useMemo(
     () =>
       createTheme({
@@ -42,6 +43,10 @@ export default function AppShell({
     [],
   );
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'), { noSsr: true });
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleToggle = () => {
     if (isDesktop) {
@@ -57,7 +62,7 @@ export default function AppShell({
       <CssBaseline />
       <ContentProvider initialData={initialContent}>
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          <Header onMenuClick={handleToggle} sidebarOpen={isDesktop ? desktopOpen : mobileOpen} />
+          <Header onMenuClick={handleToggle} sidebarOpen={mounted && (isDesktop ? desktopOpen : mobileOpen)} />
           <Box sx={{ display: 'flex', flexGrow: 1 }}>
             <Sidebar
               drawerWidth={drawerWidth}

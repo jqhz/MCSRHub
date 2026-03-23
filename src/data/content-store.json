@@ -1323,7 +1323,8 @@
       "title": "Zero Cycle Cheat Sheet",
       "description": "@Vibzz",
       "url": "https://wvibzz.github.io/Zero-Cycle-Cheat-Sheet/",
-      "recommended": true
+      "recommended": false,
+      "searchable": true
     },
     {
       "id": "app-026",
@@ -2118,6 +2119,167 @@
       "description": "@marin774",
       "url": "https://github.com/marin774/Jingle-CalcOverlay-Plugin",
       "playlistId": "app-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-043",
+      "category": "apps-tools",
+      "title": "MCSR Stats",
+      "url": "https://mcsrstats.pages.dev/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-044",
+      "category": "apps-tools",
+      "title": "MCSR Ranked Tracker",
+      "description": "@markais",
+      "url": "https://mcsrrankedtracker.vercel.app/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-045",
+      "category": "apps-tools",
+      "title": "MCSR Live",
+      "description": "@camo.gg",
+      "url": "https://mcsr.live/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-046",
+      "category": "apps-tools",
+      "title": "Advanced MPK Editor",
+      "description": "@repeater64",
+      "url": "https://repeater64.github.io/AdvancedMpkEditor/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-047",
+      "category": "apps-tools",
+      "title": "Pieray Visualizer",
+      "description": "@lathil",
+      "url": "https://lathil.itch.io/pieray-visualizer",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tutorial-065",
+      "category": "tutorials",
+      "title": "The ULTIMATE MacOS Minecraft Speedrunning Guide",
+      "description": "@FlaxyB, @Slackow",
+      "url": "https://youtu.be/sRSR55A7VCE",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tutorial-066",
+      "category": "tutorials",
+      "title": "Axis Travel",
+      "description": "@ninjabrain",
+      "url": "https://www.youtube.com/watch?v=0LDj48fsRT8",
+      "playlistId": "tutorial-p-004",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tutorial-067",
+      "category": "tutorials",
+      "title": "Sheetless",
+      "description": "@Feinberg",
+      "url": "https://www.youtube.com/watch?v=OKJxB9ClPbo",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-048",
+      "category": "apps-tools",
+      "title": "Torbaz God Sens Calculator",
+      "description": "@torbaz (Deprecated)",
+      "url": "https://god-sens.torbaz.dev/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-049",
+      "category": "apps-tools",
+      "title": "Toolscreen Sens Calculator",
+      "description": "@qmaxxen",
+      "url": "https://qmaxxen.github.io/Toolscreen-sens-calc/",
+      "recommended": true,
+      "searchable": true
+    },
+    {
+      "id": "document-014",
+      "category": "documents",
+      "title": "Culling Doc",
+      "description": "@woofdoggo",
+      "url": "https://gist.github.com/tesselslate/107dd8dcfa6c6ee966314636054c8faf",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-050",
+      "category": "apps-tools",
+      "title": "Seedwave",
+      "url": "https://seedwave.vercel.app/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tech-045",
+      "category": "tech",
+      "title": "How to make a wall portal",
+      "description": "@meebie",
+      "url": "https://www.youtube.com/watch?v=qHSGhNRXkTE",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tech-046",
+      "category": "tech",
+      "title": "Consistent Pearl Hunger Reset Method",
+      "description": "@Willbe",
+      "url": "https://www.youtube.com/watch?v=IH47hXfRFl0",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-051",
+      "category": "apps-tools",
+      "title": "MCSR Splithub",
+      "description": "@mesamesita",
+      "url": "https://mcsr-splithub.vercel.app/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-052",
+      "category": "apps-tools",
+      "title": "Multi-stream Wall",
+      "description": "@chrrs",
+      "url": "https://ranked.chrr.me/watch",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-053",
+      "category": "apps-tools",
+      "title": "Preemptive Cheat Sheet",
+      "description": "@cristhecris_",
+      "url": "https://imnotcris2.github.io/preemptive-cheatsheet-creator/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-054",
+      "category": "apps-tools",
+      "title": "MCSR Stats",
+      "description": "MCSR Ranked Stat Tracker",
+      "url": "https://mcsrstats.netlify.app/",
       "recommended": false,
       "searchable": true
     }

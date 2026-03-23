@@ -51,15 +51,12 @@ export default function Home() {
           >
             <Box
               sx={{
-                // border: '1px solid rgba(148, 163, 184, 0.5)',
-                // background:
-                //   'linear-gradient(135deg, rgba(14, 25, 33, 0.95), rgba(33, 30, 38, 0.92))',
                 px: { xs: 3, md: 5 },
                 py: { xs: 4, md: 6 },
                 maxWidth: { xs: '100%', md: 760, lg: '100%' },
               }}
             >
-              <Stack spacing={6}>
+            <Stack spacing={6}>
               {/* <Typography variant="overline" color="text.secondary">
                 MCSR Hub
               </Typography> */}
