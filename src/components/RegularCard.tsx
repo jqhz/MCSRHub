@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
@@ -113,7 +114,15 @@ export default function RegularCard({ card }: RegularCardProps) {
     <Card
       id={card.id}
       className="h-full"
-      sx={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}
+      sx={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'relative',
+        maxWidth: 'min(100%, 28rem)',
+        width: '100%',
+        mx: 'auto',
+      }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -140,24 +149,6 @@ export default function RegularCard({ card }: RegularCardProps) {
         </Tooltip>
       )}
 
-      {showCopyButton && (
-        <Tooltip title={copied ? "Copied!" : "Copy to clipboard"} placement="top">
-          <IconButton
-            aria-label="Copy"
-            onClick={doCopy}
-            sx={{
-              position: 'absolute',
-              top: 110,
-              right: 8,
-              zIndex: 2,
-              backgroundColor: 'rgba(15, 23, 42, 0.1)',
-              '&:hover': { backgroundColor: 'rgba(15, 23, 42, 0.5)' },
-            }}
-          >
-            {copyIcon}
-          </IconButton>
-        </Tooltip>
-      )}
       <CardActionArea
         component="a"
         href={card.url}
@@ -167,16 +158,68 @@ export default function RegularCard({ card }: RegularCardProps) {
         sx={{ height: '100%', alignItems: 'stretch' }}
       >
         {displaySrc && (
-          <CardMedia
-            component="img"
-            height="160"
-            image={displaySrc}
-            alt={card.title}
-            sx={{ height: 160, width: '100%', objectFit: 'cover' }}
-            loading="lazy"
-            decoding="async"
-            onError={() => setDisplaySrc('/images/defaultcard.jpg')}
-          />
+          <Box
+            sx={{
+              position: 'relative',
+              width: '100%',
+              aspectRatio: '16 / 9',
+              overflow: 'hidden',
+              flexShrink: 0,
+              bgcolor: 'action.hover',
+            }}
+          >
+            <CardMedia
+              component="img"
+              image={displaySrc}
+              alt={card.title}
+              sx={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+              loading="lazy"
+              decoding="async"
+              onError={() => setDisplaySrc('/images/defaultcard.jpg')}
+            />
+            {showCopyButton && (
+              <Tooltip title={copied ? "Copied!" : "Copy"} placement="top">
+                <IconButton
+                  aria-label="Copy"
+                  onClick={doCopy}
+                  sx={{
+                    position: 'absolute',
+                    bottom: 8,
+                    right: 8,
+                    zIndex: 2,
+                    backgroundColor: 'rgba(15, 23, 42, 0.1)',
+                    '&:hover': { backgroundColor: 'rgba(15, 23, 42, 0.5)' },
+                  }}
+                >
+                  {copyIcon}
+                </IconButton>
+              </Tooltip>
+            )}
+          </Box>
+        )}
+        {showCopyButton && !displaySrc && (
+          <Tooltip title={copied ? "Copied!" : "Copy to clipboard"} placement="top">
+            <IconButton
+              aria-label="Copy"
+              onClick={doCopy}
+              sx={{
+                position: 'absolute',
+                top: 8,
+                left: 8,
+                zIndex: 2,
+                backgroundColor: 'rgba(15, 23, 42, 0.1)',
+                '&:hover': { backgroundColor: 'rgba(15, 23, 42, 0.5)' },
+              }}
+            >
+              {copyIcon}
+            </IconButton>
+          </Tooltip>
         )}
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1, flexGrow: 1 }}>
           <Typography variant="h6" sx={{ fontWeight: 600 }}>

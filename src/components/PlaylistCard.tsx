@@ -1,5 +1,6 @@
 'use client';
 
+import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
@@ -32,7 +33,14 @@ export default function PlaylistCard({ playlist }: PlaylistCardProps) {
     <Card
       id={getHighlightIdForPlaylist(playlist.id)}
       className="h-full"
-      sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+      sx={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        maxWidth: 'min(100%, 28rem)',
+        width: '100%',
+        mx: 'auto',
+      }}
     >
       <CardActionArea
         component={Link}
@@ -41,15 +49,31 @@ export default function PlaylistCard({ playlist }: PlaylistCardProps) {
         className="h-full"
         sx={{ height: '100%', alignItems: 'stretch' }}
       >
-        <CardMedia
-          component="img"
-          height="160"
-          image={resolveImageSrc(playlist.image)}
-          alt={playlist.title}
-          sx={{ height: 160, width: '100%', objectFit: 'cover' }}
-          loading="lazy"
-          decoding="async"
-        />
+        <Box
+          sx={{
+            position: 'relative',
+            width: '100%',
+            aspectRatio: '16 / 9',
+            overflow: 'hidden',
+            flexShrink: 0,
+            bgcolor: 'action.hover',
+          }}
+        >
+          <CardMedia
+            component="img"
+            image={resolveImageSrc(playlist.image)}
+            alt={playlist.title}
+            sx={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+            loading="lazy"
+            decoding="async"
+          />
+        </Box>
         <CardContent
           sx={{ display: 'flex', flexDirection: 'column', gap: 1, flexGrow: 1 }}
         >
