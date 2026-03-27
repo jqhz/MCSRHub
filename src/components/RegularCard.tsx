@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
@@ -56,16 +58,30 @@ export default function RegularCard({ card }: RegularCardProps) {
 
   const imageSrc = card.image ?? (card.url ? getFallbackImage(card.url) : undefined);
   const [displaySrc, setDisplaySrc] = useState<string | undefined>(imageSrc);
-
+  const [isHovered, setIsHovered] = useState(false);
+  const [copied, setCopied] = useState(false);
+  
   useEffect(() => {
     setDisplaySrc(imageSrc);
   }, [imageSrc]);
+
+  const doCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(card.url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1000)
+    } catch (err) {
+      console.error("Failed to Copy: ", err);
+    }
+  }
 
   return (
     <Card
       id={card.id}
       className="h-full"
       sx={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       {card.recommended && (
         <Tooltip title="Recommended" placement="top">
@@ -88,6 +104,24 @@ export default function RegularCard({ card }: RegularCardProps) {
               height={32}
               // className="animate-spin [animation-duration:10s]"
             />
+          </IconButton>
+        </Tooltip>
+      )}
+      {isHovered && (
+        <Tooltip title={copied ? "Copied!" : "Copy to clipboard"} placement="top">
+          <IconButton
+          aria-label="Copy"
+            sx={{
+              position: 'absolute',
+              top: 110,
+              right: 8,
+              zIndex: 2,
+              backgroundColor: 'rgba(15, 23, 42, 0.1)',
+              '&:hover': { backgroundColor: 'rgba(15, 23, 42, 0.5)' },
+            }}
+            onClick={doCopy}
+          >
+            <ContentCopyIcon />
           </IconButton>
         </Tooltip>
       )}
