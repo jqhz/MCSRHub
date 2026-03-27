@@ -12,10 +12,7 @@ import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import SearchIcon from '@mui/icons-material/Search';
-import MenuIcon from '@mui/icons-material/Menu';
-import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/navigation';
 import { CATEGORIES } from '@src/data/content';
 import { useContent } from '@src/components/ContentProvider';
@@ -69,9 +66,7 @@ const getResultRoute = (
 };
 
 export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {
-  const theme = useTheme();
   const router = useRouter();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'), { noSsr: true });
   const { cards, playlists } = useContent();
   const [query, setQuery] = useState('');
   const fuse = useMemo(() => createSearch(cards, playlists), [cards, playlists]);
@@ -109,7 +104,7 @@ export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {
         >
           {/* <MenuIcon /> */}
           <img
-            src={sidebarOpen ? "/images/MCSRHubIcon.png" : "/images/MCSRHubIconAlt.png"}
+            src={sidebarOpen ? '/images/MCSRHubIcon.png' : '/images/MCSRHubIconAlt.png'}
             alt="MCSR Hub"
             width={28}
             height={28}

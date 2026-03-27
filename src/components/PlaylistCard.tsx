@@ -18,6 +18,15 @@ interface PlaylistCardProps {
   playlist: Playlist;
 }
 
+const resolveImageSrc = (src: string) => {
+  const value = src.trim();
+  if (!value) return '';
+  if (/^(https?:)?\/\//.test(value) || value.startsWith('/') || value.startsWith('data:')) {
+    return value;
+  }
+  return `/${value}`;
+};
+
 export default function PlaylistCard({ playlist }: PlaylistCardProps) {
   return (
     <Card
@@ -35,7 +44,7 @@ export default function PlaylistCard({ playlist }: PlaylistCardProps) {
         <CardMedia
           component="img"
           height="160"
-          image={playlist.image}
+          image={resolveImageSrc(playlist.image)}
           alt={playlist.title}
           sx={{ height: 160, width: '100%', objectFit: 'cover' }}
           loading="lazy"

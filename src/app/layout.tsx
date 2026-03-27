@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       'Find Minecraft speedrunning tutorials, tech, tools, and community resources in one searchable hub.',
   },
   icons: {
-    icon: 'images/MCSRHubIcon.png',
+    icon: '/images/MCSRHubIgloo.png',
   },
 };
 
