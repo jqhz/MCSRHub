@@ -32,7 +32,6 @@ export const metadata: Metadata = {
   },
 };
 
-/** Limits how far the page can be zoomed out so wide viewports do not over-stretch card grids. */
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -40,6 +39,7 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
+// Could potentially look into using a database, but json file is simpler and intended for other helpers to compile the app easily themselves and have access to all the resources.
 const getInitialContent = async () => {
   try {
     const filePath = path.join(process.cwd(), 'src', 'data', 'content-store.json');

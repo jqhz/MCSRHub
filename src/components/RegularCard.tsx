@@ -17,7 +17,6 @@ import type { CardItem } from '../data/content';
 
 interface RegularCardProps {
   card: CardItem;
-  /** When true, the card grows to fill the parent (e.g. homepage Paper); default keeps a capped width in grids. */
   fillContainer?: boolean;
 }
 
