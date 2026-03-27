@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import '@src/styles/globals.css';
 import AppShell from '@src/components/AppShell';
 import { Analytics } from "@vercel/analytics/next";
@@ -30,6 +30,14 @@ export const metadata: Metadata = {
   icons: {
     icon: '/images/MCSRHubIgloo.png',
   },
+};
+
+/** Limits how far the page can be zoomed out so wide viewports do not over-stretch card grids. */
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 5,
 };
 
 const getInitialContent = async () => {

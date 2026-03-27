@@ -54,13 +54,15 @@ export default function CardGrid({
         </Typography>
       )}
       {hasItems && (
-        <Box className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {playlists.map((playlist) => (
-            <PlaylistCard key={playlist.id} playlist={playlist} />
-          ))}
-          {cards.map((card) => (
-            <RegularCard key={card.id} card={card} />
-          ))}
+        <Box sx={{ maxWidth: 1536, mx: 'auto', width: '100%' }}>
+          <Box className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {playlists.map((playlist) => (
+              <PlaylistCard key={playlist.id} playlist={playlist} />
+            ))}
+            {cards.map((card) => (
+              <RegularCard key={card.id} card={card} />
+            ))}
+          </Box>
         </Box>
       )}
     </Box>

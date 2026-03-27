@@ -17,9 +17,11 @@ import type { CardItem } from '../data/content';
 
 interface RegularCardProps {
   card: CardItem;
+  /** When true, the card grows to fill the parent (e.g. homepage Paper); default keeps a capped width in grids. */
+  fillContainer?: boolean;
 }
 
-export default function RegularCard({ card }: RegularCardProps) {
+export default function RegularCard({ card, fillContainer = false }: RegularCardProps) {
   const getYouTubeId = (url: string) => {
     try {
       if (url.includes('youtu.be/')) {
@@ -119,9 +121,18 @@ export default function RegularCard({ card }: RegularCardProps) {
         display: 'flex',
         flexDirection: 'column',
         position: 'relative',
-        maxWidth: 'min(100%, 28rem)',
         width: '100%',
-        mx: 'auto',
+        ...(fillContainer
+          ? {
+              maxWidth: '100%',
+              mx: 0,
+              flex: 1,
+              minHeight: 0,
+            }
+          : {
+              maxWidth: 'min(100%, 28rem)',
+              mx: 'auto',
+            }),
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -155,7 +166,18 @@ export default function RegularCard({ card }: RegularCardProps) {
         target="_blank"
         rel="noreferrer"
         className="h-full"
-        sx={{ height: '100%', alignItems: 'stretch' }}
+        sx={{
+          height: '100%',
+          alignItems: 'stretch',
+          ...(fillContainer
+            ? {
+                flex: 1,
+                minHeight: 0,
+                display: 'flex',
+                flexDirection: 'column',
+              }
+            : {}),
+        }}
       >
         {displaySrc && (
           <Box
