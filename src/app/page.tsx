@@ -109,9 +109,22 @@ export default function Home() {
             </Box> */}
           </Box>
 
-          <Box className="grid gap-6 md:grid-cols-2">
-            <Paper sx={{ p: 3, borderRadius: 3, bgcolor: 'rgba(18, 24, 38, 0.8)' }}>
-              <Stack spacing={2}>
+          <Box
+            className="grid gap-6 md:grid-cols-2"
+            sx={{ alignItems: 'stretch' }}
+          >
+            <Paper
+              sx={{
+                p: 3,
+                borderRadius: 3,
+                bgcolor: 'rgba(18, 24, 38, 0.8)',
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: 0,
+                height: '100%',
+              }}
+            >
+              <Stack spacing={2} sx={{ flex: 1, minHeight: 0 }}>
                 <Typography variant="h6" sx={{ fontWeight: 700 }}>
                   Featured Channel
                 </Typography>
@@ -121,7 +134,9 @@ export default function Home() {
                     Loading featured channel...
                   </Typography>
                 ) : dailyChannel ? (
-                  <RegularCard card={dailyChannel} />
+                  <Box sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+                    <RegularCard fillContainer card={dailyChannel} />
+                  </Box>
                 ) : (
                   <Typography variant="body2" color="text.secondary">
                     Add Youtube channel cards in `src/data/content.ts`.
@@ -130,8 +145,18 @@ export default function Home() {
               </Stack>
             </Paper>
 
-            <Paper sx={{ p: 3, borderRadius: 3, bgcolor: 'rgba(18, 24, 38, 0.8)' }}>
-              <Stack spacing={2}>
+            <Paper
+              sx={{
+                p: 3,
+                borderRadius: 3,
+                bgcolor: 'rgba(18, 24, 38, 0.8)',
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: 0,
+                height: '100%',
+              }}
+            >
+              <Stack spacing={2} sx={{ flex: 1, minHeight: 0 }}>
                 <Typography variant="h6" sx={{ fontWeight: 700 }}>
                   Daily Tech Tip
                 </Typography>
@@ -141,7 +166,9 @@ export default function Home() {
                     Loading daily tip...
                   </Typography>
                 ) : dailyTip ? (
-                  <RegularCard card={dailyTip} />
+                  <Box sx={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+                    <RegularCard fillContainer card={dailyTip} />
+                  </Box>
                 ) : (
                   <Typography variant="body2" color="text.secondary">
                     Add cards in `src/data/content.ts` to show a daily tip.

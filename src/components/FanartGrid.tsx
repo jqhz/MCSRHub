@@ -77,13 +77,20 @@ export default function FanartGrid({
   }
 
   return (
-    <Box>
+    <Box sx={{ maxWidth: 1536, mx: 'auto', width: '100%' }}>
       <Box className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {pagedItems.map((item) => (
           <Card
             key={item.tweetUrl}
             className="h-full"
-            sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+            sx={{
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              maxWidth: 'min(100%, 28rem)',
+              width: '100%',
+              mx: 'auto',
+            }}
           >
             <CardActionArea
               component="a"
@@ -93,12 +100,29 @@ export default function FanartGrid({
               className="h-full"
               sx={{ height: '100%', alignItems: 'stretch' }}
             >
-              <CardMedia
-                component="img"
-                image={item.imageUrl}
-                alt={`Fanart by ${item.author}`}
-                sx={{ height: 220, objectFit: 'cover' }}
-              />
+              <Box
+                sx={{
+                  position: 'relative',
+                  width: '100%',
+                  aspectRatio: '16 / 9',
+                  overflow: 'hidden',
+                  flexShrink: 0,
+                  bgcolor: 'action.hover',
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  image={item.imageUrl}
+                  alt={`Fanart by ${item.author}`}
+                  sx={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography variant="subtitle2" color="text.secondary">
                   {item.author}

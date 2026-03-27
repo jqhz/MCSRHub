@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import '@src/styles/globals.css';
 import AppShell from '@src/components/AppShell';
 import { Analytics } from "@vercel/analytics/next";
@@ -32,6 +32,14 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 5,
+};
+
+// Could potentially look into using a database, but json file is simpler and intended for other helpers to compile the app easily themselves and have access to all the resources.
 const getInitialContent = async () => {
   try {
     const filePath = path.join(process.cwd(), 'src', 'data', 'content-store.json');
