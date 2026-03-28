@@ -108,7 +108,11 @@ export default function Sidebar({
   return (
     <Box
       component="nav"
-      sx={{ width: { md: desktopOpen ? drawerWidth : 0 }, flexShrink: 0 }}
+      sx={{
+        width: { md: desktopOpen ? drawerWidth : 0 },
+        flexShrink: 0,
+        transition: 'width 225ms cubic-bezier(0.4, 0, 0.6, 1)',
+      }}
     >
       <Drawer
         variant="temporary"
@@ -139,6 +143,7 @@ export default function Sidebar({
             borderRight: '1px solid',
             borderColor: 'divider',
             overflowX: 'hidden',
+            transition: 'width 225ms cubic-bezier(0.4, 0, 0.6, 1)',
           },
         }}
       >
