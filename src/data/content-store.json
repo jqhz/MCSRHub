@@ -2192,7 +2192,8 @@
       "description": "@Feinberg",
       "url": "https://www.youtube.com/watch?v=OKJxB9ClPbo",
       "recommended": false,
-      "searchable": true
+      "searchable": true,
+      "playlistId": "tutorial-p-004"
     },
     {
       "id": "app-048",
@@ -2280,6 +2281,70 @@
       "title": "MCSR Stats",
       "description": "MCSR Ranked Stat Tracker",
       "url": "https://mcsrstats.netlify.app/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "document-015",
+      "category": "documents",
+      "title": "Food-Health Sheet",
+      "description": "@Ninjabrain",
+      "url": "https://docs.google.com/spreadsheets/d/1LRX00kw5D0MjD-Z8EPCE4StWIFfbUfa6thAxIool9Eo/edit?gid=0#gid=0",
+      "recommended": true,
+      "searchable": true
+    },
+    {
+      "id": "document-016",
+      "category": "documents",
+      "title": "All Zero Cycle Tower-Setup-End Spawn Combination Time Lenience Sheet",
+      "description": "@ClearColdWater",
+      "url": "https://docs.google.com/spreadsheets/d/1DvZwc3_MHJt9WP0Vf-xmezcTlprTc3y36kEg7-QYyy0/edit?usp=sharing",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-055",
+      "category": "apps-tools",
+      "title": "Oshbot",
+      "description": "@Oshgay osh bot",
+      "url": "https://bot.osh.gay/",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "app-056",
+      "category": "apps-tools",
+      "title": "Ranked Online",
+      "description": "@cylorun",
+      "url": "https://cylorun.com/tools/ranked-online",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tutorial-068",
+      "category": "tutorials",
+      "title": "Boat Eye Setup Guide for MacOS",
+      "description": "@FlaxyB and @Slackow",
+      "url": "https://youtu.be/RmAmL7JhGJw",
+      "playlistId": "tutorial-p-007",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tutorial-069",
+      "category": "tutorials",
+      "title": "Toolscreen Boateye Guide",
+      "description": "@greenfrogee",
+      "url": "https://gist.github.com/greenfrogee/88eca4b40db92e3330cff15463afeb64",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tech-047",
+      "category": "tech",
+      "title": "ALL Optimal Spawner Setups for Minecraft Speedrunning",
+      "description": "@JackoWacko62",
+      "url": "https://www.youtube.com/watch?v=n11v-59LJnA",
       "recommended": false,
       "searchable": true
     }
