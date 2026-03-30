@@ -2347,6 +2347,42 @@
       "url": "https://www.youtube.com/watch?v=n11v-59LJnA",
       "recommended": false,
       "searchable": true
+    },
+    {
+      "id": "tutorial-070",
+      "category": "tutorials",
+      "title": "Advanced Tutorial for Toolscreen",
+      "description": "@jojoe",
+      "url": "https://youtu.be/LG13ljK9RPs",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "tutorial-071",
+      "category": "tutorials",
+      "title": "Ranked Overworld Tutorials",
+      "description": "(Playlist) @Calisthenicuber",
+      "url": "https://youtube.com/playlist?list=PLW3qczDBHetYzypTq-pvnlP6Ndj086veQ",
+      "playlistId": "tutorial-p-001",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "document-017",
+      "category": "documents",
+      "title": "All Zero Cycle Tower-Setup-End Spawn Combination Time Lenience Sheet",
+      "description": "@ClearColdWater",
+      "url": "https://docs.google.com/spreadsheets/d/1DvZwc3_MHJt9WP0Vf-xmezcTlprTc3y36kEg7-QYyy0/edit?usp=sharing",
+      "recommended": false,
+      "searchable": true
+    },
+    {
+      "id": "document-018",
+      "category": "documents",
+      "title": "Frontcage",
+      "url": "https://frontcage.com/",
+      "recommended": true,
+      "searchable": true
     }
   ]
 }
