@@ -111,7 +111,7 @@ export default function Sidebar({
       sx={{
         width: { md: desktopOpen ? drawerWidth : 0 },
         flexShrink: 0,
-        transition: theme.transitions.create('width', { easing: theme.transitions.easing.sharp, duration: theme.transitions.duration.leavingScreen
+        transition: theme.transitions.create('width', { easing: theme.transitions.easing.sharp, duration: theme.transitions.duration.leavingScreen }),
       }}
     >
       <Drawer
