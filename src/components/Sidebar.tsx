@@ -143,7 +143,7 @@ export default function Sidebar({
             borderRight: '1px solid',
             borderColor: 'divider',
             overflowX: 'hidden',
-            transition: 'width 225ms cubic-bezier(0.4, 0, 0.6, 1)',
+            transition: theme.transitions.duration.leavingScreen,
           },
         }}
       >
