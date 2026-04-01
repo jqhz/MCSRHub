@@ -2383,6 +2383,16 @@
       "url": "https://frontcage.com/",
       "recommended": true,
       "searchable": true
+    },
+    {
+      "id": "download-032",
+      "category": "downloads",
+      "title": "Lama's Practice Map (Preemptive Spikes)",
+      "description": "@lama",
+      "url": "https://www.mediafire.com/file/lzbecct99g8p22i/Lama%2527s_Practice_Map.zip/file",
+      "playlistId": "download-p-002",
+      "recommended": true,
+      "searchable": true
     }
   ]
 }
