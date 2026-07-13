@@ -19,7 +19,8 @@ import { useContent } from '@src/components/ContentProvider';
 import {
   getCategoryRoute,
   getHighlightIdForPlaylist,
-  getPlaylistRouteById,
+  getPlaylistRoute,
+  getPlaylistRouteByPlaylistId,
 } from '@src/utils/navigation';
 import { getCategoryPageForItem, getPlaylistPageForCard } from '@src/utils/pagination';
 import { createSearch, type SearchItem } from '@src/utils/search';
@@ -39,10 +40,13 @@ const getResultRoute = (
   playlists: import('@src/data/content').Playlist[],
 ) => {
   if (item.type === 'playlist') {
-    return `${getPlaylistRouteById(
-      item.category,
-      item.id,
-    )}?highlight=${getHighlightIdForPlaylist(item.id)}&page=1`;
+    const playlist = playlists.find(
+      (entry) => entry.id === item.id && entry.category === item.category,
+    );
+    const route = playlist
+      ? getPlaylistRoute(playlist)
+      : getPlaylistRouteByPlaylistId(item.category, item.slug, playlists);
+    return `${route}?highlight=${getHighlightIdForPlaylist(item.id)}&page=1`;
   }
   if (item.playlistId) {
     const page = getPlaylistPageForCard(
@@ -51,9 +55,10 @@ const getResultRoute = (
       cards,
       playlists,
     );
-    return `${getPlaylistRouteById(
+    return `${getPlaylistRouteByPlaylistId(
       item.category,
       item.playlistId,
+      playlists,
     )}?highlight=${item.id}&page=${page}`;
   }
   const page = getCategoryPageForItem(item, cards, playlists);
@@ -157,7 +162,7 @@ export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {
                         categoryLabelMap.get(item.category) ?? item.category;
                       return (
                         <ListItemButton
-                          key={`${item.type}-${item.id}`}
+                          key={`${item.type}-${item.id}-${item.category}${item.type === 'card' && item.playlistId ? `-${item.playlistId}` : ''}`}
                           onClick={() => handleSelect(item)}
                         >
                           <Box>

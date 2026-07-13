@@ -1,5 +1,6 @@
 import type { CardItem, Playlist, CategorySlug } from '@src/data/content';
 import type { SearchItem } from '@src/utils/search';
+import { showsOnCategoryRoot } from '@src/utils/placement';
 
 export const PAGE_SIZE = 12;
 
@@ -16,8 +17,14 @@ export const getCategoryPlaylists = (
     (playlist) => playlist.category === category && !playlist.parentPlaylistId,
   );
 
-export const getCategoryCards = (category: CategorySlug, cards: CardItem[]) =>
-  sortByRecommended(cards.filter((card) => card.categories.includes(category)));
+export const getCategoryCards = (
+  category: CategorySlug,
+  cards: CardItem[],
+  playlists: Playlist[],
+) =>
+  sortByRecommended(
+    cards.filter((card) => showsOnCategoryRoot(card, category, playlists)),
+  );
 
 export const getChildPlaylists = (playlistId: string, playlists: Playlist[]) =>
   playlists.filter((playlist) => playlist.parentPlaylistId === playlistId);
@@ -33,7 +40,7 @@ const getCategoryCombinedIds = (
   ...getCategoryPlaylists(category, playlists).map(
     (playlist) => `playlist-${playlist.id}`,
   ),
-  ...getCategoryCards(category, cards).map((card) => card.id),
+  ...getCategoryCards(category, cards, playlists).map((card) => card.id),
 ];
 
 export const getCategoryPageForItem = (

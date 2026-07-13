@@ -1,5 +1,6 @@
 import Fuse from 'fuse.js';
 import type { CardItem, Playlist, CategorySlug } from '@src/data/content';
+import { showsOnCategoryRoot } from '@src/utils/placement';
 
 export type SearchItem =
   | {
@@ -13,6 +14,7 @@ export type SearchItem =
   | {
       type: 'playlist';
       id: string;
+      slug: string;
       title: string;
       category: CategorySlug;
       description?: string;
@@ -26,28 +28,45 @@ export const buildSearchIndex = (
 
   const cardItems: SearchItem[] = [];
   for (const card of cards) {
-    // Prefer a direct category placement; otherwise locate the card via its
-    // first playlist. Cards with no placement at all are unreachable, skip.
-    if (card.categories.length > 0) {
-      cardItems.push({
-        type: 'card',
-        id: card.id,
-        title: card.title,
-        category: card.categories[0],
-        description: card.description,
-      });
+    if (card.categories.length === 0) {
+      const playlist = card.playlistIds
+        .map((id) => playlistById.get(id))
+        .find(Boolean);
+      if (playlist) {
+        cardItems.push({
+          type: 'card',
+          id: card.id,
+          title: card.title,
+          category: playlist.category,
+          playlistId: playlist.id,
+          description: card.description,
+        });
+      }
       continue;
     }
-    const playlist = card.playlistIds
+
+    const primaryCategory = card.categories[0];
+    const playlistInCategory = card.playlistIds
       .map((id) => playlistById.get(id))
-      .find(Boolean);
-    if (playlist) {
+      .find((playlist) => playlist?.category === primaryCategory);
+
+    cardItems.push({
+      type: 'card',
+      id: card.id,
+      title: card.title,
+      category: primaryCategory,
+      playlistId: playlistInCategory?.id,
+      description: card.description,
+    });
+
+    // Also index under secondary categories when the card appears on those roots.
+    for (const category of card.categories.slice(1)) {
+      if (!showsOnCategoryRoot(card, category, playlists)) continue;
       cardItems.push({
         type: 'card',
         id: card.id,
         title: card.title,
-        category: playlist.category,
-        playlistId: playlist.id,
+        category,
         description: card.description,
       });
     }
@@ -57,6 +76,7 @@ export const buildSearchIndex = (
     ...playlists.map((playlist) => ({
       type: 'playlist' as const,
       id: playlist.id,
+      slug: playlist.slug,
       title: playlist.title,
       category: playlist.category,
       description: playlist.description,

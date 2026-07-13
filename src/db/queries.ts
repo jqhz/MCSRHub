@@ -72,6 +72,7 @@ const fetchContent = async (): Promise<ContentStore> => {
     })),
     playlists: playlistRows.map((row) => ({
       id: row.id,
+      slug: row.slug,
       category: row.categorySlug,
       parentPlaylistId: row.parentPlaylistId ?? undefined,
       title: row.title,
@@ -81,6 +82,6 @@ const fetchContent = async (): Promise<ContentStore> => {
   };
 };
 
-export const getContent = unstable_cache(fetchContent, ['content-store'], {
+export const getContent = unstable_cache(fetchContent, ['content-store-v2'], {
   revalidate: 300,
 });

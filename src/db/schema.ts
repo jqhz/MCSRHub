@@ -35,6 +35,7 @@ export const playlists = pgTable(
       .references(() => categories.slug, { onDelete: 'restrict' }),
     parentPlaylistId: text('parent_playlist_id'),
     title: text('title').notNull(),
+    slug: text('slug').notNull(),
     image: text('image').notNull(),
     description: text('description'),
     createdAt: timestamp('created_at', { withTimezone: true })

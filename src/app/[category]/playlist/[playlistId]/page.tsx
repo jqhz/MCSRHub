@@ -1,6 +1,8 @@
 import { permanentRedirect } from 'next/navigation';
+import { getContent } from '@src/db/queries';
+import { appendQuerySuffix } from '@src/utils/navigation';
 
-// Legacy URL: /[category]/playlist/[playlistId] -> /[category]/[playlistId]
+// Legacy URL: /[category]/playlist/[id] -> /[category]/[slug]
 export default async function LegacyPlaylistRedirect({
   params,
   searchParams,
@@ -9,10 +11,15 @@ export default async function LegacyPlaylistRedirect({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { category, playlistId } = await params;
-  const query = new URLSearchParams();
-  for (const [key, value] of Object.entries(await searchParams)) {
-    if (typeof value === 'string') query.set(key, value);
-  }
-  const suffix = query.size > 0 ? `?${query.toString()}` : '';
-  permanentRedirect(`/${category}/${playlistId}${suffix}`);
+  const resolvedSearchParams = await searchParams;
+  const suffix = appendQuerySuffix(resolvedSearchParams);
+
+  const { playlists } = await getContent();
+  const playlist = playlists.find(
+    (item) => item.category === category && item.id === playlistId,
+  );
+
+  permanentRedirect(
+    `/${category}/${playlist?.slug ?? playlistId}${suffix}`,
+  );
 }

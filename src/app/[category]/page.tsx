@@ -74,7 +74,7 @@ export default function CategoryPage() {
   }
 
   const scopedPlaylists = getCategoryPlaylists(categoryMeta.slug, playlists);
-  const scopedCards = getCategoryCards(categoryMeta.slug, cards);
+  const scopedCards = getCategoryCards(categoryMeta.slug, cards, playlists);
   const combinedItems = [
     ...scopedPlaylists.map((playlist) => ({ type: 'playlist' as const, playlist })),
     ...scopedCards.map((card) => ({ type: 'card' as const, card })),

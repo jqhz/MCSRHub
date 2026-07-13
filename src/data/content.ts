@@ -10,6 +10,7 @@ export type CategorySlug =
 
 export interface Playlist {
   id: string;
+  slug: string;
   category: CategorySlug;
   parentPlaylistId?: string;
   title: string;
