@@ -11,6 +11,7 @@ export type CategorySlug =
 export interface Playlist {
   id: string;
   category: CategorySlug;
+  parentPlaylistId?: string;
   title: string;
   image: string;
   description?: string;
@@ -18,14 +19,13 @@ export interface Playlist {
 
 export interface CardItem {
   id: string;
-  category: CategorySlug;
-  playlistId?: string;
+  categories: CategorySlug[];
+  playlistIds: string[];
   title: string;
   description?: string;
   image?: string;
   date?: string;
   recommended?: boolean;
-  searchable?: boolean;
   url: string;
 }
 

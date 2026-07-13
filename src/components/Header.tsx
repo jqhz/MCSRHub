@@ -17,7 +17,7 @@ import { useRouter } from 'next/navigation';
 import { CATEGORIES } from '@src/data/content';
 import { useContent } from '@src/components/ContentProvider';
 import {
-  getCardRoute,
+  getCategoryRoute,
   getHighlightIdForPlaylist,
   getPlaylistRouteById,
 } from '@src/utils/navigation';
@@ -46,23 +46,18 @@ const getResultRoute = (
   }
   if (item.playlistId) {
     const page = getPlaylistPageForCard(
-      item.category,
       item.playlistId,
       item.id,
       cards,
+      playlists,
     );
     return `${getPlaylistRouteById(
       item.category,
       item.playlistId,
     )}?highlight=${item.id}&page=${page}`;
   }
-  const highlightParam = `highlight=${item.id}`;
   const page = getCategoryPageForItem(item, cards, playlists);
-  const baseRoute = getCardRoute({
-    category: item.category,
-    playlistId: item.playlistId,
-  });
-  return `${baseRoute}?${highlightParam}&page=${page}`;
+  return `${getCategoryRoute(item.category)}?highlight=${item.id}&page=${page}`;
 };
 
 export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {

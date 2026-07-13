@@ -3,8 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import '@src/styles/globals.css';
 import AppShell from '@src/components/AppShell';
 import { Analytics } from "@vercel/analytics/next";
-import path from 'path';
-import { promises as fs } from 'fs';
+import { getContent } from '@src/db/queries';
 export const metadata: Metadata = {
   title: {
     default: 'MCSR Hub',
@@ -39,15 +38,10 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-// Could potentially look into using a database, but json file is simpler and intended for other helpers to compile the app easily themselves and have access to all the resources.
+// Content lives in NeonDB and is managed by the private ResourceQ app.
 const getInitialContent = async () => {
   try {
-    const filePath = path.join(process.cwd(), 'src', 'data', 'content-store.json');
-    const raw = await fs.readFile(filePath, 'utf-8');
-    return JSON.parse(raw) as {
-      cards: import('@src/data/content').CardItem[];
-      playlists: import('@src/data/content').Playlist[];
-    };
+    return await getContent();
   } catch {
     return { cards: [], playlists: [] };
   }

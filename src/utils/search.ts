@@ -21,25 +21,49 @@ export type SearchItem =
 export const buildSearchIndex = (
   cards: CardItem[],
   playlists: Playlist[],
-): SearchItem[] => [
-  ...playlists.map((playlist) => ({
-    type: 'playlist' as const,
-    id: playlist.id,
-    title: playlist.title,
-    category: playlist.category,
-    description: playlist.description,
-  })),
-  ...cards
-    .filter((card) => card.searchable !== false)
-    .map((card) => ({
-      type: 'card' as const,
-      id: card.id,
-      title: card.title,
-      category: card.category,
-      playlistId: card.playlistId,
-      description: card.description,
+): SearchItem[] => {
+  const playlistById = new Map(playlists.map((playlist) => [playlist.id, playlist]));
+
+  const cardItems: SearchItem[] = [];
+  for (const card of cards) {
+    // Prefer a direct category placement; otherwise locate the card via its
+    // first playlist. Cards with no placement at all are unreachable, skip.
+    if (card.categories.length > 0) {
+      cardItems.push({
+        type: 'card',
+        id: card.id,
+        title: card.title,
+        category: card.categories[0],
+        description: card.description,
+      });
+      continue;
+    }
+    const playlist = card.playlistIds
+      .map((id) => playlistById.get(id))
+      .find(Boolean);
+    if (playlist) {
+      cardItems.push({
+        type: 'card',
+        id: card.id,
+        title: card.title,
+        category: playlist.category,
+        playlistId: playlist.id,
+        description: card.description,
+      });
+    }
+  }
+
+  return [
+    ...playlists.map((playlist) => ({
+      type: 'playlist' as const,
+      id: playlist.id,
+      title: playlist.title,
+      category: playlist.category,
+      description: playlist.description,
     })),
-];
+    ...cardItems,
+  ];
+};
 
 export const createSearch = (cards: CardItem[], playlists: Playlist[]) =>
   new Fuse(buildSearchIndex(cards, playlists), {
