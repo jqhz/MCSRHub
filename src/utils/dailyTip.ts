@@ -10,14 +10,14 @@ const pickDailyCard = (cards: CardItem[]) => {
 
 export const getDailyTip = (cards: CardItem[]) => {
   const eligibleCards = cards.filter(
-    (card) => card.category === 'tech' && Boolean(card.url),
+    (card) => card.categories.includes('tech') && Boolean(card.url),
   );
   return pickDailyCard(eligibleCards);
 };
 
 export const getDailyChannel = (cards: CardItem[]) => {
   const channelCards = cards.filter(
-    (card) => card.category === 'youtube' && Boolean(card.url),
+    (card) => card.categories.includes('youtube') && Boolean(card.url),
   );
   return pickDailyCard(channelCards);
 };

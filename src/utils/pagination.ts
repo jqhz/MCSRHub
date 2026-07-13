@@ -1,26 +1,47 @@
 import type { CardItem, Playlist, CategorySlug } from '@src/data/content';
 import type { SearchItem } from '@src/utils/search';
+import { showsOnCategoryRoot } from '@src/utils/placement';
 
 export const PAGE_SIZE = 12;
+
+export const sortByRecommended = (cards: CardItem[]) =>
+  [...cards].sort(
+    (a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)),
+  );
+
+export const getCategoryPlaylists = (
+  category: CategorySlug,
+  playlists: Playlist[],
+) =>
+  playlists.filter(
+    (playlist) => playlist.category === category && !playlist.parentPlaylistId,
+  );
+
+export const getCategoryCards = (
+  category: CategorySlug,
+  cards: CardItem[],
+  playlists: Playlist[],
+) =>
+  sortByRecommended(
+    cards.filter((card) => showsOnCategoryRoot(card, category, playlists)),
+  );
+
+export const getChildPlaylists = (playlistId: string, playlists: Playlist[]) =>
+  playlists.filter((playlist) => playlist.parentPlaylistId === playlistId);
+
+export const getPlaylistCards = (playlistId: string, cards: CardItem[]) =>
+  sortByRecommended(cards.filter((card) => card.playlistIds.includes(playlistId)));
 
 const getCategoryCombinedIds = (
   category: CategorySlug,
   cards: CardItem[],
   playlists: Playlist[],
-) => {
-  const scopedPlaylists = playlists.filter(
-    (playlist) => playlist.category === category,
-  );
-  const scopedCards = cards
-    .filter((card) => card.category === category && !card.playlistId)
-    .sort(
-      (a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)),
-    );
-  return [
-    ...scopedPlaylists.map((playlist) => `playlist-${playlist.id}`),
-    ...scopedCards.map((card) => card.id),
-  ];
-};
+) => [
+  ...getCategoryPlaylists(category, playlists).map(
+    (playlist) => `playlist-${playlist.id}`,
+  ),
+  ...getCategoryCards(category, cards, playlists).map((card) => card.id),
+];
 
 export const getCategoryPageForItem = (
   item: SearchItem,
@@ -39,18 +60,18 @@ export const getCategoryPageForItem = (
 };
 
 export const getPlaylistPageForCard = (
-  category: CategorySlug,
   playlistId: string,
   cardId: string,
   cards: CardItem[],
+  playlists: Playlist[],
 ) => {
-  const scopedCards = cards.filter(
-    (card) =>
-      card.category === category && card.playlistId === playlistId,
-  ).sort(
-    (a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)),
-  );
-  const index = scopedCards.findIndex((card) => card.id === cardId);
+  const combinedIds = [
+    ...getChildPlaylists(playlistId, playlists).map(
+      (playlist) => `playlist-${playlist.id}`,
+    ),
+    ...getPlaylistCards(playlistId, cards).map((card) => card.id),
+  ];
+  const index = combinedIds.findIndex((id) => id === cardId);
   if (index < 0) return 1;
   return Math.floor(index / PAGE_SIZE) + 1;
 };

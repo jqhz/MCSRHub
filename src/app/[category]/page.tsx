@@ -9,9 +9,13 @@ import Typography from '@mui/material/Typography';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import CardGrid from '@src/components/CardGrid';
 import FanartGrid from '@src/components/FanartGrid';
-import { CATEGORIES, type CategorySlug } from '@src/data/content';
+import { CATEGORIES } from '@src/data/content';
 import { useContent } from '@src/components/ContentProvider';
-import { PAGE_SIZE } from '@src/utils/pagination';
+import {
+  PAGE_SIZE,
+  getCategoryCards,
+  getCategoryPlaylists,
+} from '@src/utils/pagination';
 
 export default function CategoryPage() {
   const params = useParams();
@@ -37,8 +41,8 @@ export default function CategoryPage() {
     const handlePageChange = (_event: React.ChangeEvent<unknown>, value: number) => {
       router.push(`/${categoryMeta.slug}?page=${value}`);
     };
-    const fanartCards = cards.filter(
-      (card) => card.category === 'fanart',
+    const fanartCards = cards.filter((card) =>
+      card.categories.includes('fanart'),
     );
     const localItems = fanartCards.map((card) => ({
       imageUrl:
@@ -69,16 +73,8 @@ export default function CategoryPage() {
     );
   }
 
-  const scopedPlaylists = playlists.filter(
-    (playlist) => playlist.category === (categoryMeta.slug as CategorySlug),
-  );
-  const scopedCards = cards
-    .filter(
-      (card) =>
-        card.category === (categoryMeta.slug as CategorySlug) &&
-        !card.playlistId,
-    )
-    .sort((a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)));
+  const scopedPlaylists = getCategoryPlaylists(categoryMeta.slug, playlists);
+  const scopedCards = getCategoryCards(categoryMeta.slug, cards, playlists);
   const combinedItems = [
     ...scopedPlaylists.map((playlist) => ({ type: 'playlist' as const, playlist })),
     ...scopedCards.map((card) => ({ type: 'card' as const, card })),

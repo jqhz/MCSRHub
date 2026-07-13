@@ -37,7 +37,7 @@ git checkout -b feature/<feature-name>
 
 ## New Card Suggestions
 
-If you want to add a new card, /dev/content allows you to see all the current cards and to add a new one. If you would like to get a resource added, message me on Discord `@jqhz` or create a pull request.
+Content is stored in a NeonDB (PostgreSQL) database and managed privately. If you would like to get a resource added, message me on Discord `@jqhz` or create an issue with the link and where it belongs.
 
 ## Fan Art
 
