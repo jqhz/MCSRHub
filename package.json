@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "backup": "tsx scripts/backup-db.ts"
+    "backup": "tsx scripts/backup-db.ts",
+    "test": "tsx --test src/**/*.test.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

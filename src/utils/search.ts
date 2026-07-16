@@ -1,6 +1,7 @@
 import Fuse from 'fuse.js';
 import type { CardItem, Playlist, CategorySlug } from '@src/data/content';
 import { showsOnCategoryRoot } from '@src/utils/placement';
+import { isPublicCard } from '@src/utils/publicContent';
 
 export type SearchItem =
   | {
@@ -28,6 +29,7 @@ export const buildSearchIndex = (
 
   const cardItems: SearchItem[] = [];
   for (const card of cards) {
+    if (!isPublicCard(card)) continue;
     if (card.categories.length === 0) {
       const playlist = card.playlistIds
         .map((id) => playlistById.get(id))

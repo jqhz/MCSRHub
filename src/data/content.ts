@@ -16,17 +16,21 @@ export interface Playlist {
   title: string;
   image: string;
   description?: string;
+  position: number;
 }
 
 export interface CardItem {
   id: string;
   categories: CategorySlug[];
   playlistIds: string[];
+  categoryPositions: Partial<Record<CategorySlug, number>>;
+  playlistPositions: Partial<Record<string, number>>;
   title: string;
   description?: string;
   image?: string;
   date?: string;
   recommended?: boolean;
+  archived: boolean;
   url: string;
 }
 

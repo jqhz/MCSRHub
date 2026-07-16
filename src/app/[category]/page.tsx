@@ -41,9 +41,7 @@ export default function CategoryPage() {
     const handlePageChange = (_event: React.ChangeEvent<unknown>, value: number) => {
       router.push(`/${categoryMeta.slug}?page=${value}`);
     };
-    const fanartCards = cards.filter((card) =>
-      card.categories.includes('fanart'),
-    );
+    const fanartCards = getCategoryCards('fanart', cards, playlists);
     const localItems = fanartCards.map((card) => ({
       imageUrl:
         card.image ?? `/api/og-image?url=${encodeURIComponent(card.url)}`,
