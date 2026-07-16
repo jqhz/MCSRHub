@@ -1,20 +1,23 @@
 import type { CardItem, Playlist, CategorySlug } from '@src/data/content';
 import type { SearchItem } from '@src/utils/search';
 import { showsOnCategoryRoot } from '@src/utils/placement';
+import { isPublicCard } from '@src/utils/publicContent';
+import {
+  sortCardsByCategoryPosition,
+  sortCardsByPlaylistPosition,
+  sortPlaylistsByPosition,
+} from '@src/utils/sorting';
 
 export const PAGE_SIZE = 12;
-
-export const sortByRecommended = (cards: CardItem[]) =>
-  [...cards].sort(
-    (a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)),
-  );
 
 export const getCategoryPlaylists = (
   category: CategorySlug,
   playlists: Playlist[],
 ) =>
-  playlists.filter(
-    (playlist) => playlist.category === category && !playlist.parentPlaylistId,
+  sortPlaylistsByPosition(
+    playlists.filter(
+      (playlist) => playlist.category === category && !playlist.parentPlaylistId,
+    ),
   );
 
 export const getCategoryCards = (
@@ -22,15 +25,26 @@ export const getCategoryCards = (
   cards: CardItem[],
   playlists: Playlist[],
 ) =>
-  sortByRecommended(
-    cards.filter((card) => showsOnCategoryRoot(card, category, playlists)),
+  sortCardsByCategoryPosition(
+    cards.filter(
+      (card) =>
+        isPublicCard(card) && showsOnCategoryRoot(card, category, playlists),
+    ),
+    category,
   );
 
 export const getChildPlaylists = (playlistId: string, playlists: Playlist[]) =>
-  playlists.filter((playlist) => playlist.parentPlaylistId === playlistId);
+  sortPlaylistsByPosition(
+    playlists.filter((playlist) => playlist.parentPlaylistId === playlistId),
+  );
 
 export const getPlaylistCards = (playlistId: string, cards: CardItem[]) =>
-  sortByRecommended(cards.filter((card) => card.playlistIds.includes(playlistId)));
+  sortCardsByPlaylistPosition(
+    cards.filter(
+      (card) => isPublicCard(card) && card.playlistIds.includes(playlistId),
+    ),
+    playlistId,
+  );
 
 const getCategoryCombinedIds = (
   category: CategorySlug,

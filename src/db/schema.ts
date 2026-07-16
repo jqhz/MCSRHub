@@ -6,6 +6,7 @@ import {
   pgEnum,
   primaryKey,
   foreignKey,
+  integer,
 } from 'drizzle-orm/pg-core';
 
 // Mirrors the schema owned/migrated by the private ResourceQ app.
@@ -38,6 +39,7 @@ export const playlists = pgTable(
     slug: text('slug').notNull(),
     image: text('image').notNull(),
     description: text('description'),
+    position: integer('position').notNull().default(0),
     createdAt: timestamp('created_at', { withTimezone: true })
       .defaultNow()
       .notNull(),
@@ -58,6 +60,7 @@ export const cards = pgTable('cards', {
   image: text('image'),
   date: text('date'),
   recommended: boolean('recommended').notNull().default(false),
+  archived: boolean('archived').notNull().default(false),
   url: text('url').notNull().unique(),
   createdAt: timestamp('created_at', { withTimezone: true })
     .defaultNow()
@@ -73,6 +76,7 @@ export const playlistCards = pgTable(
     cardId: text('card_id')
       .notNull()
       .references(() => cards.id, { onDelete: 'cascade' }),
+    position: integer('position').notNull().default(0),
   },
   (t) => [primaryKey({ columns: [t.playlistId, t.cardId] })],
 );
@@ -86,6 +90,7 @@ export const cardCategories = pgTable(
     categorySlug: categorySlugEnum('category_slug')
       .notNull()
       .references(() => categories.slug, { onDelete: 'cascade' }),
+    position: integer('position').notNull().default(0),
   },
   (t) => [primaryKey({ columns: [t.cardId, t.categorySlug] })],
 );
