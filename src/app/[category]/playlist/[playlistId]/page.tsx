@@ -1,8 +1,8 @@
 import { permanentRedirect } from 'next/navigation';
 import { getContent } from '@src/db/queries';
-import { appendQuerySuffix } from '@src/utils/navigation';
+import { appendQuerySuffix, getPlaylistRoute } from '@src/utils/navigation';
 
-// Legacy URL: /[category]/playlist/[id] -> /[category]/[slug]
+// Legacy URL: /[category]/playlist/[id] -> /[category]/[...nested-slugs]
 export default async function LegacyPlaylistRedirect({
   params,
   searchParams,
@@ -20,6 +20,8 @@ export default async function LegacyPlaylistRedirect({
   );
 
   permanentRedirect(
-    `/${category}/${playlist?.slug ?? playlistId}${suffix}`,
+    playlist
+      ? `${getPlaylistRoute(playlist, playlists)}${suffix}`
+      : `/${category}/${playlistId}${suffix}`,
   );
 }

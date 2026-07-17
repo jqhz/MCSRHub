@@ -10,6 +10,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 import type { Playlist } from '@src/data/content';
+import { useContent } from '@src/components/ContentProvider';
 import {
   getHighlightIdForPlaylist,
   getPlaylistRoute,
@@ -29,6 +30,8 @@ const resolveImageSrc = (src: string) => {
 };
 
 export default function PlaylistCard({ playlist }: PlaylistCardProps) {
+  const { playlists } = useContent();
+
   return (
     <Card
       id={getHighlightIdForPlaylist(playlist.id)}
@@ -45,7 +48,7 @@ export default function PlaylistCard({ playlist }: PlaylistCardProps) {
       <CardActionArea
         component={Link}
         prefetch={false}
-        href={getPlaylistRoute(playlist)}
+        href={getPlaylistRoute(playlist, playlists)}
         className="h-full"
         sx={{ height: '100%', alignItems: 'stretch' }}
       >
