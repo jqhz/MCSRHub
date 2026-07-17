@@ -44,7 +44,7 @@ const getResultRoute = (
       (entry) => entry.id === item.id && entry.category === item.category,
     );
     const route = playlist
-      ? getPlaylistRoute(playlist)
+      ? getPlaylistRoute(playlist, playlists)
       : getPlaylistRouteByPlaylistId(item.category, item.slug, playlists);
     return `${route}?highlight=${getHighlightIdForPlaylist(item.id)}&page=1`;
   }

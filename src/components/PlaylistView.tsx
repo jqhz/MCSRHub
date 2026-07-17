@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import NextLink from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import CardGrid from '@src/components/CardGrid';
-import { CATEGORIES, type CategorySlug, type Playlist } from '@src/data/content';
+import { CATEGORIES, type CategorySlug } from '@src/data/content';
 import {
   getCategoryRoute,
   getHighlightIdForPlaylist,
@@ -22,29 +22,15 @@ import {
   getChildPlaylists,
   getPlaylistCards,
 } from '@src/utils/pagination';
+import { findPlaylistByPath, getPlaylistAncestors } from '@src/utils/playlists';
 import { useContent } from '@src/components/ContentProvider';
-
-const getAncestors = (playlist: Playlist, playlists: Playlist[]) => {
-  const byId = new Map(playlists.map((item) => [item.id, item]));
-  const ancestors: Playlist[] = [];
-  let current = playlist.parentPlaylistId
-    ? byId.get(playlist.parentPlaylistId)
-    : undefined;
-  while (current && !ancestors.includes(current)) {
-    ancestors.unshift(current);
-    current = current.parentPlaylistId
-      ? byId.get(current.parentPlaylistId)
-      : undefined;
-  }
-  return ancestors;
-};
 
 export default function PlaylistView({
   category,
-  playlistSlug,
+  playlistPath,
 }: {
   category: CategorySlug;
-  playlistSlug: string;
+  playlistPath: string[];
 }) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -70,9 +56,7 @@ export default function PlaylistView({
     );
   }
 
-  const playlist = playlists.find(
-    (item) => item.category === categoryMeta.slug && item.slug === playlistSlug,
-  );
+  const playlist = findPlaylistByPath(playlists, categoryMeta.slug, playlistPath);
 
   if (!playlist) {
     return (
@@ -82,7 +66,7 @@ export default function PlaylistView({
     );
   }
 
-  const ancestors = getAncestors(playlist, playlists);
+  const ancestors = getPlaylistAncestors(playlist, playlists);
   const childPlaylists = getChildPlaylists(playlist.id, playlists);
   const scopedCards = getPlaylistCards(playlist.id, cards);
   const combinedItems = [
@@ -100,7 +84,7 @@ export default function PlaylistView({
     .filter((item) => item.type === 'card')
     .map((item) => item.card);
   const handlePageChange = (_event: React.ChangeEvent<unknown>, value: number) => {
-    router.push(`${getPlaylistRoute(playlist)}?page=${value}`);
+    router.push(`${getPlaylistRoute(playlist, playlists)}?page=${value}`);
   };
 
   return (
@@ -115,7 +99,7 @@ export default function PlaylistView({
               key={ancestor.id}
               prefetch={false}
               component={NextLink}
-              href={getPlaylistRoute(ancestor)}
+              href={getPlaylistRoute(ancestor, playlists)}
             >
               {ancestor.title}
             </Link>
