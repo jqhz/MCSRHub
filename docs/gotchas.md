@@ -33,3 +33,7 @@ It's listed in `package.json`'s dependencies, but `/api/og-image` hand-rolls its
 ## 8. Orphan test file
 
 `src/utils/contentOrdering.test.ts` exists with no matching `contentOrdering.ts` source file anywhere in the repo. The logic it exercises likely lives across `sorting.ts` and `placement.ts`. Don't assume there's a missing file to find.
+
+## 9. Card screenshots are batch-generated
+
+Cards with no DB `image` and no discoverable `og:image` (and no Discord guild icon) fall back to `/images/defaultcard.jpg` until a screenshot exists. The capture script probes each URL with the same resolution logic as `/api/og-image` and only screenshots URLs that would still hit `defaultcard.jpg` — it skips GitHub, Google Docs, and other sites that already expose `og:image`. Captures run via the GitHub Actions workflow `.github/workflows/capture-card-screenshots.yml` (weekly + manual dispatch), not at page-load time. Screenshots live in `public/images/card-screenshots/` with a URL manifest at `src/data/card-screenshots.json`. After bulk content imports, trigger the workflow manually to pick up new URLs. Failed captures stay on `defaultcard.jpg`; re-running is safe because the manifest skips URLs already captured.

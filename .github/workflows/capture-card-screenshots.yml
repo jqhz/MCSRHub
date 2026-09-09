@@ -1,0 +1,42 @@
+name: Capture card screenshots
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 0'
+
+concurrency:
+  group: screenshots
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - run: npx playwright install chromium --with-deps
+
+      - run: npm run capture-screenshots
+
+      - name: Commit screenshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/card-screenshots/ src/data/card-screenshots.json
+          if git diff --staged --quiet; then
+            echo "No new screenshots to commit."
+          else
+            git commit -m "chore: capture card screenshots"
+            git push
+          fi

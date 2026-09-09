@@ -55,8 +55,8 @@ export default async function RootLayout({
   const initialContent = await getInitialContent();
 
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <AppShell initialContent={initialContent}>{children}</AppShell>
         <Analytics />
       </body>
