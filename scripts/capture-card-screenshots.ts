@@ -1,7 +1,7 @@
 /**
  * Batch-captures 16:9 website screenshots for cards that would otherwise
  * show /images/defaultcard.jpg (no DB image, no Discord icon, no og:image).
- * Run: npm run capture-screenshots [-- --local] [-- --limit N]
+ * Run: npm run capture-screenshots [-- --local] [-- --limit N] [-- --recapture]
  */
 import 'dotenv/config';
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
@@ -18,7 +18,8 @@ import { needsScreenshot, resolveCardImageUrl } from '../src/lib/og-image-resolv
 
 const PROD_CONTENT_URL = 'https://mcsrhub.vercel.app/api/content';
 const VIEWPORT = { width: 800, height: 450 };
-const NAV_TIMEOUT_MS = 15_000;
+const NAV_TIMEOUT_MS = 20_000;
+const POST_LOAD_SETTLE_MS = 3_000;
 const DELAY_BETWEEN_MS = 1_500;
 const PROBE_DELAY_MS = 500;
 
@@ -50,12 +51,13 @@ const isDiscordUrl = (url: string): boolean => {
 const parseArgs = () => {
   const args = process.argv.slice(2);
   const local = args.includes('--local');
+  const recapture = args.includes('--recapture');
   const limitIndex = args.indexOf('--limit');
   const limit =
     limitIndex >= 0 && args[limitIndex + 1]
       ? Number.parseInt(args[limitIndex + 1]!, 10)
       : undefined;
-  return { local, limit: Number.isFinite(limit) ? limit : undefined };
+  return { local, limit: Number.isFinite(limit) ? limit : undefined, recapture };
 };
 
 const loadManifest = (): ScreenshotManifest => {
@@ -82,7 +84,11 @@ const fetchCards = async (local: boolean): Promise<CardItem[]> => {
   return data.cards;
 };
 
-const getCandidateUrls = (cards: CardItem[], manifest: ScreenshotManifest): string[] => {
+const getCandidateUrls = (
+  cards: CardItem[],
+  manifest: ScreenshotManifest,
+  recapture: boolean,
+): string[] => {
   const seen = new Set<string>();
   const urls: string[] = [];
 
@@ -94,7 +100,7 @@ const getCandidateUrls = (cards: CardItem[], manifest: ScreenshotManifest): stri
     if (isDiscordUrl(card.url)) continue;
 
     const normalized = normalizeUrl(card.url);
-    if (manifest.entries[normalized]) continue;
+    if (!recapture && manifest.entries[normalized]) continue;
     if (seen.has(normalized)) continue;
 
     seen.add(normalized);
@@ -133,11 +139,10 @@ const captureScreenshot = async (
   });
 
   try {
-    try {
-      await page.goto(url, { waitUntil: 'networkidle', timeout: NAV_TIMEOUT_MS });
-    } catch {
-      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS });
-    }
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS });
+    await page.waitForLoadState('load', { timeout: 10_000 }).catch(() => {});
+    await page.waitForLoadState('networkidle', { timeout: 8_000 }).catch(() => {});
+    await sleep(POST_LOAD_SETTLE_MS);
 
     const pngBuffer = await page.screenshot({
       type: 'png',
@@ -153,10 +158,10 @@ const captureScreenshot = async (
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const main = async () => {
-  const { local, limit } = parseArgs();
+  const { local, limit, recapture } = parseArgs();
   const manifest = loadManifest();
   const cards = await fetchCards(local);
-  const candidates = getCandidateUrls(cards, manifest);
+  const candidates = getCandidateUrls(cards, manifest, recapture);
 
   if (candidates.length === 0) {
     console.log('No new candidate URLs.');
