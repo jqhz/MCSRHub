@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
+import { normalizeUrl } from '@src/lib/card-screenshots';
+import { resolveCardThumbnail } from '@src/lib/card-thumbnail';
 
-const FALLBACK_PATH = '/images/defaultcard.jpg';
 const CACHE_TTL_MS = 1000 * 60 * 60 * 24;
 const NEGATIVE_TTL_MS = 1000 * 60 * 10;
 
@@ -16,111 +17,73 @@ const getCache = () => {
   return globalForCache.ogImageCache;
 };
 
-const getFallbackResponse = (request: Request) => {
-  const response = NextResponse.redirect(new URL(FALLBACK_PATH, request.url), 302);
-  response.headers.set(
-    'Cache-Control',
-    'public, s-maxage=86400, stale-while-revalidate=604800',
-  );
+const CACHE_CONTROL = 'public, s-maxage=86400, stale-while-revalidate=604800';
+
+const getRedirectResponse = (destination: string) => {
+  const response = NextResponse.redirect(destination, 302);
+  response.headers.set('Cache-Control', CACHE_CONTROL);
   return response;
 };
 
-const getMetaContent = (html: string, property: string) => {
-  const regex = new RegExp(
-    `<meta[^>]+(?:property|name)=["']${property}["'][^>]+content=["']([^"']+)["']`,
-    'i',
-  );
-  const match = html.match(regex);
-  return match?.[1] ?? '';
+const toAbsoluteUrl = (url: string, request: Request): string => {
+  if (/^(https?:)?\/\//.test(url) || url.startsWith('data:')) {
+    return url.startsWith('//') ? `https:${url}` : url;
+  }
+  return new URL(url, request.url).toString();
 };
 
 export const GET = async (request: Request) => {
   const { searchParams } = new URL(request.url);
   const rawUrl = searchParams.get('url');
-  if (!rawUrl) return getFallbackResponse(request);
+  const wantsJson = searchParams.get('format') === 'json';
+
+  if (!rawUrl) {
+    const fallback = '/images/defaultcard.jpg';
+    return wantsJson
+      ? NextResponse.json({ url: fallback })
+      : getRedirectResponse(new URL(fallback, request.url).toString());
+  }
 
   let target: URL;
   try {
     target = new URL(rawUrl);
   } catch {
-    return getFallbackResponse(request);
+    const fallback = '/images/defaultcard.jpg';
+    return wantsJson
+      ? NextResponse.json({ url: fallback })
+      : getRedirectResponse(new URL(fallback, request.url).toString());
   }
 
   if (!['http:', 'https:'].includes(target.protocol)) {
-    return getFallbackResponse(request);
+    const fallback = '/images/defaultcard.jpg';
+    return wantsJson
+      ? NextResponse.json({ url: fallback })
+      : getRedirectResponse(new URL(fallback, request.url).toString());
   }
 
   try {
-    const cacheKey = target.toString();
+    const cacheKey = normalizeUrl(target.toString());
     const cache = getCache();
     const cached = cache.get(cacheKey);
     if (cached && cached.expiresAt > Date.now()) {
-      return NextResponse.redirect(cached.url, 302);
+      const cachedUrl = toAbsoluteUrl(cached.url, request);
+      return wantsJson
+        ? NextResponse.json({ url: cachedUrl }, { headers: { 'Cache-Control': CACHE_CONTROL } })
+        : getRedirectResponse(cachedUrl);
     }
 
-    const hostname = target.hostname.replace('www.', '');
-    if (
-      hostname === 'discord.gg' ||
-      (hostname === 'discord.com' && target.pathname.startsWith('/invite/'))
-    ) {
-      const inviteCode =
-        hostname === 'discord.gg'
-          ? target.pathname.replace('/', '')
-          : target.pathname.split('/invite/')[1]?.split('/')[0] ?? '';
-      if (inviteCode) {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 2500);
-        const inviteResponse = await fetch(
-          `https://discord.com/api/v9/invites/${inviteCode}?with_counts=true`,
-          { signal: controller.signal },
-        );
-        clearTimeout(timeout);
-        if (inviteResponse.ok) {
-          const inviteData = (await inviteResponse.json()) as {
-            guild?: { id?: string; icon?: string };
-          };
-          const guildId = inviteData.guild?.id;
-          const guildIcon = inviteData.guild?.icon;
-          if (guildId && guildIcon) {
-            const iconUrl = `https://cdn.discordapp.com/icons/${guildId}/${guildIcon}.png?size=512`;
-            cache.set(cacheKey, { url: iconUrl, expiresAt: Date.now() + CACHE_TTL_MS });
-            const response = NextResponse.redirect(iconUrl, 302);
-            response.headers.set(
-              'Cache-Control',
-              'public, s-maxage=86400, stale-while-revalidate=604800',
-            );
-            return response;
-          }
-        }
-        cache.set(cacheKey, { url: FALLBACK_PATH, expiresAt: Date.now() + NEGATIVE_TTL_MS });
-        return getFallbackResponse(request);
-      }
-    }
+    const resolvedUrl = await resolveCardThumbnail(cacheKey);
+    const absoluteUrl = toAbsoluteUrl(resolvedUrl, request);
+    const ttl = resolvedUrl === '/images/defaultcard.jpg' ? NEGATIVE_TTL_MS : CACHE_TTL_MS;
+    cache.set(cacheKey, { url: resolvedUrl, expiresAt: Date.now() + ttl });
 
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 3500);
-    const response = await fetch(target.toString(), {
-      headers: { 'User-Agent': 'MCSRHub/1.0' },
-      signal: controller.signal,
-    });
-    clearTimeout(timeout);
-    const html = await response.text();
-    const ogImage =
-      getMetaContent(html, 'og:image') || getMetaContent(html, 'twitter:image');
-    if (!ogImage) {
-      cache.set(cacheKey, { url: FALLBACK_PATH, expiresAt: Date.now() + NEGATIVE_TTL_MS });
-      return getFallbackResponse(request);
-    }
-
-    const resolved = new URL(ogImage, target).toString();
-    cache.set(cacheKey, { url: resolved, expiresAt: Date.now() + CACHE_TTL_MS });
-    const response2 = NextResponse.redirect(resolved, 302);
-    response2.headers.set(
-      'Cache-Control',
-      'public, s-maxage=86400, stale-while-revalidate=604800',
-    );
-    return response2;
+    return wantsJson
+      ? NextResponse.json({ url: absoluteUrl }, { headers: { 'Cache-Control': CACHE_CONTROL } })
+      : getRedirectResponse(absoluteUrl);
   } catch {
-    return getFallbackResponse(request);
+    const fallback = '/images/defaultcard.jpg';
+    return wantsJson
+      ? NextResponse.json({ url: toAbsoluteUrl(fallback, request) })
+      : getRedirectResponse(new URL(fallback, request.url).toString());
   }
 };

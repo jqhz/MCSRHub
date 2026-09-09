@@ -14,39 +14,45 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import type { CardItem } from '../data/content';
+import { getScreenshotPath } from '@src/lib/card-screenshots';
+import { FALLBACK_CARD_IMAGE } from '@src/lib/card-thumbnail';
 
 interface RegularCardProps {
   card: CardItem;
   fillContainer?: boolean;
 }
 
-export default function RegularCard({ card, fillContainer = false }: RegularCardProps) {
-  const getYouTubeId = (url: string) => {
-    try {
-      if (url.includes('youtu.be/')) {
-        return url.split('youtu.be/')[1]?.split(/[?&]/)[0] ?? '';
-      }
-      if (url.includes('youtube.com')) {
-        const params = new URL(url).searchParams;
-        return params.get('v') ?? '';
-      }
-    } catch {
-      return '';
+const getYouTubeId = (url: string) => {
+  try {
+    if (url.includes('youtu.be/')) {
+      return url.split('youtu.be/')[1]?.split(/[?&]/)[0] ?? '';
     }
+    if (url.includes('youtube.com')) {
+      const params = new URL(url).searchParams;
+      return params.get('v') ?? '';
+    }
+  } catch {
     return '';
-  };
+  }
+  return '';
+};
 
-  const getFallbackImage = (url: string) => {
-    const youtubeId = getYouTubeId(url);
-    if (youtubeId) {
-      return `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
-    }
-    return `/api/og-image?url=${encodeURIComponent(url)}`;
-  };
+const getSyncImageSrc = (card: CardItem): string | undefined => {
+  if (card.image?.trim()) {
+    return card.image;
+  }
+  if (!card.url?.trim()) {
+    return undefined;
+  }
+  const youtubeId = getYouTubeId(card.url);
+  if (youtubeId) {
+    return `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+  }
+  return getScreenshotPath(card.url) ?? undefined;
+};
 
-  const imageSrc = card.image ?? (card.url ? getFallbackImage(card.url) : undefined);
-
-  const [displaySrc, setDisplaySrc] = useState<string | undefined>(imageSrc);
+export default function RegularCard({ card, fillContainer = false }: RegularCardProps) {
+  const [displaySrc, setDisplaySrc] = useState<string | undefined>(() => getSyncImageSrc(card));
   const [isHovered, setIsHovered] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -69,10 +75,48 @@ export default function RegularCard({ card, fillContainer = false }: RegularCard
   };
 
   useEffect(() => {
-    setDisplaySrc(imageSrc);
     setCopied(false);
     clearResetTimer();
-  }, [imageSrc]);
+
+    const syncSrc = getSyncImageSrc(card);
+    if (syncSrc) {
+      setDisplaySrc(syncSrc);
+      return;
+    }
+
+    if (!card.url?.trim()) {
+      setDisplaySrc(undefined);
+      return;
+    }
+
+    let cancelled = false;
+
+    const resolveThumbnail = async () => {
+      try {
+        const response = await fetch(
+          `/api/og-image?url=${encodeURIComponent(card.url)}&format=json`,
+        );
+        if (!response.ok) {
+          throw new Error('Failed to resolve thumbnail');
+        }
+        const data = (await response.json()) as { url?: string };
+        if (!cancelled) {
+          setDisplaySrc(data.url ?? FALLBACK_CARD_IMAGE);
+        }
+      } catch {
+        if (!cancelled) {
+          setDisplaySrc(FALLBACK_CARD_IMAGE);
+        }
+      }
+    };
+
+    setDisplaySrc(undefined);
+    void resolveThumbnail();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [card.image, card.url]);
 
   useEffect(() => {
     return () => clearResetTimer();
@@ -86,7 +130,6 @@ export default function RegularCard({ card, fillContainer = false }: RegularCard
       await navigator.clipboard.writeText(card.url);
       setCopied(true);
 
-      // On touch devices there is no hover-off state, so reset after 1 second.
       if (isTouchDevice) {
         scheduleReset();
       }
@@ -178,7 +221,7 @@ export default function RegularCard({ card, fillContainer = false }: RegularCard
             : {}),
         }}
       >
-        {displaySrc && (
+        {(displaySrc || !getSyncImageSrc(card)) && (
           <Box
             sx={{
               position: 'relative',
@@ -189,22 +232,24 @@ export default function RegularCard({ card, fillContainer = false }: RegularCard
               bgcolor: 'action.hover',
             }}
           >
-            <CardMedia
-              component="img"
-              image={displaySrc}
-              alt={card.title}
-              sx={{
-                position: 'absolute',
-                inset: 0,
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-              }}
-              loading="lazy"
-              decoding="async"
-              onError={() => setDisplaySrc('/images/defaultcard.jpg')}
-            />
-            {showCopyButton && (
+            {displaySrc && (
+              <CardMedia
+                component="img"
+                image={displaySrc}
+                alt={card.title}
+                sx={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+                loading="lazy"
+                decoding="async"
+                onError={() => setDisplaySrc(FALLBACK_CARD_IMAGE)}
+              />
+            )}
+            {showCopyButton && displaySrc && (
               <Tooltip title={copied ? "Copied!" : "Copy"} placement="top">
                 <IconButton
                   aria-label="Copy"
