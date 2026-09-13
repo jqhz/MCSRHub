@@ -4,6 +4,8 @@ import '@src/styles/globals.css';
 import AppShell from '@src/components/AppShell';
 import { Analytics } from "@vercel/analytics/next";
 import { getContent } from '@src/db/queries';
+import { SITE_ORIGIN } from '@src/lib/site-url';
+
 export const metadata: Metadata = {
   title: {
     default: 'MCSR Hub',
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
   },
   description:
     'MCSR Hub is a community-driven index of Minecraft speedrunning tutorials, tech, tools, and resources with searchable playlists and curated links.',
-  metadataBase: new URL('https://mcsrhub.vercel.app'),
+  metadataBase: new URL(SITE_ORIGIN),
   openGraph: {
     title: 'MCSR Hub',
     description:
