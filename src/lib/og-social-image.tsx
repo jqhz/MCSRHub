@@ -1,7 +1,11 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { ImageResponse } from 'next/og';
-import { OG_IMAGE_SIZE } from '@src/lib/og-social-image.constants';
+import {
+  CARD_ASPECT_RATIO,
+  OG_FEATURED_IMAGE_WIDTH,
+  OG_IMAGE_SIZE,
+} from '@src/lib/og-social-image.constants';
 import { toAbsoluteImageUrl, toAbsoluteUrl } from '@src/lib/site-url';
 
 const BRAND = {
@@ -42,6 +46,7 @@ export async function renderOgSocialImage({
   const featuredImage = toAbsoluteImageUrl(imageUrl);
   const safeTitle = truncate(title, 72);
   const safeDescription = description ? truncate(description, 140) : undefined;
+  const featuredImageHeight = Math.round(OG_FEATURED_IMAGE_WIDTH / CARD_ASPECT_RATIO);
 
   return new ImageResponse(
     (
@@ -58,7 +63,7 @@ export async function renderOgSocialImage({
           style={{
             display: 'flex',
             flexDirection: 'column',
-            flex: featuredImage ? 1.15 : 1,
+            flex: 1,
             padding: '56px 64px',
             justifyContent: 'space-between',
           }}
@@ -125,16 +130,18 @@ export async function renderOgSocialImage({
           <div
             style={{
               display: 'flex',
-              flex: 0.85,
+              width: OG_FEATURED_IMAGE_WIDTH + 48,
               padding: '40px 48px 40px 0',
               alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
             }}
           >
             <div
               style={{
                 display: 'flex',
-                width: '100%',
-                height: '100%',
+                width: OG_FEATURED_IMAGE_WIDTH,
+                height: featuredImageHeight,
                 borderRadius: 24,
                 overflow: 'hidden',
                 border: `3px solid ${BRAND.accent}`,
@@ -144,12 +151,13 @@ export async function renderOgSocialImage({
               <img
                 src={featuredImage}
                 alt=""
-                width={OG_IMAGE_SIZE.width}
-                height={OG_IMAGE_SIZE.height}
+                width={OG_FEATURED_IMAGE_WIDTH}
+                height={featuredImageHeight}
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
+                  borderRadius: 16,
                 }}
               />
             </div>
