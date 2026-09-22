@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 // import Image from 'next/image';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -30,9 +30,18 @@ interface HeaderProps {
   sidebarOpen: boolean;
 }
 
+const SEARCH_LISTBOX_ID = 'search-results-listbox';
+
 const categoryLabelMap = new Map(
   CATEGORIES.map((category) => [category.slug, category.label]),
 );
+
+const isTypingTarget = (target: EventTarget | null) => {
+  if (!(target instanceof HTMLElement)) return false;
+  if (target.isContentEditable) return true;
+  const tag = target.tagName;
+  return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+};
 
 const getResultRoute = (
   item: SearchItem,
@@ -68,7 +77,10 @@ const getResultRoute = (
 export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {
   const router = useRouter();
   const { cards, playlists } = useContent();
+  const inputRef = useRef<HTMLInputElement>(null);
+  const activeOptionRef = useRef<HTMLDivElement>(null);
   const [query, setQuery] = useState('');
+  const [activeIndex, setActiveIndex] = useState(-1);
   const fuse = useMemo(() => createSearch(cards, playlists), [cards, playlists]);
   const results = useMemo(() => {
     const trimmed = query.trim();
@@ -77,10 +89,68 @@ export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {
   }, [fuse, query]);
   const hasQuery = query.trim().length > 0;
   const hasResults = hasQuery && results.length > 0;
+  const effectiveActiveIndex =
+    activeIndex >= 0 && results.length > 0
+      ? Math.min(activeIndex, results.length - 1)
+      : -1;
+
+  useEffect(() => {
+    if (effectiveActiveIndex < 0) return;
+    activeOptionRef.current?.scrollIntoView({ block: 'nearest' });
+  }, [effectiveActiveIndex]);
+
+  useEffect(() => {
+    const handleGlobalKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== '/') return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      event.preventDefault();
+      inputRef.current?.focus();
+    };
+    document.addEventListener('keydown', handleGlobalKeyDown);
+    return () => document.removeEventListener('keydown', handleGlobalKeyDown);
+  }, []);
 
   const handleSelect = (item: SearchItem) => {
     router.push(getResultRoute(item, cards, playlists));
     setQuery('');
+    setActiveIndex(-1);
+  };
+
+  const handleSearchKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setQuery('');
+      setActiveIndex(-1);
+      inputRef.current?.blur();
+      return;
+    }
+
+    if (results.length === 0) return;
+
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      setActiveIndex((prev) => {
+        if (prev < 0) return 0;
+        return Math.min(prev + 1, results.length - 1);
+      });
+      return;
+    }
+
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      setActiveIndex((prev) => {
+        if (prev < 0) return 0;
+        return Math.max(prev - 1, 0);
+      });
+      return;
+    }
+
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      const index = effectiveActiveIndex >= 0 ? effectiveActiveIndex : 0;
+      handleSelect(results[index]!);
+    }
   };
 
   return (
@@ -125,10 +195,23 @@ export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {
           <Box sx={{ width: '100%', maxWidth: 520, position: 'relative' }}>
             <TextField
               fullWidth
+              inputRef={inputRef}
               value={query}
-              onChange={(event) => setQuery(event.target.value)}
+              onChange={(event) => {
+                setQuery(event.target.value);
+                setActiveIndex(-1);
+              }}
+              onKeyDown={handleSearchKeyDown}
               placeholder="Search tutorials, tools, channels..."
               aria-label="Search MCSR resources"
+              aria-expanded={hasQuery}
+              aria-controls={hasQuery ? SEARCH_LISTBOX_ID : undefined}
+              aria-autocomplete="list"
+              aria-activedescendant={
+                effectiveActiveIndex >= 0 && hasResults
+                  ? `search-result-${effectiveActiveIndex}`
+                  : undefined
+              }
               sx={{
                 '& .MuiInputBase-root': {
                   backgroundColor: 'rgba(18, 24, 38, 0.9)',
@@ -144,6 +227,7 @@ export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {
             />
             {hasQuery && (
               <Paper
+                id={SEARCH_LISTBOX_ID}
                 role="listbox"
                 aria-label="Search results"
                 sx={{
@@ -157,12 +241,18 @@ export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {
               >
                 {hasResults ? (
                   <List dense disablePadding>
-                    {results.map((item) => {
+                    {results.map((item, index) => {
                       const categoryLabel =
                         categoryLabelMap.get(item.category) ?? item.category;
+                      const selected = index === effectiveActiveIndex;
                       return (
                         <ListItemButton
                           key={`${item.type}-${item.id}-${item.category}${item.type === 'card' && item.playlistId ? `-${item.playlistId}` : ''}`}
+                          id={`search-result-${index}`}
+                          role="option"
+                          aria-selected={selected}
+                          selected={selected}
+                          ref={selected ? activeOptionRef : undefined}
                           onClick={() => handleSelect(item)}
                         >
                           <Box>
