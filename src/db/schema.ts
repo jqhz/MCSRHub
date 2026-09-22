@@ -57,6 +57,7 @@ export const cards = pgTable('cards', {
   id: text('id').primaryKey(),
   title: text('title').notNull(),
   description: text('description'),
+  additionalInfo: text('additional_info'),
   image: text('image'),
   date: text('date'),
   recommended: boolean('recommended').notNull().default(false),
