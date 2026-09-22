@@ -9,33 +9,23 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckIcon from '@mui/icons-material/Check';
-import Stack from '@mui/material/Stack';
+import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
 import type { CardItem } from '../data/content';
 import { getScreenshotPath } from '@src/lib/card-screenshots';
 import { FALLBACK_CARD_IMAGE } from '@src/lib/card-thumbnail';
+import { getYouTubeId } from '@src/lib/youtube';
+import CardAdditionalInfoMarkdown from './CardAdditionalInfoMarkdown';
 
 interface RegularCardProps {
   card: CardItem;
   fillContainer?: boolean;
 }
-
-const getYouTubeId = (url: string) => {
-  try {
-    if (url.includes('youtu.be/')) {
-      return url.split('youtu.be/')[1]?.split(/[?&]/)[0] ?? '';
-    }
-    if (url.includes('youtube.com')) {
-      const params = new URL(url).searchParams;
-      return params.get('v') ?? '';
-    }
-  } catch {
-    return '';
-  }
-  return '';
-};
 
 const getSyncImageSrc = (card: CardItem): string | undefined => {
   if (card.image?.trim()) {
@@ -55,6 +45,10 @@ export default function RegularCard({ card, fillContainer = false }: RegularCard
   const [displaySrc, setDisplaySrc] = useState<string | undefined>(() => getSyncImageSrc(card));
   const [isHovered, setIsHovered] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [infoOpen, setInfoOpen] = useState(false);
+
+  const additionalInfoMarkdown = card.additionalInfo?.trim() ?? '';
+  const hasAdditionalInfo = additionalInfoMarkdown.length > 0;
 
   const resetTimerRef = useRef<number | null>(null);
   const isTouchDevice = useMediaQuery('(hover: none), (pointer: coarse)');
@@ -153,6 +147,12 @@ export default function RegularCard({ card, fillContainer = false }: RegularCard
 
   const showCopyButton = isTouchDevice || isHovered;
   const copyIcon = copied ? <CheckIcon /> : <ContentCopyIcon />;
+
+  const openAdditionalInfo = (event: React.MouseEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setInfoOpen(true);
+  };
 
   return (
     <Card
@@ -291,20 +291,103 @@ export default function RegularCard({ card, fillContainer = false }: RegularCard
           <Typography variant="h6" sx={{ fontWeight: 600 }}>
             {card.title}
           </Typography>
-          {card.description && (
-            <Typography variant="body2" color="text.secondary">
-              {card.description}
-            </Typography>
-          )}
-          {card.date && (
-            <Stack direction="row" spacing={1}>
-              <Typography variant="caption" color="text.secondary">
-                {new Date(card.date).toLocaleDateString('en-US', { timeZone: 'UTC' })}
-              </Typography>
-            </Stack>
+          {(card.description || card.date || hasAdditionalInfo) && (
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+                minWidth: 0,
+              }}
+            >
+              <Box sx={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 0.25 }}>
+                {card.description && (
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    {...(hasAdditionalInfo
+                      ? {
+                          noWrap: true,
+                          sx: { overflow: 'hidden', textOverflow: 'ellipsis' },
+                        }
+                      : {})}
+                  >
+                    {card.description}
+                  </Typography>
+                )}
+                {card.date && (
+                  <Typography variant="caption" color="text.secondary">
+                    {new Date(card.date).toLocaleDateString('en-US', { timeZone: 'UTC' })}
+                  </Typography>
+                )}
+              </Box>
+              {hasAdditionalInfo && (
+                <Tooltip title="Additional Info" placement="top">
+                  <Box
+                    component="button"
+                    type="button"
+                    aria-label="Additional Info"
+                    onClick={openAdditionalInfo}
+                    sx={{
+                      flexShrink: 0,
+                      width: 22,
+                      height: 22,
+                      p: 0,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      border: 1,
+                      borderColor: 'text.secondary',
+                      borderRadius: 0.5,
+                      bgcolor: 'transparent',
+                      color: 'text.secondary',
+                      cursor: 'pointer',
+                      fontFamily: 'inherit',
+                      fontSize: '0.75rem',
+                      fontWeight: 400,
+                      fontStyle: 'normal',
+                      lineHeight: 1,
+                      '&:hover': {
+                        bgcolor: 'action.hover',
+                      },
+                    }}
+                  >
+                    i
+                  </Box>
+                </Tooltip>
+              )}
+            </Box>
           )}
         </CardContent>
       </CardActionArea>
+      {hasAdditionalInfo && (
+        <Dialog
+          open={infoOpen}
+          onClose={() => setInfoOpen(false)}
+          maxWidth="sm"
+          fullWidth
+          aria-labelledby={`${card.id}-additional-info-title`}
+        >
+          <DialogTitle
+            id={`${card.id}-additional-info-title`}
+            sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 1, pr: 1 }}
+          >
+            <Typography component="span" variant="h6" sx={{ fontWeight: 600, pt: 0.25 }}>
+              {card.title}
+            </Typography>
+            <IconButton
+              aria-label="Close"
+              onClick={() => setInfoOpen(false)}
+              sx={{ mt: -0.5, mr: -0.5 }}
+            >
+              <CloseIcon />
+            </IconButton>
+          </DialogTitle>
+          <DialogContent dividers={false}>
+            <CardAdditionalInfoMarkdown markdown={additionalInfoMarkdown} />
+          </DialogContent>
+        </Dialog>
+      )}
     </Card>
   );
 }

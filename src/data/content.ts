@@ -27,6 +27,7 @@ export interface CardItem {
   playlistPositions: Partial<Record<string, number>>;
   title: string;
   description?: string;
+  additionalInfo?: string;
   image?: string;
   date?: string;
   recommended?: boolean;

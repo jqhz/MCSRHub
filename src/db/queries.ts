@@ -79,6 +79,7 @@ const fetchContent = async (): Promise<ContentStore> => {
     playlistPositions: playlistPositionsByCard.get(row.id) ?? {},
     title: row.title,
     description: row.description ?? undefined,
+    additionalInfo: row.additionalInfo ?? undefined,
     image: row.image ?? undefined,
     date: row.date ?? undefined,
     recommended: row.recommended,
@@ -101,6 +102,6 @@ const fetchContent = async (): Promise<ContentStore> => {
   };
 };
 
-export const getContent = unstable_cache(fetchContent, ['content-store-v3'], {
+export const getContent = unstable_cache(fetchContent, ['content-store-v4'], {
   revalidate: 300,
 });
