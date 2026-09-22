@@ -223,6 +223,35 @@ export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {
                     <SearchIcon />
                   </InputAdornment>
                 ),
+                endAdornment: !hasQuery ? (
+                  <InputAdornment
+                    position="end"
+                    sx={{ display: { xs: 'none', md: 'flex' }, mr: 0.25 }}
+                  >
+                    <Box
+                      component="span"
+                      aria-hidden
+                      sx={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        minWidth: 22,
+                        height: 22,
+                        borderRadius: 0.75,
+                        border: '1px solid',
+                        borderColor: 'divider',
+                        color: 'text.secondary',
+                        fontSize: '0.8125rem',
+                        fontWeight: 600,
+                        lineHeight: 1,
+                        pointerEvents: 'none',
+                        userSelect: 'none',
+                      }}
+                    >
+                      /
+                    </Box>
+                  </InputAdornment>
+                ) : undefined,
               }}
             />
             {hasQuery && (
