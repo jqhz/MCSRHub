@@ -115,6 +115,7 @@ export default function Header({ onMenuClick, sidebarOpen }: HeaderProps) {
     router.push(getResultRoute(item, cards, playlists));
     setQuery('');
     setActiveIndex(-1);
+    inputRef.current?.blur();
   };
 
   const handleSearchKeyDown = (event: React.KeyboardEvent) => {
