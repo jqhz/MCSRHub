@@ -322,37 +322,39 @@ export default function RegularCard({ card, fillContainer = false }: RegularCard
                 )}
               </Box>
               {hasAdditionalInfo && (
-                <Box
-                  component="button"
-                  type="button"
-                  aria-label="Additional information"
-                  onClick={openAdditionalInfo}
-                  sx={{
-                    flexShrink: 0,
-                    width: 22,
-                    height: 22,
-                    p: 0,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: 1,
-                    borderColor: 'text.secondary',
-                    borderRadius: 0.5,
-                    bgcolor: 'transparent',
-                    color: 'text.secondary',
-                    cursor: 'pointer',
-                    fontFamily: 'inherit',
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    fontStyle: 'italic',
-                    lineHeight: 1,
-                    '&:hover': {
-                      bgcolor: 'action.hover',
-                    },
-                  }}
-                >
-                  i
-                </Box>
+                <Tooltip title="Additional Info" placement="top">
+                  <Box
+                    component="button"
+                    type="button"
+                    aria-label="Additional Info"
+                    onClick={openAdditionalInfo}
+                    sx={{
+                      flexShrink: 0,
+                      width: 22,
+                      height: 22,
+                      p: 0,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      border: 1,
+                      borderColor: 'text.secondary',
+                      borderRadius: 0.5,
+                      bgcolor: 'transparent',
+                      color: 'text.secondary',
+                      cursor: 'pointer',
+                      fontFamily: 'inherit',
+                      fontSize: '0.75rem',
+                      fontWeight: 400,
+                      fontStyle: 'normal',
+                      lineHeight: 1,
+                      '&:hover': {
+                        bgcolor: 'action.hover',
+                      },
+                    }}
+                  >
+                    i
+                  </Box>
+                </Tooltip>
               )}
             </Box>
           )}
