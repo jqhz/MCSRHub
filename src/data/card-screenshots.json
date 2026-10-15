@@ -248,14 +248,17 @@
       "path": "/images/card-screenshots/1bf6528bd7039c26.webp",
       "capturedAt": "2026-09-13T10:43:40.072Z"
     },
-<<<<<<< HEAD
-    "https://gist.github.com/maskersss/5847d594fc6ce4feb66fbd2d3fda281d": {
-      "path": "/images/card-screenshots/99920b36c479d0a5.webp",
-      "capturedAt": "2026-10-15T21:00:11.070Z"
+    "https://mcsr-tree.dinotnt.com/": {
+      "path": "/images/card-screenshots/91d0e63354ecf74f.webp",
+      "capturedAt": "2026-09-27T10:56:43.458Z"
     },
-    "https://github.com/Mescht/Portal-Practice/releases/latest": {
-      "path": "/images/card-screenshots/d3430f4c6a384785.webp",
-      "capturedAt": "2026-10-15T21:00:20.490Z"
+    "https://maskers.xyz/log-analysis": {
+      "path": "/images/card-screenshots/7bae8a9875fa3d01.webp",
+      "capturedAt": "2026-09-27T10:56:51.148Z"
+    },
+    "https://rankedcoolseeds.com/": {
+      "path": "/images/card-screenshots/02cac21fc866036c.webp",
+      "capturedAt": "2026-09-27T10:57:04.105Z"
     },
     "https://minecraftle.zachmanson.com/": {
       "path": "/images/card-screenshots/fc91b6d9db24fdbf.webp",
@@ -268,6 +271,18 @@
     "https://7-zip.org/download.html": {
       "path": "/images/card-screenshots/ee905f8e6a202fe7.webp",
       "capturedAt": "2026-10-15T21:01:33.252Z"
+    },
+    "https://lcqtracker.vercel.app/": {
+      "path": "/images/card-screenshots/90e3811b83de68a8.webp",
+      "capturedAt": "2026-10-04T11:25:30.903Z"
+    },
+    "https://gist.github.com/maskersss/5847d594fc6ce4feb66fbd2d3fda281d": {
+      "path": "/images/card-screenshots/99920b36c479d0a5.webp",
+      "capturedAt": "2026-10-15T21:00:11.070Z"
+    },
+    "https://github.com/Mescht/Portal-Practice/releases/latest": {
+      "path": "/images/card-screenshots/d3430f4c6a384785.webp",
+      "capturedAt": "2026-10-15T21:00:20.490Z"
     },
     "https://awesomedev.site/ranked-seedbank": {
       "path": "/images/card-screenshots/58b887ddb178fc61.webp",
@@ -300,35 +315,6 @@
     "https://kiuhbit.site/things/overlaygenerator": {
       "path": "/images/card-screenshots/7123af1fd6793360.webp",
       "capturedAt": "2026-10-15T21:02:58.329Z"
-=======
-    "https://mcsr-tree.dinotnt.com/": {
-      "path": "/images/card-screenshots/91d0e63354ecf74f.webp",
-      "capturedAt": "2026-09-27T10:56:43.458Z"
-    },
-    "https://maskers.xyz/log-analysis": {
-      "path": "/images/card-screenshots/7bae8a9875fa3d01.webp",
-      "capturedAt": "2026-09-27T10:56:51.148Z"
-    },
-    "https://rankedcoolseeds.com/": {
-      "path": "/images/card-screenshots/02cac21fc866036c.webp",
-      "capturedAt": "2026-09-27T10:57:04.105Z"
-    },
-    "https://minecraftle.zachmanson.com/": {
-      "path": "/images/card-screenshots/fc91b6d9db24fdbf.webp",
-      "capturedAt": "2026-09-27T10:57:11.101Z"
-    },
-    "https://craftle.enigmatics.org/": {
-      "path": "/images/card-screenshots/9c479b6140cc6ac7.webp",
-      "capturedAt": "2026-09-27T10:57:18.495Z"
-    },
-    "https://7-zip.org/download.html": {
-      "path": "/images/card-screenshots/ee905f8e6a202fe7.webp",
-      "capturedAt": "2026-09-27T10:57:24.488Z"
-    },
-    "https://lcqtracker.vercel.app/": {
-      "path": "/images/card-screenshots/90e3811b83de68a8.webp",
-      "capturedAt": "2026-10-04T11:25:30.903Z"
->>>>>>> 63626b147ad6c9f6828ccf22d84b9ef7882180cf
     }
   }
 }
